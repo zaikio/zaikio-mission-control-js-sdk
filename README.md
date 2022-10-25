@@ -36,6 +36,37 @@ api
   .catch((err) => console.error(err));
 ```
 
+### Environments
+
+The JS SDK defaults to our live environment. To test or use the Mission Control Sandbox, please ensure to 
+change the `baseUrl` of the client to point to the Sandbox. This can be done in the following manner, and is 
+shown in the simple example above.
+
+```js
+var MissionControl = require("mission_control");
+var defaultClient = MissionControl.ApiClient.instance;
+
+defaultClient.basePath = "https://mc.sandbox.zaikio.com/api/v1";
+```
+
+### Authorization
+
+Providing an oAuth Access Token (Available from Zaikio Hub [live](https://hub.zaikio.com) or [sandbox](https://hub.sandbox.zaikio.com)) will allow the JS SDK to authenticate with Mission Control's API.
+
+This can be provided to the default client and will be automatically included in requests for you.
+
+```js
+var MissionControl = require("mission_control");
+var defaultClient = MissionControl.ApiClient.instance;
+
+defaultClient.authentications.bearerAuth = {
+  type: "oauth2",
+  accessToken: process.env.ACCESS_TOKEN,
+};
+```
+
+We would always suggest following good development practices regarding credential storage.
+
 ## Available OAuth Scopes
 
 - `mission_control.commissionings.r` [`Commissioning`]: Read information of all commissionings
