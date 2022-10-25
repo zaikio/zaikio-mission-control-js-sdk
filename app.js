@@ -7,13 +7,18 @@ ApiClient.instance.basePath = 'https://mc.sandbox.zaikio.com/api/v1';
 ApiClient.instance.authentications.bearerAuth = { type: "oauth2", accessToken };
 
 function run() {
-  console.log("running")
   const productionApi = new ProductionApi();
+  
   productionApi.executionsGet(undefined, (err, data) => {
-    console.log("callback");
-    if (err != null) { console.error(err) };
+    if (err != null) { 
+      console.log("ERROR");
+      console.error(err);
+      
+      process.exit(0);
+    };
+    
     console.log(data);
   });
 }
 
-run()
+run();
