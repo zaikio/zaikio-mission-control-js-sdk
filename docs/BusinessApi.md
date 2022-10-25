@@ -37,13 +37,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.BusinessApi();
 let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.estimatesEstimateIdDelete(estimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.estimatesEstimateIdDelete(estimateId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -82,13 +81,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.BusinessApi();
 let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.estimatesEstimateIdGet(estimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.estimatesEstimateIdGet(estimateId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -128,13 +126,12 @@ let apiInstance = new MissionControl.BusinessApi();
 let body = new MissionControl.EstimatesEstimateIdBody(); // EstimatesEstimateIdBody | 
 let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.estimatesEstimateIdPatch(body, estimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.estimatesEstimateIdPatch(body, estimateId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -177,13 +174,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -225,13 +221,12 @@ let apiInstance = new MissionControl.BusinessApi();
 let body = new MissionControl.EstimateIdWorkstepEstimatesBody(); // EstimateIdWorkstepEstimatesBody | 
 let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.estimatesEstimateIdWorkstepEstimatesPost(body, estimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.estimatesEstimateIdWorkstepEstimatesPost(body, estimateId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -274,13 +269,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.jobsJobIdEstimatesGet(jobId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsJobIdEstimatesGet(jobId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -322,13 +316,12 @@ let apiInstance = new MissionControl.BusinessApi();
 let body = new MissionControl.JobIdEstimatesBody(); // JobIdEstimatesBody | 
 let jobId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.jobsJobIdEstimatesPost(body, jobId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsJobIdEstimatesPost(body, jobId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -368,13 +361,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.BusinessApi();
 let materialEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.materialEstimatesMaterialEstimateIdDelete(materialEstimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.materialEstimatesMaterialEstimateIdDelete(materialEstimateId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -413,13 +405,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.BusinessApi();
 let materialEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.materialEstimatesMaterialEstimateIdGet(materialEstimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.materialEstimatesMaterialEstimateIdGet(materialEstimateId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -459,13 +450,12 @@ let apiInstance = new MissionControl.BusinessApi();
 let body = new MissionControl.MaterialEstimatesMaterialEstimateIdBody(); // MaterialEstimatesMaterialEstimateIdBody | 
 let materialEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -505,13 +495,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.BusinessApi();
 let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -550,13 +539,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.BusinessApi();
 let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -598,13 +586,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -646,13 +633,12 @@ let apiInstance = new MissionControl.BusinessApi();
 let body = new MissionControl.WorkstepEstimateIdMaterialEstimatesBody(); // WorkstepEstimateIdMaterialEstimatesBody | 
 let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -693,13 +679,12 @@ let apiInstance = new MissionControl.BusinessApi();
 let body = new MissionControl.WorkstepEstimatesWorkstepEstimateIdBody(); // WorkstepEstimatesWorkstepEstimateIdBody | 
 let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters

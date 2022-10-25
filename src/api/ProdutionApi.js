@@ -35,13 +35,7 @@ export class ProdutionApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    /**
-     * Callback function to receive the result of the listsListIdMembersGet operation.
-     * @callback moduleapi/ProdutionApi~listsListIdMembersGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ListMember>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
+
 
     /**
      * Returns all members in a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
@@ -49,10 +43,9 @@ export class ProdutionApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProdutionApi~listsListIdMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ListMember>} and HTTP response
      */
-    listsListIdMembersGet(listId, opts, callback) {
+    listsListIdMembersGetWithHttpInfo(listId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'listId' is set
@@ -81,8 +74,23 @@ export class ProdutionApi {
       return this.apiClient.callApi(
         '/lists/{list_id}/members', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Returns all members in a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} listId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ListMember>}
+     */
+    listsListIdMembersGet(listId, opts) {
+      return this.listsListIdMembersGetWithHttpInfo(listId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 }

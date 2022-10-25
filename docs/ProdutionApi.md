@@ -26,13 +26,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.listsListIdMembersGet(listId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.listsListIdMembersGet(listId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters

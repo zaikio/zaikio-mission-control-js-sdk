@@ -48,20 +48,14 @@ export class CommercialApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    /**
-     * Callback function to receive the result of the orderLineItemsOrderLineItemIdDelete operation.
-     * @callback moduleapi/CommercialApi~orderLineItemsOrderLineItemIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
+
 
     /**
      * Removes or specific order line item. Please not that removing line items is only possible                             if the parent order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} orderLineItemId 
-     * @param {module:api/CommercialApi~orderLineItemsOrderLineItemIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    orderLineItemsOrderLineItemIdDelete(orderLineItemId, callback) {
+    orderLineItemsOrderLineItemIdDeleteWithHttpInfo(orderLineItemId) {
       
       let postBody = null;
       // verify the required parameter 'orderLineItemId' is set
@@ -90,24 +84,29 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/order_line_items/{order_line_item_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the orderLineItemsOrderLineItemIdGet operation.
-     * @callback moduleapi/CommercialApi~orderLineItemsOrderLineItemIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/OrderLineItem{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes or specific order line item. Please not that removing line items is only possible                             if the parent order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderLineItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    orderLineItemsOrderLineItemIdDelete(orderLineItemId) {
+      return this.orderLineItemsOrderLineItemIdDeleteWithHttpInfo(orderLineItemId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific order line item. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
      * @param {String} orderLineItemId 
-     * @param {module:api/CommercialApi~orderLineItemsOrderLineItemIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderLineItem} and HTTP response
      */
-    orderLineItemsOrderLineItemIdGet(orderLineItemId, callback) {
+    orderLineItemsOrderLineItemIdGetWithHttpInfo(orderLineItemId) {
       
       let postBody = null;
       // verify the required parameter 'orderLineItemId' is set
@@ -136,25 +135,30 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/order_line_items/{order_line_item_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the orderLineItemsOrderLineItemIdPatch operation.
-     * @callback moduleapi/CommercialApi~orderLineItemsOrderLineItemIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/OrderLineItem{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific order line item. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderLineItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderLineItem}
      */
+    orderLineItemsOrderLineItemIdGet(orderLineItemId) {
+      return this.orderLineItemsOrderLineItemIdGetWithHttpInfo(orderLineItemId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies a specfic order line item. Please not that any modifications to order line items                           are only possible as long as the parent order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/OrderLineItemsOrderLineItemIdBody} body 
      * @param {String} orderLineItemId 
-     * @param {module:api/CommercialApi~orderLineItemsOrderLineItemIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderLineItem} and HTTP response
      */
-    orderLineItemsOrderLineItemIdPatch(body, orderLineItemId, callback) {
+    orderLineItemsOrderLineItemIdPatchWithHttpInfo(body, orderLineItemId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -187,26 +191,32 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/order_line_items/{order_line_item_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersGet operation.
-     * @callback moduleapi/CommercialApi~ordersGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Order>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Modifies a specfic order line item. Please not that any modifications to order line items                           are only possible as long as the parent order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderLineItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderLineItem}
      */
+    orderLineItemsOrderLineItemIdPatch(body, orderLineItemId) {
+      return this.orderLineItemsOrderLineItemIdPatchWithHttpInfo(body, orderLineItemId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all orders that have already been confirmed. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/CommercialApi~ordersGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Order>} and HTTP response
      */
-    ordersGet(opts, callback) {
+    ordersGetWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -231,23 +241,31 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdAddressDelete operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdAddressDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Returns all orders that have already been confirmed. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Order>}
      */
+    ordersGet(opts) {
+      return this.ordersGetWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes the address from a specific order as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdAddressDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    ordersOrderIdAddressDelete(orderId, callback) {
+    ordersOrderIdAddressDeleteWithHttpInfo(orderId) {
       
       let postBody = null;
       // verify the required parameter 'orderId' is set
@@ -276,24 +294,29 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/address', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdAddressGet operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdAddressGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Address{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes the address from a specific order as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    ordersOrderIdAddressDelete(orderId) {
+      return this.ordersOrderIdAddressDeleteWithHttpInfo(orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns the address for this order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission-control.orders.r&#x60;
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdAddressGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Address} and HTTP response
      */
-    ordersOrderIdAddressGet(orderId, callback) {
+    ordersOrderIdAddressGetWithHttpInfo(orderId) {
       
       let postBody = null;
       // verify the required parameter 'orderId' is set
@@ -322,25 +345,30 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/address', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdAddressPatch operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdAddressPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Address{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns the address for this order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission-control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Address}
      */
+    ordersOrderIdAddressGet(orderId) {
+      return this.ordersOrderIdAddressGetWithHttpInfo(orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies the address from a specific order as long as                   the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/OrderIdAddressBody1} body 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdAddressPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Address} and HTTP response
      */
-    ordersOrderIdAddressPatch(body, orderId, callback) {
+    ordersOrderIdAddressPatchWithHttpInfo(body, orderId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -373,25 +401,31 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/address', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdAddressPost operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdAddressPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Address{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Modifies the address from a specific order as long as                   the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Address}
      */
+    ordersOrderIdAddressPatch(body, orderId) {
+      return this.ordersOrderIdAddressPatchWithHttpInfo(body, orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates new address. If an address is already present, it will be overwritten.                   Creating an address is only possible as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/OrderIdAddressBody} body 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdAddressPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Address} and HTTP response
      */
-    ordersOrderIdAddressPost(body, orderId, callback) {
+    ordersOrderIdAddressPostWithHttpInfo(body, orderId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -424,23 +458,30 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/address', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdDelete operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Creates new address. If an address is already present, it will be overwritten.                   Creating an address is only possible as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Address}
      */
+    ordersOrderIdAddressPost(body, orderId) {
+      return this.ordersOrderIdAddressPostWithHttpInfo(body, orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes a specific order as long as it still is in &#x60;draft&#x60; state, otherwise the order                           is set to the &#x60;canceled&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    ordersOrderIdDelete(orderId, callback) {
+    ordersOrderIdDeleteWithHttpInfo(orderId) {
       
       let postBody = null;
       // verify the required parameter 'orderId' is set
@@ -469,24 +510,29 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdGet operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2012{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a specific order as long as it still is in &#x60;draft&#x60; state, otherwise the order                           is set to the &#x60;canceled&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    ordersOrderIdDelete(orderId) {
+      return this.ordersOrderIdDeleteWithHttpInfo(orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific order, including the address, payment terms and line items. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2012} and HTTP response
      */
-    ordersOrderIdGet(orderId, callback) {
+    ordersOrderIdGetWithHttpInfo(orderId) {
       
       let postBody = null;
       // verify the required parameter 'orderId' is set
@@ -515,16 +561,22 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdOrderLineItemsGet operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdOrderLineItemsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/OrderLineItem>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific order, including the address, payment terms and line items. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2012}
      */
+    ordersOrderIdGet(orderId) {
+      return this.ordersOrderIdGetWithHttpInfo(orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all line item of a specific order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
@@ -532,10 +584,9 @@ export class CommercialApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/CommercialApi~ordersOrderIdOrderLineItemsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/OrderLineItem>} and HTTP response
      */
-    ordersOrderIdOrderLineItemsGet(orderId, opts, callback) {
+    ordersOrderIdOrderLineItemsGetWithHttpInfo(orderId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'orderId' is set
@@ -564,25 +615,33 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/order_line_items', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdOrderLineItemsPost operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdOrderLineItemsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/OrderLineItem{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all line item of a specific order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/OrderLineItem>}
      */
+    ordersOrderIdOrderLineItemsGet(orderId, opts) {
+      return this.ordersOrderIdOrderLineItemsGetWithHttpInfo(orderId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new order line item and attaches it to an order. Please note that line items can                           only be added to orders in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/OrderIdOrderLineItemsBody} body 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdOrderLineItemsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderLineItem} and HTTP response
      */
-    ordersOrderIdOrderLineItemsPost(body, orderId, callback) {
+    ordersOrderIdOrderLineItemsPostWithHttpInfo(body, orderId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -615,25 +674,31 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/order_line_items', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdPatch operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2012{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new order line item and attaches it to an order. Please note that line items can                           only be added to orders in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderLineItem}
      */
+    ordersOrderIdOrderLineItemsPost(body, orderId) {
+      return this.ordersOrderIdOrderLineItemsPostWithHttpInfo(body, orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies a specific order. Please note that changes are only possible while the order                         is in &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/OrdersOrderIdBody} body 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2012} and HTTP response
      */
-    ordersOrderIdPatch(body, orderId, callback) {
+    ordersOrderIdPatchWithHttpInfo(body, orderId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -666,23 +731,30 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdPaymentTermsDelete operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdPaymentTermsDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Modifies a specific order. Please note that changes are only possible while the order                         is in &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2012}
      */
+    ordersOrderIdPatch(body, orderId) {
+      return this.ordersOrderIdPatchWithHttpInfo(body, orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes the payment terms. Removing the payment terms is only possible while                             the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdPaymentTermsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    ordersOrderIdPaymentTermsDelete(orderId, callback) {
+    ordersOrderIdPaymentTermsDeleteWithHttpInfo(orderId) {
       
       let postBody = null;
       // verify the required parameter 'orderId' is set
@@ -711,24 +783,29 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/payment_terms', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdPaymentTermsGet operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdPaymentTermsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaymentTerms{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes the payment terms. Removing the payment terms is only possible while                             the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    ordersOrderIdPaymentTermsDelete(orderId) {
+      return this.ordersOrderIdPaymentTermsDeleteWithHttpInfo(orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns the payment terms for the specified order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdPaymentTermsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTerms} and HTTP response
      */
-    ordersOrderIdPaymentTermsGet(orderId, callback) {
+    ordersOrderIdPaymentTermsGetWithHttpInfo(orderId) {
       
       let postBody = null;
       // verify the required parameter 'orderId' is set
@@ -757,25 +834,30 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/payment_terms', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdPaymentTermsPatch operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdPaymentTermsPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaymentTerms{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns the payment terms for the specified order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTerms}
      */
+    ordersOrderIdPaymentTermsGet(orderId) {
+      return this.ordersOrderIdPaymentTermsGetWithHttpInfo(orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies existing payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long as                           the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/OrderIdPaymentTermsBody1} body 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdPaymentTermsPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTerms} and HTTP response
      */
-    ordersOrderIdPaymentTermsPatch(body, orderId, callback) {
+    ordersOrderIdPaymentTermsPatchWithHttpInfo(body, orderId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -808,25 +890,31 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/payment_terms', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersOrderIdPaymentTermsPost operation.
-     * @callback moduleapi/CommercialApi~ordersOrderIdPaymentTermsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaymentTerms{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Modifies existing payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long as                           the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTerms}
      */
+    ordersOrderIdPaymentTermsPatch(body, orderId) {
+      return this.ordersOrderIdPaymentTermsPatchWithHttpInfo(body, orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long                           as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/OrderIdPaymentTermsBody} body 
      * @param {String} orderId 
-     * @param {module:api/CommercialApi~ordersOrderIdPaymentTermsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTerms} and HTTP response
      */
-    ordersOrderIdPaymentTermsPost(body, orderId, callback) {
+    ordersOrderIdPaymentTermsPostWithHttpInfo(body, orderId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -859,24 +947,30 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders/{order_id}/payment_terms', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the ordersPost operation.
-     * @callback moduleapi/CommercialApi~ordersPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2012{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long                           as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTerms}
      */
+    ordersOrderIdPaymentTermsPost(body, orderId) {
+      return this.ordersOrderIdPaymentTermsPostWithHttpInfo(body, orderId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new order with the given properties. The order will be in state &#x60;draft&#x60; and                         can be modified as long as that is the case. You can also supply nested properties for                           line items and the address. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/OrdersBody} body 
-     * @param {module:api/CommercialApi~ordersPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2012} and HTTP response
      */
-    ordersPost(body, callback) {
+    ordersPostWithHttpInfo(body) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -905,8 +999,20 @@ export class CommercialApi {
       return this.apiClient.callApi(
         '/orders', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Creates a new order with the given properties. The order will be in state &#x60;draft&#x60; and                         can be modified as long as that is the case. You can also supply nested properties for                           line items and the address. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2012}
+     */
+    ordersPost(body) {
+      return this.ordersPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 }

@@ -65,20 +65,14 @@ export class SpecificationApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    /**
-     * Callback function to receive the result of the fileActionsFileActionIdDelete operation.
-     * @callback moduleapi/SpecificationApi~fileActionsFileActionIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
+
 
     /**
      * Removes a file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} fileActionId 
-     * @param {module:api/SpecificationApi~fileActionsFileActionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    fileActionsFileActionIdDelete(fileActionId, callback) {
+    fileActionsFileActionIdDeleteWithHttpInfo(fileActionId) {
       
       let postBody = null;
       // verify the required parameter 'fileActionId' is set
@@ -107,16 +101,22 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_actions/{file_action_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the fileActionsFileActionIdFileRemarksGet operation.
-     * @callback moduleapi/SpecificationApi~fileActionsFileActionIdFileRemarksGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FileRemark>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileActionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    fileActionsFileActionIdDelete(fileActionId) {
+      return this.fileActionsFileActionIdDeleteWithHttpInfo(fileActionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get all file remarks of a file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
@@ -124,10 +124,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~fileActionsFileActionIdFileRemarksGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FileRemark>} and HTTP response
      */
-    fileActionsFileActionIdFileRemarksGet(fileActionId, opts, callback) {
+    fileActionsFileActionIdFileRemarksGetWithHttpInfo(fileActionId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'fileActionId' is set
@@ -156,25 +155,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_actions/{file_action_id}/file_remarks', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the fileActionsFileActionIdFileRemarksPost operation.
-     * @callback moduleapi/SpecificationApi~fileActionsFileActionIdFileRemarksPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FileRemark{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get all file remarks of a file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileActionId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FileRemark>}
      */
+    fileActionsFileActionIdFileRemarksGet(fileActionId, opts) {
+      return this.fileActionsFileActionIdFileRemarksGetWithHttpInfo(fileActionId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a file remark. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/FileActionIdFileRemarksBody} body 
      * @param {String} fileActionId 
-     * @param {module:api/SpecificationApi~fileActionsFileActionIdFileRemarksPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FileRemark} and HTTP response
      */
-    fileActionsFileActionIdFileRemarksPost(body, fileActionId, callback) {
+    fileActionsFileActionIdFileRemarksPostWithHttpInfo(body, fileActionId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -207,24 +214,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_actions/{file_action_id}/file_remarks', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the fileActionsFileActionIdGet operation.
-     * @callback moduleapi/SpecificationApi~fileActionsFileActionIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FileAction{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a file remark. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileActionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FileRemark}
      */
+    fileActionsFileActionIdFileRemarksPost(body, fileActionId) {
+      return this.fileActionsFileActionIdFileRemarksPostWithHttpInfo(body, fileActionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {String} fileActionId 
-     * @param {module:api/SpecificationApi~fileActionsFileActionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FileAction} and HTTP response
      */
-    fileActionsFileActionIdGet(fileActionId, callback) {
+    fileActionsFileActionIdGetWithHttpInfo(fileActionId) {
       
       let postBody = null;
       // verify the required parameter 'fileActionId' is set
@@ -253,25 +266,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_actions/{file_action_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the fileActionsFileActionIdPatch operation.
-     * @callback moduleapi/SpecificationApi~fileActionsFileActionIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FileAction{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileActionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FileAction}
      */
+    fileActionsFileActionIdGet(fileActionId) {
+      return this.fileActionsFileActionIdGetWithHttpInfo(fileActionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/FileActionsFileActionIdBody} body 
      * @param {String} fileActionId 
-     * @param {module:api/SpecificationApi~fileActionsFileActionIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FileAction} and HTTP response
      */
-    fileActionsFileActionIdPatch(body, fileActionId, callback) {
+    fileActionsFileActionIdPatchWithHttpInfo(body, fileActionId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -304,23 +322,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_actions/{file_action_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the fileReferencesFileReferenceIdDelete operation.
-     * @callback moduleapi/SpecificationApi~fileReferencesFileReferenceIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Modifies file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileActionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FileAction}
      */
+    fileActionsFileActionIdPatch(body, fileActionId) {
+      return this.fileActionsFileActionIdPatchWithHttpInfo(body, fileActionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes the file reference from it&#x27;s referenceable, which is a part or a finishing. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} fileReferenceId 
-     * @param {module:api/SpecificationApi~fileReferencesFileReferenceIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    fileReferencesFileReferenceIdDelete(fileReferenceId, callback) {
+    fileReferencesFileReferenceIdDeleteWithHttpInfo(fileReferenceId) {
       
       let postBody = null;
       // verify the required parameter 'fileReferenceId' is set
@@ -349,16 +374,22 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_references/{file_reference_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the fileReferencesFileReferenceIdFileActionsGet operation.
-     * @callback moduleapi/SpecificationApi~fileReferencesFileReferenceIdFileActionsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FileAction>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes the file reference from it&#x27;s referenceable, which is a part or a finishing. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileReferenceId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    fileReferencesFileReferenceIdDelete(fileReferenceId) {
+      return this.fileReferencesFileReferenceIdDeleteWithHttpInfo(fileReferenceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get all file actions of a file reference. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
@@ -366,10 +397,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~fileReferencesFileReferenceIdFileActionsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FileAction>} and HTTP response
      */
-    fileReferencesFileReferenceIdFileActionsGet(fileReferenceId, opts, callback) {
+    fileReferencesFileReferenceIdFileActionsGetWithHttpInfo(fileReferenceId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'fileReferenceId' is set
@@ -398,25 +428,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_references/{file_reference_id}/file_actions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the fileReferencesFileReferenceIdFileActionsPost operation.
-     * @callback moduleapi/SpecificationApi~fileReferencesFileReferenceIdFileActionsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FileAction{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get all file actions of a file reference. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileReferenceId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FileAction>}
      */
+    fileReferencesFileReferenceIdFileActionsGet(fileReferenceId, opts) {
+      return this.fileReferencesFileReferenceIdFileActionsGetWithHttpInfo(fileReferenceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/FileReferenceIdFileActionsBody} body 
      * @param {String} fileReferenceId 
-     * @param {module:api/SpecificationApi~fileReferencesFileReferenceIdFileActionsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FileAction} and HTTP response
      */
-    fileReferencesFileReferenceIdFileActionsPost(body, fileReferenceId, callback) {
+    fileReferencesFileReferenceIdFileActionsPostWithHttpInfo(body, fileReferenceId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -449,24 +487,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_references/{file_reference_id}/file_actions', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the fileReferencesFileReferenceIdGet operation.
-     * @callback moduleapi/SpecificationApi~fileReferencesFileReferenceIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FileReference{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a file action. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileReferenceId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FileAction}
      */
+    fileReferencesFileReferenceIdFileActionsPost(body, fileReferenceId) {
+      return this.fileReferencesFileReferenceIdFileActionsPostWithHttpInfo(body, fileReferenceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific file reference. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {String} fileReferenceId 
-     * @param {module:api/SpecificationApi~fileReferencesFileReferenceIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FileReference} and HTTP response
      */
-    fileReferencesFileReferenceIdGet(fileReferenceId, callback) {
+    fileReferencesFileReferenceIdGetWithHttpInfo(fileReferenceId) {
       
       let postBody = null;
       // verify the required parameter 'fileReferenceId' is set
@@ -495,23 +539,29 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/file_references/{file_reference_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdDelete operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific file reference. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} fileReferenceId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FileReference}
      */
+    fileReferencesFileReferenceIdGet(fileReferenceId) {
+      return this.fileReferencesFileReferenceIdGetWithHttpInfo(fileReferenceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes the finishing from a part. The finishing itself is destroyed                         by this operation including all of it&#x27;s applications. If you only want to                         detach a finishing from one part please remove the finishing application                         for that part instead. Finishings can only be removed as long as the                         parent jobs is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} finishingId 
-     * @param {module:api/SpecificationApi~finishingsFinishingIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    finishingsFinishingIdDelete(finishingId, callback) {
+    finishingsFinishingIdDeleteWithHttpInfo(finishingId) {
       
       let postBody = null;
       // verify the required parameter 'finishingId' is set
@@ -540,16 +590,22 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdFileReferencesGet operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdFileReferencesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FileReference>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes the finishing from a part. The finishing itself is destroyed                         by this operation including all of it&#x27;s applications. If you only want to                         detach a finishing from one part please remove the finishing application                         for that part instead. Finishings can only be removed as long as the                         parent jobs is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    finishingsFinishingIdDelete(finishingId) {
+      return this.finishingsFinishingIdDeleteWithHttpInfo(finishingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all file references of a specific finishing. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
@@ -557,10 +613,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~finishingsFinishingIdFileReferencesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FileReference>} and HTTP response
      */
-    finishingsFinishingIdFileReferencesGet(finishingId, opts, callback) {
+    finishingsFinishingIdFileReferencesGetWithHttpInfo(finishingId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'finishingId' is set
@@ -589,25 +644,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}/file_references', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdFileReferencesPost operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdFileReferencesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FileReference{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all file references of a specific finishing. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FileReference>}
      */
+    finishingsFinishingIdFileReferencesGet(finishingId, opts) {
+      return this.finishingsFinishingIdFileReferencesGetWithHttpInfo(finishingId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new file reference for a specific finishing. File referenes can only be                           added or modified as long as the job has not been &#x60;completed&#x60; or &#x60;canceled&#x60;.                           This means, that file references can be modified for production jobs. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/FinishingIdFileReferencesBody} body 
      * @param {String} finishingId 
-     * @param {module:api/SpecificationApi~finishingsFinishingIdFileReferencesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FileReference} and HTTP response
      */
-    finishingsFinishingIdFileReferencesPost(body, finishingId, callback) {
+    finishingsFinishingIdFileReferencesPostWithHttpInfo(body, finishingId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -640,24 +703,31 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}/file_references', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDelete operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Creates a new file reference for a specific finishing. File referenes can only be                           added or modified as long as the job has not been &#x60;completed&#x60; or &#x60;canceled&#x60;.                           This means, that file references can be modified for production jobs. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FileReference}
      */
+    finishingsFinishingIdFileReferencesPost(body, finishingId) {
+      return this.finishingsFinishingIdFileReferencesPostWithHttpInfo(body, finishingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes a finishing application from a specific finishing. If a finishing is                             left without any applications after this removal, the finishing itself will                             be automatically destroyed as well. Removing finishing applications is only                             possible if the parent job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} finishingId 
      * @param {String} finishingApplicationId 
-     * @param {module:api/SpecificationApi~finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDelete(finishingId, finishingApplicationId, callback) {
+    finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDeleteWithHttpInfo(finishingId, finishingApplicationId) {
       
       let postBody = null;
       // verify the required parameter 'finishingId' is set
@@ -690,25 +760,31 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}/finishing_applications/{finishing_application_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGet operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FinishingApplication{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a finishing application from a specific finishing. If a finishing is                             left without any applications after this removal, the finishing itself will                             be automatically destroyed as well. Removing finishing applications is only                             possible if the parent job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingApplicationId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDelete(finishingId, finishingApplicationId) {
+      return this.finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDeleteWithHttpInfo(finishingId, finishingApplicationId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific finishing application. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {String} finishingId 
      * @param {String} finishingApplicationId 
-     * @param {module:api/SpecificationApi~finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FinishingApplication} and HTTP response
      */
-    finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGet(finishingId, finishingApplicationId, callback) {
+    finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGetWithHttpInfo(finishingId, finishingApplicationId) {
       
       let postBody = null;
       // verify the required parameter 'finishingId' is set
@@ -741,16 +817,23 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}/finishing_applications/{finishing_application_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdFinishingApplicationsGet operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdFinishingApplicationsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FinishingApplication>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific finishing application. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingApplicationId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FinishingApplication}
      */
+    finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGet(finishingId, finishingApplicationId) {
+      return this.finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGetWithHttpInfo(finishingId, finishingApplicationId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all finishing applications of a specific finishing. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
@@ -758,10 +841,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~finishingsFinishingIdFinishingApplicationsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FinishingApplication>} and HTTP response
      */
-    finishingsFinishingIdFinishingApplicationsGet(finishingId, opts, callback) {
+    finishingsFinishingIdFinishingApplicationsGetWithHttpInfo(finishingId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'finishingId' is set
@@ -790,25 +872,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}/finishing_applications', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdFinishingApplicationsPost operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdFinishingApplicationsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FinishingApplication{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all finishing applications of a specific finishing. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FinishingApplication>}
      */
+    finishingsFinishingIdFinishingApplicationsGet(finishingId, opts) {
+      return this.finishingsFinishingIdFinishingApplicationsGetWithHttpInfo(finishingId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new finishing application for a specific finshing and part.                           Finshing applications can only be added as long as the job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/FinishingIdFinishingApplicationsBody} body 
      * @param {String} finishingId 
-     * @param {module:api/SpecificationApi~finishingsFinishingIdFinishingApplicationsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FinishingApplication} and HTTP response
      */
-    finishingsFinishingIdFinishingApplicationsPost(body, finishingId, callback) {
+    finishingsFinishingIdFinishingApplicationsPostWithHttpInfo(body, finishingId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -841,24 +931,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}/finishing_applications', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdGet operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Finishing{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new finishing application for a specific finshing and part.                           Finshing applications can only be added as long as the job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FinishingApplication}
      */
+    finishingsFinishingIdFinishingApplicationsPost(body, finishingId) {
+      return this.finishingsFinishingIdFinishingApplicationsPostWithHttpInfo(body, finishingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific finishing. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {String} finishingId 
-     * @param {module:api/SpecificationApi~finishingsFinishingIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Finishing} and HTTP response
      */
-    finishingsFinishingIdGet(finishingId, callback) {
+    finishingsFinishingIdGetWithHttpInfo(finishingId) {
       
       let postBody = null;
       // verify the required parameter 'finishingId' is set
@@ -887,25 +983,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the finishingsFinishingIdPatch operation.
-     * @callback moduleapi/SpecificationApi~finishingsFinishingIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Finishing{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific finishing. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Finishing}
      */
+    finishingsFinishingIdGet(finishingId) {
+      return this.finishingsFinishingIdGetWithHttpInfo(finishingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/FinishingsFinishingIdBody} body 
      * @param {String} finishingId 
-     * @param {module:api/SpecificationApi~finishingsFinishingIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Finishing} and HTTP response
      */
-    finishingsFinishingIdPatch(body, finishingId, callback) {
+    finishingsFinishingIdPatchWithHttpInfo(body, finishingId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -938,26 +1039,32 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/finishings/{finishing_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsGet operation.
-     * @callback moduleapi/SpecificationApi~jobsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Job>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} finishingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Finishing}
      */
+    finishingsFinishingIdPatch(body, finishingId) {
+      return this.finishingsFinishingIdPatchWithHttpInfo(body, finishingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all jobs that have a connection to the &#x60;Organization&#x60;                        from your token. This means that those jobs might have been created by                        that organization, are produced by it, some parts have been outsourced to it,                        or the organization is the customer which ordered a job. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~jobsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Job>} and HTTP response
      */
-    jobsGet(opts, callback) {
+    jobsGetWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -982,23 +1089,31 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdDelete operation.
-     * @callback moduleapi/SpecificationApi~jobsJobIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Returns all jobs that have a connection to the &#x60;Organization&#x60;                        from your token. This means that those jobs might have been created by                        that organization, are produced by it, some parts have been outsourced to it,                        or the organization is the customer which ordered a job. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Job>}
      */
+    jobsGet(opts) {
+      return this.jobsGetWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes or specific job while this job is still a &#x60;draft&#x60;. If the job                          is not in a &#x60;draft&#x60; state anymore the job will be canceled. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} jobId 
-     * @param {module:api/SpecificationApi~jobsJobIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    jobsJobIdDelete(jobId, callback) {
+    jobsJobIdDeleteWithHttpInfo(jobId) {
       
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1027,24 +1142,29 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdGet operation.
-     * @callback moduleapi/SpecificationApi~jobsJobIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes or specific job while this job is still a &#x60;draft&#x60;. If the job                          is not in a &#x60;draft&#x60; state anymore the job will be canceled. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    jobsJobIdDelete(jobId) {
+      return this.jobsJobIdDeleteWithHttpInfo(jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific job, including it&#x27;s entire defintion like compments, their                       colors, finishings, finishing applications and desired substrate information. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {String} jobId 
-     * @param {module:api/SpecificationApi~jobsJobIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
-    jobsJobIdGet(jobId, callback) {
+    jobsJobIdGetWithHttpInfo(jobId) {
       
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1073,16 +1193,22 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdPackagingsGet operation.
-     * @callback moduleapi/SpecificationApi~jobsJobIdPackagingsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Packaging>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific job, including it&#x27;s entire defintion like compments, their                       colors, finishings, finishing applications and desired substrate information. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
+    jobsJobIdGet(jobId) {
+      return this.jobsJobIdGetWithHttpInfo(jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all packagings of a specific jobs - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
@@ -1090,10 +1216,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~jobsJobIdPackagingsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Packaging>} and HTTP response
      */
-    jobsJobIdPackagingsGet(jobId, opts, callback) {
+    jobsJobIdPackagingsGetWithHttpInfo(jobId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1122,25 +1247,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/packagings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdPackagingsPost operation.
-     * @callback moduleapi/SpecificationApi~jobsJobIdPackagingsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Packaging{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all packagings of a specific jobs - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Packaging>}
      */
+    jobsJobIdPackagingsGet(jobId, opts) {
+      return this.jobsJobIdPackagingsGetWithHttpInfo(jobId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new packaging for the specified job. Packagings can only be added or                           modified as long as the job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/JobIdPackagingsBody} body 
      * @param {String} jobId 
-     * @param {module:api/SpecificationApi~jobsJobIdPackagingsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Packaging} and HTTP response
      */
-    jobsJobIdPackagingsPost(body, jobId, callback) {
+    jobsJobIdPackagingsPostWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1173,16 +1306,23 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/packagings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdPartsGet operation.
-     * @callback moduleapi/SpecificationApi~jobsJobIdPartsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Part>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new packaging for the specified job. Packagings can only be added or                           modified as long as the job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Packaging}
      */
+    jobsJobIdPackagingsPost(body, jobId) {
+      return this.jobsJobIdPackagingsPostWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all parts of a specific job - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
@@ -1190,10 +1330,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~jobsJobIdPartsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Part>} and HTTP response
      */
-    jobsJobIdPartsGet(jobId, opts, callback) {
+    jobsJobIdPartsGetWithHttpInfo(jobId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1222,25 +1361,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/parts', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdPartsPost operation.
-     * @callback moduleapi/SpecificationApi~jobsJobIdPartsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Part{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all parts of a specific job - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Part>}
      */
+    jobsJobIdPartsGet(jobId, opts) {
+      return this.jobsJobIdPartsGetWithHttpInfo(jobId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new part for the specified job. Parts can only be added or modified                           as long as the job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/JobIdPartsBody} body 
      * @param {String} jobId 
-     * @param {module:api/SpecificationApi~jobsJobIdPartsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Part} and HTTP response
      */
-    jobsJobIdPartsPost(body, jobId, callback) {
+    jobsJobIdPartsPostWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1273,25 +1420,31 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/parts', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdPatch operation.
-     * @callback moduleapi/SpecificationApi~jobsJobIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Job{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new part for the specified job. Parts can only be added or modified                           as long as the job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Part}
      */
+    jobsJobIdPartsPost(body, jobId) {
+      return this.jobsJobIdPartsPostWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Changes the attributes on a job. Please not that most attributes cannot be                         changed anymore, once the job is no longer a draft. If you try to change a                         frozen attribute, you will receive a 422 error. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/JobsJobIdBody} body 
      * @param {String} jobId 
-     * @param {module:api/SpecificationApi~jobsJobIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Job} and HTTP response
      */
-    jobsJobIdPatch(body, jobId, callback) {
+    jobsJobIdPatchWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1324,24 +1477,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsPost operation.
-     * @callback moduleapi/SpecificationApi~jobsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Job{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Changes the attributes on a job. Please not that most attributes cannot be                         changed anymore, once the job is no longer a draft. If you try to change a                         frozen attribute, you will receive a 422 error. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Job}
      */
+    jobsJobIdPatch(body, jobId) {
+      return this.jobsJobIdPatchWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new job. When creating jobs you may supply information for                         parts (including colors, finishings, desired substrate) as well. Please see the                         respective documentation for parameters. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/JobsBody} body 
-     * @param {module:api/SpecificationApi~jobsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Job} and HTTP response
      */
-    jobsPost(body, callback) {
+    jobsPostWithHttpInfo(body) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1370,23 +1529,29 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/jobs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the packagingsPackagingIdDelete operation.
-     * @callback moduleapi/SpecificationApi~packagingsPackagingIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Creates a new job. When creating jobs you may supply information for                         parts (including colors, finishings, desired substrate) as well. Please see the                         respective documentation for parameters. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Job}
      */
+    jobsPost(body) {
+      return this.jobsPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes a specific packaging, which also unassigns it from its job. Removing packagings                             is only possible while the attached job is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} packagingId 
-     * @param {module:api/SpecificationApi~packagingsPackagingIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    packagingsPackagingIdDelete(packagingId, callback) {
+    packagingsPackagingIdDeleteWithHttpInfo(packagingId) {
       
       let postBody = null;
       // verify the required parameter 'packagingId' is set
@@ -1415,24 +1580,29 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/packagings/{packaging_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the packagingsPackagingIdGet operation.
-     * @callback moduleapi/SpecificationApi~packagingsPackagingIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Packaging{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a specific packaging, which also unassigns it from its job. Removing packagings                             is only possible while the attached job is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} packagingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    packagingsPackagingIdDelete(packagingId) {
+      return this.packagingsPackagingIdDeleteWithHttpInfo(packagingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific packaging. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {String} packagingId 
-     * @param {module:api/SpecificationApi~packagingsPackagingIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Packaging} and HTTP response
      */
-    packagingsPackagingIdGet(packagingId, callback) {
+    packagingsPackagingIdGetWithHttpInfo(packagingId) {
       
       let postBody = null;
       // verify the required parameter 'packagingId' is set
@@ -1461,25 +1631,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/packagings/{packaging_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the packagingsPackagingIdPatch operation.
-     * @callback moduleapi/SpecificationApi~packagingsPackagingIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Packaging{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific packaging. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} packagingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Packaging}
      */
+    packagingsPackagingIdGet(packagingId) {
+      return this.packagingsPackagingIdGetWithHttpInfo(packagingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies a specific packagings. Packagings can only be modified as long as their parent                           job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/PackagingsPackagingIdBody} body 
      * @param {String} packagingId 
-     * @param {module:api/SpecificationApi~packagingsPackagingIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Packaging} and HTTP response
      */
-    packagingsPackagingIdPatch(body, packagingId, callback) {
+    packagingsPackagingIdPatchWithHttpInfo(body, packagingId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1512,24 +1687,31 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/packagings/{packaging_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdColorsColorIdDelete operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdColorsColorIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Modifies a specific packagings. Packagings can only be modified as long as their parent                           job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} packagingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Packaging}
      */
+    packagingsPackagingIdPatch(body, packagingId) {
+      return this.packagingsPackagingIdPatchWithHttpInfo(body, packagingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes a specific color from a part, as long as the job is still a draft. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} partId 
      * @param {String} colorId 
-     * @param {module:api/SpecificationApi~partsPartIdColorsColorIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    partsPartIdColorsColorIdDelete(partId, colorId, callback) {
+    partsPartIdColorsColorIdDeleteWithHttpInfo(partId, colorId) {
       
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -1562,25 +1744,31 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/colors/{color_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdColorsColorIdGet operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdColorsColorIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Color{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a specific color from a part, as long as the job is still a draft. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @param {<&vendorExtensions.x-jsdoc-type>} colorId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    partsPartIdColorsColorIdDelete(partId, colorId) {
+      return this.partsPartIdColorsColorIdDeleteWithHttpInfo(partId, colorId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific color from a part. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} partId 
      * @param {String} colorId 
-     * @param {module:api/SpecificationApi~partsPartIdColorsColorIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Color} and HTTP response
      */
-    partsPartIdColorsColorIdGet(partId, colorId, callback) {
+    partsPartIdColorsColorIdGetWithHttpInfo(partId, colorId) {
       
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -1613,26 +1801,32 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/colors/{color_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdColorsColorIdPatch operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdColorsColorIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Color{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific color from a part. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @param {<&vendorExtensions.x-jsdoc-type>} colorId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Color}
      */
+    partsPartIdColorsColorIdGet(partId, colorId) {
+      return this.partsPartIdColorsColorIdGetWithHttpInfo(partId, colorId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Changes attributes on a specific color from a part, as long as job is still a draft. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/ColorsColorIdBody} body 
      * @param {String} partId 
      * @param {String} colorId 
-     * @param {module:api/SpecificationApi~partsPartIdColorsColorIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Color} and HTTP response
      */
-    partsPartIdColorsColorIdPatch(body, partId, colorId, callback) {
+    partsPartIdColorsColorIdPatchWithHttpInfo(body, partId, colorId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1669,16 +1863,24 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/colors/{color_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdColorsGet operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdColorsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Color>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Changes attributes on a specific color from a part, as long as job is still a draft. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @param {<&vendorExtensions.x-jsdoc-type>} colorId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Color}
      */
+    partsPartIdColorsColorIdPatch(body, partId, colorId) {
+      return this.partsPartIdColorsColorIdPatchWithHttpInfo(body, partId, colorId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all colors from a job&#x27;s part. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
@@ -1686,10 +1888,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~partsPartIdColorsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Color>} and HTTP response
      */
-    partsPartIdColorsGet(partId, opts, callback) {
+    partsPartIdColorsGetWithHttpInfo(partId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -1718,25 +1919,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/colors', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdColorsPost operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdColorsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Color{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all colors from a job&#x27;s part. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Color>}
      */
+    partsPartIdColorsGet(partId, opts) {
+      return this.partsPartIdColorsGetWithHttpInfo(partId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new color and attaches it to the selected part with the given parameters. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/PartIdColorsBody} body 
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdColorsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Color} and HTTP response
      */
-    partsPartIdColorsPost(body, partId, callback) {
+    partsPartIdColorsPostWithHttpInfo(body, partId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1769,23 +1978,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/colors', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdDelete operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Creates a new color and attaches it to the selected part with the given parameters. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Color}
      */
+    partsPartIdColorsPost(body, partId) {
+      return this.partsPartIdColorsPostWithHttpInfo(body, partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes a specific part, which also unassigns it from its job. Removing parts                            is only possible while the attached job is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    partsPartIdDelete(partId, callback) {
+    partsPartIdDeleteWithHttpInfo(partId) {
       
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -1814,23 +2030,29 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdDesiredSubstrateDelete operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdDesiredSubstrateDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Removes a specific part, which also unassigns it from its job. Removing parts                            is only possible while the attached job is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    partsPartIdDelete(partId) {
+      return this.partsPartIdDeleteWithHttpInfo(partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes the desired substrate information from a specific part as long as                             the job to which the part belongs is still a draft. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdDesiredSubstrateDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    partsPartIdDesiredSubstrateDelete(partId, callback) {
+    partsPartIdDesiredSubstrateDeleteWithHttpInfo(partId) {
       
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -1859,24 +2081,29 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/desired_substrate', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdDesiredSubstrateGet operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdDesiredSubstrateGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DesiredSubstrate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes the desired substrate information from a specific part as long as                             the job to which the part belongs is still a draft. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    partsPartIdDesiredSubstrateDelete(partId) {
+      return this.partsPartIdDesiredSubstrateDeleteWithHttpInfo(partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns the desired substrate information. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdDesiredSubstrateGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DesiredSubstrate} and HTTP response
      */
-    partsPartIdDesiredSubstrateGet(partId, callback) {
+    partsPartIdDesiredSubstrateGetWithHttpInfo(partId) {
       
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -1905,25 +2132,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/desired_substrate', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdDesiredSubstratePatch operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdDesiredSubstratePatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DesiredSubstrate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns the desired substrate information. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DesiredSubstrate}
      */
+    partsPartIdDesiredSubstrateGet(partId) {
+      return this.partsPartIdDesiredSubstrateGetWithHttpInfo(partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies the desired substrate information from a specific part as long as                           the job to which the part belongs is still a draft. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/PartIdDesiredSubstrateBody1} body 
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdDesiredSubstratePatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DesiredSubstrate} and HTTP response
      */
-    partsPartIdDesiredSubstratePatch(body, partId, callback) {
+    partsPartIdDesiredSubstratePatchWithHttpInfo(body, partId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1956,25 +2188,31 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/desired_substrate', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdDesiredSubstratePost operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdDesiredSubstratePostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DesiredSubstrate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Modifies the desired substrate information from a specific part as long as                           the job to which the part belongs is still a draft. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DesiredSubstrate}
      */
+    partsPartIdDesiredSubstratePatch(body, partId) {
+      return this.partsPartIdDesiredSubstratePatchWithHttpInfo(body, partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates new desired substrate information. If desired substrate information is                           already present, it will be overwritten. Creating desired substrate information                           is only possible as long as the job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/PartIdDesiredSubstrateBody} body 
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdDesiredSubstratePostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DesiredSubstrate} and HTTP response
      */
-    partsPartIdDesiredSubstratePost(body, partId, callback) {
+    partsPartIdDesiredSubstratePostWithHttpInfo(body, partId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2007,16 +2245,23 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/desired_substrate', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdFileReferencesGet operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdFileReferencesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FileReference>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates new desired substrate information. If desired substrate information is                           already present, it will be overwritten. Creating desired substrate information                           is only possible as long as the job is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DesiredSubstrate}
      */
+    partsPartIdDesiredSubstratePost(body, partId) {
+      return this.partsPartIdDesiredSubstratePostWithHttpInfo(body, partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all file references of a specific part. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
@@ -2024,10 +2269,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~partsPartIdFileReferencesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FileReference>} and HTTP response
      */
-    partsPartIdFileReferencesGet(partId, opts, callback) {
+    partsPartIdFileReferencesGetWithHttpInfo(partId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -2056,25 +2300,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/file_references', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdFileReferencesPost operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdFileReferencesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FileReference{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all file references of a specific part. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FileReference>}
      */
+    partsPartIdFileReferencesGet(partId, opts) {
+      return this.partsPartIdFileReferencesGetWithHttpInfo(partId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new file reference for a specific part. File referenes can only be added or                           modified as long as the job has not been &#x60;completed&#x60; or &#x60;canceled&#x60;. This means,                           that file references can be modified for production jobs. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/PartIdFileReferencesBody} body 
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdFileReferencesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FileReference} and HTTP response
      */
-    partsPartIdFileReferencesPost(body, partId, callback) {
+    partsPartIdFileReferencesPostWithHttpInfo(body, partId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2107,16 +2359,23 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/file_references', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdFinishingsGet operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdFinishingsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Finishing>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new file reference for a specific part. File referenes can only be added or                           modified as long as the job has not been &#x60;completed&#x60; or &#x60;canceled&#x60;. This means,                           that file references can be modified for production jobs. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FileReference}
      */
+    partsPartIdFileReferencesPost(body, partId) {
+      return this.partsPartIdFileReferencesPostWithHttpInfo(body, partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all finishings of a specific part. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
@@ -2124,10 +2383,9 @@ export class SpecificationApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/SpecificationApi~partsPartIdFinishingsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Finishing>} and HTTP response
      */
-    partsPartIdFinishingsGet(partId, opts, callback) {
+    partsPartIdFinishingsGetWithHttpInfo(partId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -2156,25 +2414,33 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/finishings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdFinishingsPost operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdFinishingsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Finishing{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all finishings of a specific part. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Finishing>}
      */
+    partsPartIdFinishingsGet(partId, opts) {
+      return this.partsPartIdFinishingsGetWithHttpInfo(partId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new finishing for a specific part. Finishings can only be                           added or modified as long as the job they belong to is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/PartIdFinishingsBody} body 
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdFinishingsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Finishing} and HTTP response
      */
-    partsPartIdFinishingsPost(body, partId, callback) {
+    partsPartIdFinishingsPostWithHttpInfo(body, partId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2207,24 +2473,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}/finishings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdGet operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ExtendedPart{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new finishing for a specific part. Finishings can only be                           added or modified as long as the job they belong to is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Finishing}
      */
+    partsPartIdFinishingsPost(body, partId) {
+      return this.partsPartIdFinishingsPostWithHttpInfo(body, partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific part, including its entire defintion with colors, finishings, finishing applications and desired substrate information. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ExtendedPart} and HTTP response
      */
-    partsPartIdGet(partId, callback) {
+    partsPartIdGetWithHttpInfo(partId) {
       
       let postBody = null;
       // verify the required parameter 'partId' is set
@@ -2253,25 +2525,30 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the partsPartIdPatch operation.
-     * @callback moduleapi/SpecificationApi~partsPartIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Part{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific part, including its entire defintion with colors, finishings, finishing applications and desired substrate information. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ExtendedPart}
      */
+    partsPartIdGet(partId) {
+      return this.partsPartIdGetWithHttpInfo(partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies a specific part. Parts can only be modified as long as their parent job                           is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {module:model/PartsPartIdBody} body 
      * @param {String} partId 
-     * @param {module:api/SpecificationApi~partsPartIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Part} and HTTP response
      */
-    partsPartIdPatch(body, partId, callback) {
+    partsPartIdPatchWithHttpInfo(body, partId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2304,8 +2581,21 @@ export class SpecificationApi {
       return this.apiClient.callApi(
         '/parts/{part_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Modifies a specific part. Parts can only be modified as long as their parent job                           is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} partId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Part}
+     */
+    partsPartIdPatch(body, partId) {
+      return this.partsPartIdPatchWithHttpInfo(body, partId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 }

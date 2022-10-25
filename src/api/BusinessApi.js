@@ -44,20 +44,14 @@ export class BusinessApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    /**
-     * Callback function to receive the result of the estimatesEstimateIdDelete operation.
-     * @callback moduleapi/BusinessApi~estimatesEstimateIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
+
 
     /**
      * Removes a specific estimate, inclduing all of its workstep and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {String} estimateId 
-     * @param {module:api/BusinessApi~estimatesEstimateIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    estimatesEstimateIdDelete(estimateId, callback) {
+    estimatesEstimateIdDeleteWithHttpInfo(estimateId) {
       
       let postBody = null;
       // verify the required parameter 'estimateId' is set
@@ -86,24 +80,29 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/estimates/{estimate_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the estimatesEstimateIdGet operation.
-     * @callback moduleapi/BusinessApi~estimatesEstimateIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Estimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a specific estimate, inclduing all of its workstep and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    estimatesEstimateIdDelete(estimateId) {
+      return this.estimatesEstimateIdDeleteWithHttpInfo(estimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific estimate, including its workstep estimates and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {String} estimateId 
-     * @param {module:api/BusinessApi~estimatesEstimateIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Estimate} and HTTP response
      */
-    estimatesEstimateIdGet(estimateId, callback) {
+    estimatesEstimateIdGetWithHttpInfo(estimateId) {
       
       let postBody = null;
       // verify the required parameter 'estimateId' is set
@@ -132,25 +131,30 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/estimates/{estimate_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the estimatesEstimateIdPatch operation.
-     * @callback moduleapi/BusinessApi~estimatesEstimateIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Estimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific estimate, including its workstep estimates and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Estimate}
      */
+    estimatesEstimateIdGet(estimateId) {
+      return this.estimatesEstimateIdGetWithHttpInfo(estimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies a specific estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {module:model/EstimatesEstimateIdBody} body 
      * @param {String} estimateId 
-     * @param {module:api/BusinessApi~estimatesEstimateIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Estimate} and HTTP response
      */
-    estimatesEstimateIdPatch(body, estimateId, callback) {
+    estimatesEstimateIdPatchWithHttpInfo(body, estimateId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -183,16 +187,23 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/estimates/{estimate_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the estimatesEstimateIdWorkstepEstimatesGet operation.
-     * @callback moduleapi/BusinessApi~estimatesEstimateIdWorkstepEstimatesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WorkstepEstimate>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Modifies a specific estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Estimate}
      */
+    estimatesEstimateIdPatch(body, estimateId) {
+      return this.estimatesEstimateIdPatchWithHttpInfo(body, estimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all workstep estimates for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
@@ -200,10 +211,9 @@ export class BusinessApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/BusinessApi~estimatesEstimateIdWorkstepEstimatesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/WorkstepEstimate>} and HTTP response
      */
-    estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts, callback) {
+    estimatesEstimateIdWorkstepEstimatesGetWithHttpInfo(estimateId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'estimateId' is set
@@ -232,25 +242,33 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/estimates/{estimate_id}/workstep_estimates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the estimatesEstimateIdWorkstepEstimatesPost operation.
-     * @callback moduleapi/BusinessApi~estimatesEstimateIdWorkstepEstimatesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WorkstepEstimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all workstep estimates for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/WorkstepEstimate>}
      */
+    estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts) {
+      return this.estimatesEstimateIdWorkstepEstimatesGetWithHttpInfo(estimateId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new workstep estimate for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {module:model/EstimateIdWorkstepEstimatesBody} body 
      * @param {String} estimateId 
-     * @param {module:api/BusinessApi~estimatesEstimateIdWorkstepEstimatesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepEstimate} and HTTP response
      */
-    estimatesEstimateIdWorkstepEstimatesPost(body, estimateId, callback) {
+    estimatesEstimateIdWorkstepEstimatesPostWithHttpInfo(body, estimateId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -283,16 +301,23 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/estimates/{estimate_id}/workstep_estimates', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdEstimatesGet operation.
-     * @callback moduleapi/BusinessApi~jobsJobIdEstimatesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Estimate>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new workstep estimate for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepEstimate}
      */
+    estimatesEstimateIdWorkstepEstimatesPost(body, estimateId) {
+      return this.estimatesEstimateIdWorkstepEstimatesPostWithHttpInfo(body, estimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all estimates of a specific job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
@@ -300,10 +325,9 @@ export class BusinessApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/BusinessApi~jobsJobIdEstimatesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Estimate>} and HTTP response
      */
-    jobsJobIdEstimatesGet(jobId, opts, callback) {
+    jobsJobIdEstimatesGetWithHttpInfo(jobId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -332,25 +356,33 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/estimates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdEstimatesPost operation.
-     * @callback moduleapi/BusinessApi~jobsJobIdEstimatesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Estimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all estimates of a specific job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Estimate>}
      */
+    jobsJobIdEstimatesGet(jobId, opts) {
+      return this.jobsJobIdEstimatesGetWithHttpInfo(jobId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new estimate for the specified job. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {module:model/JobIdEstimatesBody} body 
      * @param {String} jobId 
-     * @param {module:api/BusinessApi~jobsJobIdEstimatesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Estimate} and HTTP response
      */
-    jobsJobIdEstimatesPost(body, jobId, callback) {
+    jobsJobIdEstimatesPostWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -383,23 +415,30 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/estimates', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the materialEstimatesMaterialEstimateIdDelete operation.
-     * @callback moduleapi/BusinessApi~materialEstimatesMaterialEstimateIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Creates a new estimate for the specified job. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Estimate}
      */
+    jobsJobIdEstimatesPost(body, jobId) {
+      return this.jobsJobIdEstimatesPostWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {String} materialEstimateId 
-     * @param {module:api/BusinessApi~materialEstimatesMaterialEstimateIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    materialEstimatesMaterialEstimateIdDelete(materialEstimateId, callback) {
+    materialEstimatesMaterialEstimateIdDeleteWithHttpInfo(materialEstimateId) {
       
       let postBody = null;
       // verify the required parameter 'materialEstimateId' is set
@@ -428,24 +467,29 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/material_estimates/{material_estimate_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the materialEstimatesMaterialEstimateIdGet operation.
-     * @callback moduleapi/BusinessApi~materialEstimatesMaterialEstimateIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/MaterialEstimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} materialEstimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    materialEstimatesMaterialEstimateIdDelete(materialEstimateId) {
+      return this.materialEstimatesMaterialEstimateIdDeleteWithHttpInfo(materialEstimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {String} materialEstimateId 
-     * @param {module:api/BusinessApi~materialEstimatesMaterialEstimateIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MaterialEstimate} and HTTP response
      */
-    materialEstimatesMaterialEstimateIdGet(materialEstimateId, callback) {
+    materialEstimatesMaterialEstimateIdGetWithHttpInfo(materialEstimateId) {
       
       let postBody = null;
       // verify the required parameter 'materialEstimateId' is set
@@ -474,25 +518,30 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/material_estimates/{material_estimate_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the materialEstimatesMaterialEstimateIdPatch operation.
-     * @callback moduleapi/BusinessApi~materialEstimatesMaterialEstimateIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/MaterialEstimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} materialEstimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MaterialEstimate}
      */
+    materialEstimatesMaterialEstimateIdGet(materialEstimateId) {
+      return this.materialEstimatesMaterialEstimateIdGetWithHttpInfo(materialEstimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {module:model/MaterialEstimatesMaterialEstimateIdBody} body 
      * @param {String} materialEstimateId 
-     * @param {module:api/BusinessApi~materialEstimatesMaterialEstimateIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MaterialEstimate} and HTTP response
      */
-    materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId, callback) {
+    materialEstimatesMaterialEstimateIdPatchWithHttpInfo(body, materialEstimateId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -525,23 +574,30 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/material_estimates/{material_estimate_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepEstimatesWorkstepEstimateIdDelete operation.
-     * @callback moduleapi/BusinessApi~workstepEstimatesWorkstepEstimateIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} materialEstimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MaterialEstimate}
      */
+    materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId) {
+      return this.materialEstimatesMaterialEstimateIdPatchWithHttpInfo(body, materialEstimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {String} workstepEstimateId 
-     * @param {module:api/BusinessApi~workstepEstimatesWorkstepEstimateIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId, callback) {
+    workstepEstimatesWorkstepEstimateIdDeleteWithHttpInfo(workstepEstimateId) {
       
       let postBody = null;
       // verify the required parameter 'workstepEstimateId' is set
@@ -570,24 +626,29 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/workstep_estimates/{workstep_estimate_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepEstimatesWorkstepEstimateIdGet operation.
-     * @callback moduleapi/BusinessApi~workstepEstimatesWorkstepEstimateIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WorkstepEstimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId) {
+      return this.workstepEstimatesWorkstepEstimateIdDeleteWithHttpInfo(workstepEstimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {String} workstepEstimateId 
-     * @param {module:api/BusinessApi~workstepEstimatesWorkstepEstimateIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepEstimate} and HTTP response
      */
-    workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId, callback) {
+    workstepEstimatesWorkstepEstimateIdGetWithHttpInfo(workstepEstimateId) {
       
       let postBody = null;
       // verify the required parameter 'workstepEstimateId' is set
@@ -616,16 +677,22 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/workstep_estimates/{workstep_estimate_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet operation.
-     * @callback moduleapi/BusinessApi~workstepEstimatesWorkstepEstimateIdMaterialEstimatesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/MaterialEstimate>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepEstimate}
      */
+    workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId) {
+      return this.workstepEstimatesWorkstepEstimateIdGetWithHttpInfo(workstepEstimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
@@ -633,10 +700,9 @@ export class BusinessApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/BusinessApi~workstepEstimatesWorkstepEstimateIdMaterialEstimatesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/MaterialEstimate>} and HTTP response
      */
-    workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts, callback) {
+    workstepEstimatesWorkstepEstimateIdMaterialEstimatesGetWithHttpInfo(workstepEstimateId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'workstepEstimateId' is set
@@ -665,25 +731,33 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/workstep_estimates/{workstep_estimate_id}/material_estimates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost operation.
-     * @callback moduleapi/BusinessApi~workstepEstimatesWorkstepEstimateIdMaterialEstimatesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/MaterialEstimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/MaterialEstimate>}
      */
+    workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts) {
+      return this.workstepEstimatesWorkstepEstimateIdMaterialEstimatesGetWithHttpInfo(workstepEstimateId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {module:model/WorkstepEstimateIdMaterialEstimatesBody} body 
      * @param {String} workstepEstimateId 
-     * @param {module:api/BusinessApi~workstepEstimatesWorkstepEstimateIdMaterialEstimatesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MaterialEstimate} and HTTP response
      */
-    workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId, callback) {
+    workstepEstimatesWorkstepEstimateIdMaterialEstimatesPostWithHttpInfo(body, workstepEstimateId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -716,25 +790,31 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/workstep_estimates/{workstep_estimate_id}/material_estimates', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepEstimatesWorkstepEstimateIdPatch operation.
-     * @callback moduleapi/BusinessApi~workstepEstimatesWorkstepEstimateIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WorkstepEstimate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MaterialEstimate}
      */
+    workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId) {
+      return this.workstepEstimatesWorkstepEstimateIdMaterialEstimatesPostWithHttpInfo(body, workstepEstimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
      * @param {module:model/WorkstepEstimatesWorkstepEstimateIdBody} body 
      * @param {String} workstepEstimateId 
-     * @param {module:api/BusinessApi~workstepEstimatesWorkstepEstimateIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepEstimate} and HTTP response
      */
-    workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId, callback) {
+    workstepEstimatesWorkstepEstimateIdPatchWithHttpInfo(body, workstepEstimateId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -767,8 +847,21 @@ export class BusinessApi {
       return this.apiClient.callApi(
         '/workstep_estimates/{workstep_estimate_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepEstimate}
+     */
+    workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId) {
+      return this.workstepEstimatesWorkstepEstimateIdPatchWithHttpInfo(body, workstepEstimateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 }

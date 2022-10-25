@@ -68,13 +68,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let fileActionId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.fileActionsFileActionIdDelete(fileActionId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.fileActionsFileActionIdDelete(fileActionId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -116,13 +115,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.fileActionsFileActionIdFileRemarksGet(fileActionId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.fileActionsFileActionIdFileRemarksGet(fileActionId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -164,13 +162,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.FileActionIdFileRemarksBody(); // FileActionIdFileRemarksBody | 
 let fileActionId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.fileActionsFileActionIdFileRemarksPost(body, fileActionId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.fileActionsFileActionIdFileRemarksPost(body, fileActionId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -210,13 +207,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let fileActionId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.fileActionsFileActionIdGet(fileActionId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.fileActionsFileActionIdGet(fileActionId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -256,13 +252,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.FileActionsFileActionIdBody(); // FileActionsFileActionIdBody | 
 let fileActionId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.fileActionsFileActionIdPatch(body, fileActionId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.fileActionsFileActionIdPatch(body, fileActionId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -302,13 +297,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let fileReferenceId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.fileReferencesFileReferenceIdDelete(fileReferenceId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.fileReferencesFileReferenceIdDelete(fileReferenceId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -350,13 +344,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.fileReferencesFileReferenceIdFileActionsGet(fileReferenceId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.fileReferencesFileReferenceIdFileActionsGet(fileReferenceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -398,13 +391,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.FileReferenceIdFileActionsBody(); // FileReferenceIdFileActionsBody | 
 let fileReferenceId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.fileReferencesFileReferenceIdFileActionsPost(body, fileReferenceId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.fileReferencesFileReferenceIdFileActionsPost(body, fileReferenceId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -444,13 +436,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let fileReferenceId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.fileReferencesFileReferenceIdGet(fileReferenceId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.fileReferencesFileReferenceIdGet(fileReferenceId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -489,13 +480,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let finishingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.finishingsFinishingIdDelete(finishingId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.finishingsFinishingIdDelete(finishingId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -537,13 +527,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.finishingsFinishingIdFileReferencesGet(finishingId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.finishingsFinishingIdFileReferencesGet(finishingId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -585,13 +574,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.FinishingIdFileReferencesBody(); // FinishingIdFileReferencesBody | 
 let finishingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.finishingsFinishingIdFileReferencesPost(body, finishingId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.finishingsFinishingIdFileReferencesPost(body, finishingId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -632,13 +620,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let finishingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 let finishingApplicationId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDelete(finishingId, finishingApplicationId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.finishingsFinishingIdFinishingApplicationsFinishingApplicationIdDelete(finishingId, finishingApplicationId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -679,13 +666,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let finishingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 let finishingApplicationId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGet(finishingId, finishingApplicationId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.finishingsFinishingIdFinishingApplicationsFinishingApplicationIdGet(finishingId, finishingApplicationId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -728,13 +714,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.finishingsFinishingIdFinishingApplicationsGet(finishingId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.finishingsFinishingIdFinishingApplicationsGet(finishingId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -776,13 +761,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.FinishingIdFinishingApplicationsBody(); // FinishingIdFinishingApplicationsBody | 
 let finishingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.finishingsFinishingIdFinishingApplicationsPost(body, finishingId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.finishingsFinishingIdFinishingApplicationsPost(body, finishingId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -822,13 +806,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let finishingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.finishingsFinishingIdGet(finishingId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.finishingsFinishingIdGet(finishingId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -868,13 +851,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.FinishingsFinishingIdBody(); // FinishingsFinishingIdBody | 
 let finishingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.finishingsFinishingIdPatch(body, finishingId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.finishingsFinishingIdPatch(body, finishingId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -916,13 +898,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.jobsGet(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -962,13 +943,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let jobId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.jobsJobIdDelete(jobId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.jobsJobIdDelete(jobId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1007,13 +987,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let jobId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.jobsJobIdGet(jobId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsJobIdGet(jobId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1055,13 +1034,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.jobsJobIdPackagingsGet(jobId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsJobIdPackagingsGet(jobId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1103,13 +1081,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.JobIdPackagingsBody(); // JobIdPackagingsBody | 
 let jobId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.jobsJobIdPackagingsPost(body, jobId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsJobIdPackagingsPost(body, jobId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1152,13 +1129,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.jobsJobIdPartsGet(jobId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsJobIdPartsGet(jobId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1200,13 +1176,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.JobIdPartsBody(); // JobIdPartsBody | 
 let jobId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.jobsJobIdPartsPost(body, jobId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsJobIdPartsPost(body, jobId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1247,13 +1222,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.JobsJobIdBody(); // JobsJobIdBody | 
 let jobId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.jobsJobIdPatch(body, jobId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsJobIdPatch(body, jobId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1293,13 +1267,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.JobsBody(); // JobsBody | 
 
-apiInstance.jobsPost(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.jobsPost(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1338,13 +1311,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let packagingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.packagingsPackagingIdDelete(packagingId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.packagingsPackagingIdDelete(packagingId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1383,13 +1355,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let packagingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.packagingsPackagingIdGet(packagingId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.packagingsPackagingIdGet(packagingId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1429,13 +1400,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.PackagingsPackagingIdBody(); // PackagingsPackagingIdBody | 
 let packagingId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.packagingsPackagingIdPatch(body, packagingId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.packagingsPackagingIdPatch(body, packagingId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1476,13 +1446,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 let colorId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdColorsColorIdDelete(partId, colorId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.partsPartIdColorsColorIdDelete(partId, colorId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1523,13 +1492,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 let colorId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdColorsColorIdGet(partId, colorId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdColorsColorIdGet(partId, colorId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1571,13 +1539,12 @@ let body = new MissionControl.ColorsColorIdBody(); // ColorsColorIdBody |
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 let colorId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdColorsColorIdPatch(body, partId, colorId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdColorsColorIdPatch(body, partId, colorId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1621,13 +1588,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.partsPartIdColorsGet(partId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdColorsGet(partId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1669,13 +1635,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.PartIdColorsBody(); // PartIdColorsBody | 
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdColorsPost(body, partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdColorsPost(body, partId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1715,13 +1680,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdDelete(partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.partsPartIdDelete(partId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1760,13 +1724,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdDesiredSubstrateDelete(partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.partsPartIdDesiredSubstrateDelete(partId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1805,13 +1768,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdDesiredSubstrateGet(partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdDesiredSubstrateGet(partId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1851,13 +1813,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.PartIdDesiredSubstrateBody1(); // PartIdDesiredSubstrateBody1 | 
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdDesiredSubstratePatch(body, partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdDesiredSubstratePatch(body, partId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1898,13 +1859,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.PartIdDesiredSubstrateBody(); // PartIdDesiredSubstrateBody | 
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdDesiredSubstratePost(body, partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdDesiredSubstratePost(body, partId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1947,13 +1907,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.partsPartIdFileReferencesGet(partId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdFileReferencesGet(partId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1995,13 +1954,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.PartIdFileReferencesBody(); // PartIdFileReferencesBody | 
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdFileReferencesPost(body, partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdFileReferencesPost(body, partId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2044,13 +2002,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.partsPartIdFinishingsGet(partId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdFinishingsGet(partId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2092,13 +2049,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.PartIdFinishingsBody(); // PartIdFinishingsBody | 
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdFinishingsPost(body, partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdFinishingsPost(body, partId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2138,13 +2094,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.SpecificationApi();
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdGet(partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdGet(partId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2184,13 +2139,12 @@ let apiInstance = new MissionControl.SpecificationApi();
 let body = new MissionControl.PartsPartIdBody(); // PartsPartIdBody | 
 let partId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.partsPartIdPatch(body, partId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.partsPartIdPatch(body, partId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters

@@ -40,13 +40,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let orderLineItemId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.orderLineItemsOrderLineItemIdDelete(orderLineItemId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.orderLineItemsOrderLineItemIdDelete(orderLineItemId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -85,13 +84,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let orderLineItemId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.orderLineItemsOrderLineItemIdGet(orderLineItemId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.orderLineItemsOrderLineItemIdGet(orderLineItemId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -131,13 +129,12 @@ let apiInstance = new MissionControl.CommercialApi();
 let body = new MissionControl.OrderLineItemsOrderLineItemIdBody(); // OrderLineItemsOrderLineItemIdBody | 
 let orderLineItemId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.orderLineItemsOrderLineItemIdPatch(body, orderLineItemId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.orderLineItemsOrderLineItemIdPatch(body, orderLineItemId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -179,13 +176,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.ordersGet(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -225,13 +221,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdAddressDelete(orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.ordersOrderIdAddressDelete(orderId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -270,13 +265,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdAddressGet(orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdAddressGet(orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -316,13 +310,12 @@ let apiInstance = new MissionControl.CommercialApi();
 let body = new MissionControl.OrderIdAddressBody1(); // OrderIdAddressBody1 | 
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdAddressPatch(body, orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdAddressPatch(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -363,13 +356,12 @@ let apiInstance = new MissionControl.CommercialApi();
 let body = new MissionControl.OrderIdAddressBody(); // OrderIdAddressBody | 
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdAddressPost(body, orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdAddressPost(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -409,13 +401,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdDelete(orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.ordersOrderIdDelete(orderId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -454,13 +445,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdGet(orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdGet(orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -502,13 +492,12 @@ let opts = {
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.ordersOrderIdOrderLineItemsGet(orderId, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdOrderLineItemsGet(orderId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -550,13 +539,12 @@ let apiInstance = new MissionControl.CommercialApi();
 let body = new MissionControl.OrderIdOrderLineItemsBody(); // OrderIdOrderLineItemsBody | 
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdOrderLineItemsPost(body, orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdOrderLineItemsPost(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -597,13 +585,12 @@ let apiInstance = new MissionControl.CommercialApi();
 let body = new MissionControl.OrdersOrderIdBody(); // OrdersOrderIdBody | 
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdPatch(body, orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdPatch(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -643,13 +630,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdPaymentTermsDelete(orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.ordersOrderIdPaymentTermsDelete(orderId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -688,13 +674,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdPaymentTermsGet(orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdPaymentTermsGet(orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -734,13 +719,12 @@ let apiInstance = new MissionControl.CommercialApi();
 let body = new MissionControl.OrderIdPaymentTermsBody1(); // OrderIdPaymentTermsBody1 | 
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdPaymentTermsPatch(body, orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdPaymentTermsPatch(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -781,13 +765,12 @@ let apiInstance = new MissionControl.CommercialApi();
 let body = new MissionControl.OrderIdPaymentTermsBody(); // OrderIdPaymentTermsBody | 
 let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.ordersOrderIdPaymentTermsPost(body, orderId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersOrderIdPaymentTermsPost(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -827,13 +810,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 let apiInstance = new MissionControl.CommercialApi();
 let body = new MissionControl.OrdersBody(); // OrdersBody | 
 
-apiInstance.ordersPost(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.ordersPost(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters

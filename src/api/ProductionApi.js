@@ -80,20 +80,14 @@ export class ProductionApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    /**
-     * Callback function to receive the result of the batchesBatchIdDelete operation.
-     * @callback moduleapi/ProductionApi~batchesBatchIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
+
 
     /**
      * Remove a Batch. This will remove all associated linked Production resources too - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.w&#x60; or &#x60;mission_control.production.rw&#x60;
      * @param {String} batchId 
-     * @param {module:api/ProductionApi~batchesBatchIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    batchesBatchIdDelete(batchId, callback) {
+    batchesBatchIdDeleteWithHttpInfo(batchId) {
       
       let postBody = null;
       // verify the required parameter 'batchId' is set
@@ -122,24 +116,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/batches/{batch_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the batchesBatchIdGet operation.
-     * @callback moduleapi/ProductionApi~batchesBatchIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Batch{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove a Batch. This will remove all associated linked Production resources too - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.w&#x60; or &#x60;mission_control.production.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} batchId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    batchesBatchIdDelete(batchId) {
+      return this.batchesBatchIdDeleteWithHttpInfo(batchId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Return in depth information about a single Batch - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.r&#x60; or &#x60;mission_control.production.rw&#x60;
      * @param {String} batchId 
-     * @param {module:api/ProductionApi~batchesBatchIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Batch} and HTTP response
      */
-    batchesBatchIdGet(batchId, callback) {
+    batchesBatchIdGetWithHttpInfo(batchId) {
       
       let postBody = null;
       // verify the required parameter 'batchId' is set
@@ -168,25 +167,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/batches/{batch_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the batchesBatchIdPatch operation.
-     * @callback moduleapi/ProductionApi~batchesBatchIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Batch{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Return in depth information about a single Batch - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.r&#x60; or &#x60;mission_control.production.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} batchId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Batch}
      */
+    batchesBatchIdGet(batchId) {
+      return this.batchesBatchIdGetWithHttpInfo(batchId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update the details of a Batch - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.w&#x60; or &#x60;mission_control.production.rw&#x60;
      * @param {module:model/BatchesBatchIdBody} body 
      * @param {String} batchId 
-     * @param {module:api/ProductionApi~batchesBatchIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Batch} and HTTP response
      */
-    batchesBatchIdPatch(body, batchId, callback) {
+    batchesBatchIdPatchWithHttpInfo(body, batchId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -219,26 +223,32 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/batches/{batch_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the batchesGet operation.
-     * @callback moduleapi/ProductionApi~batchesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Batch>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update the details of a Batch - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.w&#x60; or &#x60;mission_control.production.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} batchId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Batch}
      */
+    batchesBatchIdPatch(body, batchId) {
+      return this.batchesBatchIdPatchWithHttpInfo(body, batchId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Return all Batches for the current caller - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.r&#x60; or &#x60;mission_control.production.rw&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~batchesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Batch>} and HTTP response
      */
-    batchesGet(opts, callback) {
+    batchesGetWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -263,24 +273,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/batches', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the batchesPost operation.
-     * @callback moduleapi/ProductionApi~batchesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Batch{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Return all Batches for the current caller - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.r&#x60; or &#x60;mission_control.production.rw&#x60;
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Batch>}
      */
+    batchesGet(opts) {
+      return this.batchesGetWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new Batch for producing multiple Parts together - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.w&#x60; or &#x60;mission_control.production.rw&#x60;
      * @param {module:model/BatchesBody} body 
-     * @param {module:api/ProductionApi~batchesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Batch} and HTTP response
      */
-    batchesPost(body, callback) {
+    batchesPostWithHttpInfo(body) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -309,23 +326,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/batches', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the executionsExecutionIdDelete operation.
-     * @callback moduleapi/ProductionApi~executionsExecutionIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create a new Batch for producing multiple Parts together - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.production.w&#x60; or &#x60;mission_control.production.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Batch}
      */
+    batchesPost(body) {
+      return this.batchesPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove an execution - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60;
      * @param {String} executionId 
-     * @param {module:api/ProductionApi~executionsExecutionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    executionsExecutionIdDelete(executionId, callback) {
+    executionsExecutionIdDeleteWithHttpInfo(executionId) {
       
       let postBody = null;
       // verify the required parameter 'executionId' is set
@@ -354,24 +377,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/executions/{execution_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the executionsExecutionIdGet operation.
-     * @callback moduleapi/ProductionApi~executionsExecutionIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Execution{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove an execution - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} executionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    executionsExecutionIdDelete(executionId) {
+      return this.executionsExecutionIdDeleteWithHttpInfo(executionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show the details of a given execution - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {String} executionId 
-     * @param {module:api/ProductionApi~executionsExecutionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Execution} and HTTP response
      */
-    executionsExecutionIdGet(executionId, callback) {
+    executionsExecutionIdGetWithHttpInfo(executionId) {
       
       let postBody = null;
       // verify the required parameter 'executionId' is set
@@ -400,25 +428,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/executions/{execution_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the executionsExecutionIdPatch operation.
-     * @callback moduleapi/ProductionApi~executionsExecutionIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Execution{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show the details of a given execution - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} executionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Execution}
      */
+    executionsExecutionIdGet(executionId) {
+      return this.executionsExecutionIdGetWithHttpInfo(executionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update the status of an execution - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60;
      * @param {module:model/ExecutionsExecutionIdBody} body 
      * @param {String} executionId 
-     * @param {module:api/ProductionApi~executionsExecutionIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Execution} and HTTP response
      */
-    executionsExecutionIdPatch(body, executionId, callback) {
+    executionsExecutionIdPatchWithHttpInfo(body, executionId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -451,26 +484,32 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/executions/{execution_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the executionsGet operation.
-     * @callback moduleapi/ProductionApi~executionsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Execution>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update the status of an execution - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} executionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Execution}
      */
+    executionsExecutionIdPatch(body, executionId) {
+      return this.executionsExecutionIdPatchWithHttpInfo(body, executionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List all executions, useful as an audit log of production - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~executionsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Execution>} and HTTP response
      */
-    executionsGet(opts, callback) {
+    executionsGetWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -495,24 +534,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/executions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the executionsPost operation.
-     * @callback moduleapi/ProductionApi~executionsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Execution{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List all executions, useful as an audit log of production - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60;
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Execution>}
      */
+    executionsGet(opts) {
+      return this.executionsGetWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new execution to log production - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60;
      * @param {module:model/ExecutionsBody} body 
-     * @param {module:api/ProductionApi~executionsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Execution} and HTTP response
      */
-    executionsPost(body, callback) {
+    executionsPostWithHttpInfo(body) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -541,23 +587,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/executions', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the imposingsImposingIdDelete operation.
-     * @callback moduleapi/ProductionApi~imposingsImposingIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create a new execution to log production - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Execution}
      */
+    executionsPost(body) {
+      return this.executionsPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove an Imposing from the ProductionStrategy - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} imposingId 
-     * @param {module:api/ProductionApi~imposingsImposingIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    imposingsImposingIdDelete(imposingId, callback) {
+    imposingsImposingIdDeleteWithHttpInfo(imposingId) {
       
       let postBody = null;
       // verify the required parameter 'imposingId' is set
@@ -586,24 +638,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/imposings/{imposing_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the imposingsImposingIdGet operation.
-     * @callback moduleapi/ProductionApi~imposingsImposingIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Imposing{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove an Imposing from the ProductionStrategy - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} imposingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    imposingsImposingIdDelete(imposingId) {
+      return this.imposingsImposingIdDeleteWithHttpInfo(imposingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show the full details of a given Imposing including all Signatures - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} imposingId 
-     * @param {module:api/ProductionApi~imposingsImposingIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Imposing} and HTTP response
      */
-    imposingsImposingIdGet(imposingId, callback) {
+    imposingsImposingIdGetWithHttpInfo(imposingId) {
       
       let postBody = null;
       // verify the required parameter 'imposingId' is set
@@ -632,25 +689,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/imposings/{imposing_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the imposingsImposingIdPatch operation.
-     * @callback moduleapi/ProductionApi~imposingsImposingIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Imposing{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show the full details of a given Imposing including all Signatures - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} imposingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Imposing}
      */
+    imposingsImposingIdGet(imposingId) {
+      return this.imposingsImposingIdGetWithHttpInfo(imposingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update an Imposing - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/ImposingsImposingIdBody} body 
      * @param {String} imposingId 
-     * @param {module:api/ProductionApi~imposingsImposingIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Imposing} and HTTP response
      */
-    imposingsImposingIdPatch(body, imposingId, callback) {
+    imposingsImposingIdPatchWithHttpInfo(body, imposingId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -683,24 +745,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/imposings/{imposing_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the imposingsImposingIdSignaturesGet operation.
-     * @callback moduleapi/ProductionApi~imposingsImposingIdSignaturesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Signature>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update an Imposing - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} imposingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Imposing}
      */
+    imposingsImposingIdPatch(body, imposingId) {
+      return this.imposingsImposingIdPatchWithHttpInfo(body, imposingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List Signatures for provided Imposings - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} imposingId 
-     * @param {module:api/ProductionApi~imposingsImposingIdSignaturesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Signature>} and HTTP response
      */
-    imposingsImposingIdSignaturesGet(imposingId, callback) {
+    imposingsImposingIdSignaturesGetWithHttpInfo(imposingId) {
       
       let postBody = null;
       // verify the required parameter 'imposingId' is set
@@ -729,25 +797,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/imposings/{imposing_id}/signatures', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the imposingsImposingIdSignaturesPost operation.
-     * @callback moduleapi/ProductionApi~imposingsImposingIdSignaturesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Signature{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List Signatures for provided Imposings - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} imposingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Signature>}
      */
+    imposingsImposingIdSignaturesGet(imposingId) {
+      return this.imposingsImposingIdSignaturesGetWithHttpInfo(imposingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new Signature for the provided Imposing - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/ImposingIdSignaturesBody} body 
      * @param {String} imposingId 
-     * @param {module:api/ProductionApi~imposingsImposingIdSignaturesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Signature} and HTTP response
      */
-    imposingsImposingIdSignaturesPost(body, imposingId, callback) {
+    imposingsImposingIdSignaturesPostWithHttpInfo(body, imposingId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -780,23 +853,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/imposings/{imposing_id}/signatures', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the intermediateProductsIntermediateProductIdDelete operation.
-     * @callback moduleapi/ProductionApi~intermediateProductsIntermediateProductIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create a new Signature for the provided Imposing - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} imposingId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Signature}
      */
+    imposingsImposingIdSignaturesPost(body, imposingId) {
+      return this.imposingsImposingIdSignaturesPostWithHttpInfo(body, imposingId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove an IntermediateProduct - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} intermediateProductId 
-     * @param {module:api/ProductionApi~intermediateProductsIntermediateProductIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    intermediateProductsIntermediateProductIdDelete(intermediateProductId, callback) {
+    intermediateProductsIntermediateProductIdDeleteWithHttpInfo(intermediateProductId) {
       
       let postBody = null;
       // verify the required parameter 'intermediateProductId' is set
@@ -825,24 +905,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/intermediate_products/{intermediate_product_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the intermediateProductsIntermediateProductIdGet operation.
-     * @callback moduleapi/ProductionApi~intermediateProductsIntermediateProductIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IntermediateProduct{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove an IntermediateProduct - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} intermediateProductId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    intermediateProductsIntermediateProductIdDelete(intermediateProductId) {
+      return this.intermediateProductsIntermediateProductIdDeleteWithHttpInfo(intermediateProductId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show the full details of an IntermediateProduct - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} intermediateProductId 
-     * @param {module:api/ProductionApi~intermediateProductsIntermediateProductIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntermediateProduct} and HTTP response
      */
-    intermediateProductsIntermediateProductIdGet(intermediateProductId, callback) {
+    intermediateProductsIntermediateProductIdGetWithHttpInfo(intermediateProductId) {
       
       let postBody = null;
       // verify the required parameter 'intermediateProductId' is set
@@ -871,25 +956,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/intermediate_products/{intermediate_product_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the intermediateProductsIntermediateProductIdPatch operation.
-     * @callback moduleapi/ProductionApi~intermediateProductsIntermediateProductIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IntermediateProduct{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show the full details of an IntermediateProduct - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} intermediateProductId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntermediateProduct}
      */
+    intermediateProductsIntermediateProductIdGet(intermediateProductId) {
+      return this.intermediateProductsIntermediateProductIdGetWithHttpInfo(intermediateProductId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update an IntermediateProduct with the provided params - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/IntermediateProductsIntermediateProductIdBody} body 
      * @param {String} intermediateProductId 
-     * @param {module:api/ProductionApi~intermediateProductsIntermediateProductIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntermediateProduct} and HTTP response
      */
-    intermediateProductsIntermediateProductIdPatch(body, intermediateProductId, callback) {
+    intermediateProductsIntermediateProductIdPatchWithHttpInfo(body, intermediateProductId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -922,23 +1012,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/intermediate_products/{intermediate_product_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdFinishedProductDelete operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdFinishedProductDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Update an IntermediateProduct with the provided params - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} intermediateProductId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntermediateProduct}
      */
+    intermediateProductsIntermediateProductIdPatch(body, intermediateProductId) {
+      return this.intermediateProductsIntermediateProductIdPatchWithHttpInfo(body, intermediateProductId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove the FinishedProduct - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdFinishedProductDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    jobsJobIdFinishedProductDelete(jobId, callback) {
+    jobsJobIdFinishedProductDeleteWithHttpInfo(jobId) {
       
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -967,24 +1064,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/finished_product', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdFinishedProductGet operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdFinishedProductGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FinishedProduct{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove the FinishedProduct - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    jobsJobIdFinishedProductDelete(jobId) {
+      return this.jobsJobIdFinishedProductDeleteWithHttpInfo(jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show the full details of the FinishedProduct - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdFinishedProductGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FinishedProduct} and HTTP response
      */
-    jobsJobIdFinishedProductGet(jobId, callback) {
+    jobsJobIdFinishedProductGetWithHttpInfo(jobId) {
       
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1013,25 +1115,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/finished_product', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdFinishedProductPatch operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdFinishedProductPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FinishedProduct{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show the full details of the FinishedProduct - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FinishedProduct}
      */
+    jobsJobIdFinishedProductGet(jobId) {
+      return this.jobsJobIdFinishedProductGetWithHttpInfo(jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update the FinishedProduct with the provided params - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/JobIdFinishedProductBody1} body 
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdFinishedProductPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FinishedProduct} and HTTP response
      */
-    jobsJobIdFinishedProductPatch(body, jobId, callback) {
+    jobsJobIdFinishedProductPatchWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1064,25 +1171,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/finished_product', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdFinishedProductPost operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdFinishedProductPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FinishedProduct{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update the FinishedProduct with the provided params - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FinishedProduct}
      */
+    jobsJobIdFinishedProductPatch(body, jobId) {
+      return this.jobsJobIdFinishedProductPatchWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create the FinishedProduct for a Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/JobIdFinishedProductBody} body 
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdFinishedProductPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FinishedProduct} and HTTP response
      */
-    jobsJobIdFinishedProductPost(body, jobId, callback) {
+    jobsJobIdFinishedProductPostWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1115,16 +1228,23 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/finished_product', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdIntermediateProductsGet operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdIntermediateProductsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IntermediateProduct>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create the FinishedProduct for a Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FinishedProduct}
      */
+    jobsJobIdFinishedProductPost(body, jobId) {
+      return this.jobsJobIdFinishedProductPostWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List all available IntermediateProducts for a given Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
@@ -1132,10 +1252,9 @@ export class ProductionApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~jobsJobIdIntermediateProductsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IntermediateProduct>} and HTTP response
      */
-    jobsJobIdIntermediateProductsGet(jobId, opts, callback) {
+    jobsJobIdIntermediateProductsGetWithHttpInfo(jobId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1164,25 +1283,33 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/intermediate_products', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdIntermediateProductsPost operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdIntermediateProductsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IntermediateProduct{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List all available IntermediateProducts for a given Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IntermediateProduct>}
      */
+    jobsJobIdIntermediateProductsGet(jobId, opts) {
+      return this.jobsJobIdIntermediateProductsGetWithHttpInfo(jobId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new IntermediateProduct for a Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/JobIdIntermediateProductsBody} body 
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdIntermediateProductsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntermediateProduct} and HTTP response
      */
-    jobsJobIdIntermediateProductsPost(body, jobId, callback) {
+    jobsJobIdIntermediateProductsPostWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1215,16 +1342,23 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/intermediate_products', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdMilestonesGet operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdMilestonesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Milestone>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a new IntermediateProduct for a Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntermediateProduct}
      */
+    jobsJobIdIntermediateProductsPost(body, jobId) {
+      return this.jobsJobIdIntermediateProductsPostWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List all milestones for this Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
@@ -1232,10 +1366,9 @@ export class ProductionApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~jobsJobIdMilestonesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Milestone>} and HTTP response
      */
-    jobsJobIdMilestonesGet(jobId, opts, callback) {
+    jobsJobIdMilestonesGetWithHttpInfo(jobId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1264,25 +1397,33 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/milestones', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdMilestonesPost operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdMilestonesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Milestone{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List all milestones for this Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Milestone>}
      */
+    jobsJobIdMilestonesGet(jobId, opts) {
+      return this.jobsJobIdMilestonesGetWithHttpInfo(jobId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new milestone for this Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/JobIdMilestonesBody} body 
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdMilestonesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Milestone} and HTTP response
      */
-    jobsJobIdMilestonesPost(body, jobId, callback) {
+    jobsJobIdMilestonesPostWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1315,24 +1456,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/milestones', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdProductionStrategiesGet operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdProductionStrategiesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ProductionStrategy>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a new milestone for this Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Milestone}
      */
+    jobsJobIdMilestonesPost(body, jobId) {
+      return this.jobsJobIdMilestonesPostWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List ProductionStrategies for the provided job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdProductionStrategiesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProductionStrategy>} and HTTP response
      */
-    jobsJobIdProductionStrategiesGet(jobId, callback) {
+    jobsJobIdProductionStrategiesGetWithHttpInfo(jobId) {
       
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1361,25 +1508,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/production_strategies', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdProductionStrategiesPost operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdProductionStrategiesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2011{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List ProductionStrategies for the provided job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProductionStrategy>}
      */
+    jobsJobIdProductionStrategiesGet(jobId) {
+      return this.jobsJobIdProductionStrategiesGetWithHttpInfo(jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new ProductionStrategy for the provided job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/JobIdProductionStrategiesBody} body 
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdProductionStrategiesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2011} and HTTP response
      */
-    jobsJobIdProductionStrategiesPost(body, jobId, callback) {
+    jobsJobIdProductionStrategiesPostWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1412,16 +1564,23 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/production_strategies', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdTodosGet operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdTodosGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Todo>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a new ProductionStrategy for the provided job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2011}
      */
+    jobsJobIdProductionStrategiesPost(body, jobId) {
+      return this.jobsJobIdProductionStrategiesPostWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List all todos for this Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
@@ -1429,10 +1588,9 @@ export class ProductionApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~jobsJobIdTodosGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Todo>} and HTTP response
      */
-    jobsJobIdTodosGet(jobId, opts, callback) {
+    jobsJobIdTodosGetWithHttpInfo(jobId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'jobId' is set
@@ -1461,25 +1619,33 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/todos', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the jobsJobIdTodosPost operation.
-     * @callback moduleapi/ProductionApi~jobsJobIdTodosPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Todo{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List all todos for this Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Todo>}
      */
+    jobsJobIdTodosGet(jobId, opts) {
+      return this.jobsJobIdTodosGetWithHttpInfo(jobId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new todo for this Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/JobIdTodosBody} body 
      * @param {String} jobId 
-     * @param {module:api/ProductionApi~jobsJobIdTodosPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Todo} and HTTP response
      */
-    jobsJobIdTodosPost(body, jobId, callback) {
+    jobsJobIdTodosPostWithHttpInfo(body, jobId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1512,26 +1678,32 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/jobs/{job_id}/todos', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the listsGet operation.
-     * @callback moduleapi/ProductionApi~listsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<Object>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a new todo for this Job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Todo}
      */
+    jobsJobIdTodosPost(body, jobId) {
+      return this.jobsJobIdTodosPostWithHttpInfo(body, jobId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all lists associated to user organizations. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~listsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<Object>} and HTTP response
      */
-    listsGet(opts, callback) {
+    listsGetWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -1556,23 +1728,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/lists', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the listsListIdDelete operation.
-     * @callback moduleapi/ProductionApi~listsListIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Returns all lists associated to user organizations. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<Object>}
      */
+    listsGet(opts) {
+      return this.listsGetWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes a list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {String} listId 
-     * @param {module:api/ProductionApi~listsListIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    listsListIdDelete(listId, callback) {
+    listsListIdDeleteWithHttpInfo(listId) {
       
       let postBody = null;
       // verify the required parameter 'listId' is set
@@ -1601,24 +1781,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/lists/{list_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the listsListIdGet operation.
-     * @callback moduleapi/ProductionApi~listsListIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2014{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} listId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    listsListIdDelete(listId) {
+      return this.listsListIdDeleteWithHttpInfo(listId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific list associated to a user organizations (without its members). - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
      * @param {String} listId 
-     * @param {module:api/ProductionApi~listsListIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2014} and HTTP response
      */
-    listsListIdGet(listId, callback) {
+    listsListIdGetWithHttpInfo(listId) {
       
       let postBody = null;
       // verify the required parameter 'listId' is set
@@ -1647,25 +1832,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/lists/{list_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the listsListIdPatch operation.
-     * @callback moduleapi/ProductionApi~listsListIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2014{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific list associated to a user organizations (without its members). - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} listId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2014}
      */
+    listsListIdGet(listId) {
+      return this.listsListIdGetWithHttpInfo(listId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies a list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {module:model/ListsListIdBody} body 
      * @param {String} listId 
-     * @param {module:api/ProductionApi~listsListIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2014} and HTTP response
      */
-    listsListIdPatch(body, listId, callback) {
+    listsListIdPatchWithHttpInfo(body, listId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1698,16 +1888,23 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/lists/{list_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the listsListIdPredicatesGet operation.
-     * @callback moduleapi/ProductionApi~listsListIdPredicatesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Predicate>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Modifies a list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} listId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2014}
      */
+    listsListIdPatch(body, listId) {
+      return this.listsListIdPatchWithHttpInfo(body, listId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all predicates of a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
@@ -1715,10 +1912,9 @@ export class ProductionApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~listsListIdPredicatesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Predicate>} and HTTP response
      */
-    listsListIdPredicatesGet(listId, opts, callback) {
+    listsListIdPredicatesGetWithHttpInfo(listId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'listId' is set
@@ -1747,25 +1943,33 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/lists/{list_id}/predicates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the listsListIdPredicatesPost operation.
-     * @callback moduleapi/ProductionApi~listsListIdPredicatesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Predicate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all predicates of a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} listId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Predicate>}
      */
+    listsListIdPredicatesGet(listId, opts) {
+      return this.listsListIdPredicatesGetWithHttpInfo(listId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new predicate for a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {module:model/ListIdPredicatesBody} body 
      * @param {String} listId 
-     * @param {module:api/ProductionApi~listsListIdPredicatesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Predicate} and HTTP response
      */
-    listsListIdPredicatesPost(body, listId, callback) {
+    listsListIdPredicatesPostWithHttpInfo(body, listId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1798,24 +2002,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/lists/{list_id}/predicates', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the listsPost operation.
-     * @callback moduleapi/ProductionApi~listsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2014{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new predicate for a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} listId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Predicate}
      */
+    listsListIdPredicatesPost(body, listId) {
+      return this.listsListIdPredicatesPostWithHttpInfo(body, listId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {module:model/ListsBody} body 
-     * @param {module:api/ProductionApi~listsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2014} and HTTP response
      */
-    listsPost(body, callback) {
+    listsPostWithHttpInfo(body) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1844,23 +2054,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/lists', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the milestonesMilestoneIdDelete operation.
-     * @callback moduleapi/ProductionApi~milestonesMilestoneIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Creates a list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2014}
      */
+    listsPost(body) {
+      return this.listsPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove a milestone - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} milestoneId 
-     * @param {module:api/ProductionApi~milestonesMilestoneIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    milestonesMilestoneIdDelete(milestoneId, callback) {
+    milestonesMilestoneIdDeleteWithHttpInfo(milestoneId) {
       
       let postBody = null;
       // verify the required parameter 'milestoneId' is set
@@ -1889,24 +2105,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/milestones/{milestone_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the milestonesMilestoneIdGet operation.
-     * @callback moduleapi/ProductionApi~milestonesMilestoneIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Milestone{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove a milestone - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} milestoneId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    milestonesMilestoneIdDelete(milestoneId) {
+      return this.milestonesMilestoneIdDeleteWithHttpInfo(milestoneId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Display the status of a Milestone - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} milestoneId 
-     * @param {module:api/ProductionApi~milestonesMilestoneIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Milestone} and HTTP response
      */
-    milestonesMilestoneIdGet(milestoneId, callback) {
+    milestonesMilestoneIdGetWithHttpInfo(milestoneId) {
       
       let postBody = null;
       // verify the required parameter 'milestoneId' is set
@@ -1935,25 +2156,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/milestones/{milestone_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the milestonesMilestoneIdPatch operation.
-     * @callback moduleapi/ProductionApi~milestonesMilestoneIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Milestone{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Display the status of a Milestone - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} milestoneId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Milestone}
      */
+    milestonesMilestoneIdGet(milestoneId) {
+      return this.milestonesMilestoneIdGetWithHttpInfo(milestoneId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Change properties of a Milestone - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/MilestonesMilestoneIdBody} body 
      * @param {String} milestoneId 
-     * @param {module:api/ProductionApi~milestonesMilestoneIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Milestone} and HTTP response
      */
-    milestonesMilestoneIdPatch(body, milestoneId, callback) {
+    milestonesMilestoneIdPatchWithHttpInfo(body, milestoneId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -1986,23 +2212,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/milestones/{milestone_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the predicatesPredicateIdDelete operation.
-     * @callback moduleapi/ProductionApi~predicatesPredicateIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Change properties of a Milestone - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} milestoneId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Milestone}
      */
+    milestonesMilestoneIdPatch(body, milestoneId) {
+      return this.milestonesMilestoneIdPatchWithHttpInfo(body, milestoneId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes a predicate. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {String} predicateId 
-     * @param {module:api/ProductionApi~predicatesPredicateIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    predicatesPredicateIdDelete(predicateId, callback) {
+    predicatesPredicateIdDeleteWithHttpInfo(predicateId) {
       
       let postBody = null;
       // verify the required parameter 'predicateId' is set
@@ -2031,24 +2264,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/predicates/{predicate_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the predicatesPredicateIdGet operation.
-     * @callback moduleapi/ProductionApi~predicatesPredicateIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Predicate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a predicate. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} predicateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    predicatesPredicateIdDelete(predicateId) {
+      return this.predicatesPredicateIdDeleteWithHttpInfo(predicateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific predicate associated to a user organizations. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
      * @param {String} predicateId 
-     * @param {module:api/ProductionApi~predicatesPredicateIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Predicate} and HTTP response
      */
-    predicatesPredicateIdGet(predicateId, callback) {
+    predicatesPredicateIdGetWithHttpInfo(predicateId) {
       
       let postBody = null;
       // verify the required parameter 'predicateId' is set
@@ -2077,25 +2315,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/predicates/{predicate_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the predicatesPredicateIdPatch operation.
-     * @callback moduleapi/ProductionApi~predicatesPredicateIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Predicate{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific predicate associated to a user organizations. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} predicateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Predicate}
      */
+    predicatesPredicateIdGet(predicateId) {
+      return this.predicatesPredicateIdGetWithHttpInfo(predicateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies a predicate. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {module:model/PredicatesPredicateIdBody} body 
      * @param {String} predicateId 
-     * @param {module:api/ProductionApi~predicatesPredicateIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Predicate} and HTTP response
      */
-    predicatesPredicateIdPatch(body, predicateId, callback) {
+    predicatesPredicateIdPatchWithHttpInfo(body, predicateId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2128,16 +2371,23 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/predicates/{predicate_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the predicatesPredicateIdRulesGet operation.
-     * @callback moduleapi/ProductionApi~predicatesPredicateIdRulesGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Rule>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Modifies a predicate. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} predicateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Predicate}
      */
+    predicatesPredicateIdPatch(body, predicateId) {
+      return this.predicatesPredicateIdPatchWithHttpInfo(body, predicateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns all rules of a specific predicate. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
@@ -2145,10 +2395,9 @@ export class ProductionApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~predicatesPredicateIdRulesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Rule>} and HTTP response
      */
-    predicatesPredicateIdRulesGet(predicateId, opts, callback) {
+    predicatesPredicateIdRulesGetWithHttpInfo(predicateId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'predicateId' is set
@@ -2177,25 +2426,33 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/predicates/{predicate_id}/rules', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the predicatesPredicateIdRulesPost operation.
-     * @callback moduleapi/ProductionApi~predicatesPredicateIdRulesPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Rule{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns all rules of a specific predicate. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} predicateId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Rule>}
      */
+    predicatesPredicateIdRulesGet(predicateId, opts) {
+      return this.predicatesPredicateIdRulesGetWithHttpInfo(predicateId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a new rule for a specific predicate. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {module:model/PredicateIdRulesBody} body 
      * @param {String} predicateId 
-     * @param {module:api/ProductionApi~predicatesPredicateIdRulesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Rule} and HTTP response
      */
-    predicatesPredicateIdRulesPost(body, predicateId, callback) {
+    predicatesPredicateIdRulesPostWithHttpInfo(body, predicateId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2228,24 +2485,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/predicates/{predicate_id}/rules', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the productionPathsPost operation.
-     * @callback moduleapi/ProductionApi~productionPathsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse201{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates a new rule for a specific predicate. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} predicateId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Rule}
      */
+    predicatesPredicateIdRulesPost(body, predicateId) {
+      return this.predicatesPredicateIdRulesPostWithHttpInfo(body, predicateId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates a full production pathway with all linkages - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/ProductionPathsBody} body 
-     * @param {module:api/ProductionApi~productionPathsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse201} and HTTP response
      */
-    productionPathsPost(body, callback) {
+    productionPathsPostWithHttpInfo(body) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2274,25 +2537,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/production_paths', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the productionStrategiesProductionStrategyIdDelete operation.
-     * @callback moduleapi/ProductionApi~productionStrategiesProductionStrategyIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Creates a full production pathway with all linkages - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse201}
      */
+    productionPathsPost(body) {
+      return this.productionPathsPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} productionStrategyId 
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.clone Create a clone of this strategy when cancelling the existing one.
-     * @param {module:api/ProductionApi~productionStrategiesProductionStrategyIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    productionStrategiesProductionStrategyIdDelete(productionStrategyId, opts, callback) {
+    productionStrategiesProductionStrategyIdDeleteWithHttpInfo(productionStrategyId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'productionStrategyId' is set
@@ -2321,24 +2590,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/production_strategies/{production_strategy_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the productionStrategiesProductionStrategyIdGet operation.
-     * @callback moduleapi/ProductionApi~productionStrategiesProductionStrategyIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2011{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} productionStrategyId 
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.clone Create a clone of this strategy when cancelling the existing one.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    productionStrategiesProductionStrategyIdDelete(productionStrategyId, opts) {
+      return this.productionStrategiesProductionStrategyIdDeleteWithHttpInfo(productionStrategyId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show the ProductionStrategy for the provided job, if set - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} productionStrategyId 
-     * @param {module:api/ProductionApi~productionStrategiesProductionStrategyIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2011} and HTTP response
      */
-    productionStrategiesProductionStrategyIdGet(productionStrategyId, callback) {
+    productionStrategiesProductionStrategyIdGetWithHttpInfo(productionStrategyId) {
       
       let postBody = null;
       // verify the required parameter 'productionStrategyId' is set
@@ -2367,24 +2643,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/production_strategies/{production_strategy_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the productionStrategiesProductionStrategyIdImposingsGet operation.
-     * @callback moduleapi/ProductionApi~productionStrategiesProductionStrategyIdImposingsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Imposing>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show the ProductionStrategy for the provided job, if set - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} productionStrategyId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2011}
      */
+    productionStrategiesProductionStrategyIdGet(productionStrategyId) {
+      return this.productionStrategiesProductionStrategyIdGetWithHttpInfo(productionStrategyId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List Imposings for provided ProductionStrategy - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} productionStrategyId 
-     * @param {module:api/ProductionApi~productionStrategiesProductionStrategyIdImposingsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Imposing>} and HTTP response
      */
-    productionStrategiesProductionStrategyIdImposingsGet(productionStrategyId, callback) {
+    productionStrategiesProductionStrategyIdImposingsGetWithHttpInfo(productionStrategyId) {
       
       let postBody = null;
       // verify the required parameter 'productionStrategyId' is set
@@ -2413,25 +2694,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/production_strategies/{production_strategy_id}/imposings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the productionStrategiesProductionStrategyIdImposingsPost operation.
-     * @callback moduleapi/ProductionApi~productionStrategiesProductionStrategyIdImposingsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Imposing{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List Imposings for provided ProductionStrategy - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} productionStrategyId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Imposing>}
      */
+    productionStrategiesProductionStrategyIdImposingsGet(productionStrategyId) {
+      return this.productionStrategiesProductionStrategyIdImposingsGetWithHttpInfo(productionStrategyId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new Imposing for the provided ProductionStrategy - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/ProductionStrategyIdImposingsBody} body 
      * @param {String} productionStrategyId 
-     * @param {module:api/ProductionApi~productionStrategiesProductionStrategyIdImposingsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Imposing} and HTTP response
      */
-    productionStrategiesProductionStrategyIdImposingsPost(body, productionStrategyId, callback) {
+    productionStrategiesProductionStrategyIdImposingsPostWithHttpInfo(body, productionStrategyId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2464,25 +2750,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/production_strategies/{production_strategy_id}/imposings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the productionStrategiesProductionStrategyIdPatch operation.
-     * @callback moduleapi/ProductionApi~productionStrategiesProductionStrategyIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2011{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a new Imposing for the provided ProductionStrategy - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} productionStrategyId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Imposing}
      */
+    productionStrategiesProductionStrategyIdImposingsPost(body, productionStrategyId) {
+      return this.productionStrategiesProductionStrategyIdImposingsPostWithHttpInfo(body, productionStrategyId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/ProductionStrategiesProductionStrategyIdBody} body 
      * @param {String} productionStrategyId 
-     * @param {module:api/ProductionApi~productionStrategiesProductionStrategyIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2011} and HTTP response
      */
-    productionStrategiesProductionStrategyIdPatch(body, productionStrategyId, callback) {
+    productionStrategiesProductionStrategyIdPatchWithHttpInfo(body, productionStrategyId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2515,23 +2807,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/production_strategies/{production_strategy_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the rulesRuleIdDelete operation.
-     * @callback moduleapi/ProductionApi~rulesRuleIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} productionStrategyId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2011}
      */
+    productionStrategiesProductionStrategyIdPatch(body, productionStrategyId) {
+      return this.productionStrategiesProductionStrategyIdPatchWithHttpInfo(body, productionStrategyId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Removes a rule. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {String} ruleId 
-     * @param {module:api/ProductionApi~rulesRuleIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    rulesRuleIdDelete(ruleId, callback) {
+    rulesRuleIdDeleteWithHttpInfo(ruleId) {
       
       let postBody = null;
       // verify the required parameter 'ruleId' is set
@@ -2560,24 +2859,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/rules/{rule_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the rulesRuleIdGet operation.
-     * @callback moduleapi/ProductionApi~rulesRuleIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Rule{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Removes a rule. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} ruleId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    rulesRuleIdDelete(ruleId) {
+      return this.rulesRuleIdDeleteWithHttpInfo(ruleId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns a specific rule. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
      * @param {String} ruleId 
-     * @param {module:api/ProductionApi~rulesRuleIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Rule} and HTTP response
      */
-    rulesRuleIdGet(ruleId, callback) {
+    rulesRuleIdGetWithHttpInfo(ruleId) {
       
       let postBody = null;
       // verify the required parameter 'ruleId' is set
@@ -2606,25 +2910,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/rules/{rule_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the rulesRuleIdPatch operation.
-     * @callback moduleapi/ProductionApi~rulesRuleIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Rule{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns a specific rule. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} ruleId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Rule}
      */
+    rulesRuleIdGet(ruleId) {
+      return this.rulesRuleIdGetWithHttpInfo(ruleId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Modifies a rule. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
      * @param {module:model/RulesRuleIdBody} body 
      * @param {String} ruleId 
-     * @param {module:api/ProductionApi~rulesRuleIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Rule} and HTTP response
      */
-    rulesRuleIdPatch(body, ruleId, callback) {
+    rulesRuleIdPatchWithHttpInfo(body, ruleId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2657,23 +2966,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/rules/{rule_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the signaturesSignatureIdDelete operation.
-     * @callback moduleapi/ProductionApi~signaturesSignatureIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Modifies a rule. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.w&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} ruleId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Rule}
      */
+    rulesRuleIdPatch(body, ruleId) {
+      return this.rulesRuleIdPatchWithHttpInfo(body, ruleId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove a Signature from the Imposing - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} signatureId 
-     * @param {module:api/ProductionApi~signaturesSignatureIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    signaturesSignatureIdDelete(signatureId, callback) {
+    signaturesSignatureIdDeleteWithHttpInfo(signatureId) {
       
       let postBody = null;
       // verify the required parameter 'signatureId' is set
@@ -2702,24 +3018,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/signatures/{signature_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the signaturesSignatureIdGet operation.
-     * @callback moduleapi/ProductionApi~signaturesSignatureIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Signature{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove a Signature from the Imposing - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} signatureId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    signaturesSignatureIdDelete(signatureId) {
+      return this.signaturesSignatureIdDeleteWithHttpInfo(signatureId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show the full details of a given Signature - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} signatureId 
-     * @param {module:api/ProductionApi~signaturesSignatureIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Signature} and HTTP response
      */
-    signaturesSignatureIdGet(signatureId, callback) {
+    signaturesSignatureIdGetWithHttpInfo(signatureId) {
       
       let postBody = null;
       // verify the required parameter 'signatureId' is set
@@ -2748,25 +3069,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/signatures/{signature_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the signaturesSignatureIdPatch operation.
-     * @callback moduleapi/ProductionApi~signaturesSignatureIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Signature{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show the full details of a given Signature - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} signatureId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Signature}
      */
+    signaturesSignatureIdGet(signatureId) {
+      return this.signaturesSignatureIdGetWithHttpInfo(signatureId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update a Signature - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/SignaturesSignatureIdBody} body 
      * @param {String} signatureId 
-     * @param {module:api/ProductionApi~signaturesSignatureIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Signature} and HTTP response
      */
-    signaturesSignatureIdPatch(body, signatureId, callback) {
+    signaturesSignatureIdPatchWithHttpInfo(body, signatureId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2799,23 +3125,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/signatures/{signature_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the todosTodoIdDelete operation.
-     * @callback moduleapi/ProductionApi~todosTodoIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Update a Signature - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} signatureId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Signature}
      */
+    signaturesSignatureIdPatch(body, signatureId) {
+      return this.signaturesSignatureIdPatchWithHttpInfo(body, signatureId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove a todo - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} todoId 
-     * @param {module:api/ProductionApi~todosTodoIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    todosTodoIdDelete(todoId, callback) {
+    todosTodoIdDeleteWithHttpInfo(todoId) {
       
       let postBody = null;
       // verify the required parameter 'todoId' is set
@@ -2844,24 +3177,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/todos/{todo_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the todosTodoIdGet operation.
-     * @callback moduleapi/ProductionApi~todosTodoIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Todo{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove a todo - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} todoId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    todosTodoIdDelete(todoId) {
+      return this.todosTodoIdDeleteWithHttpInfo(todoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Display the status of a todo - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} todoId 
-     * @param {module:api/ProductionApi~todosTodoIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Todo} and HTTP response
      */
-    todosTodoIdGet(todoId, callback) {
+    todosTodoIdGetWithHttpInfo(todoId) {
       
       let postBody = null;
       // verify the required parameter 'todoId' is set
@@ -2890,25 +3228,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/todos/{todo_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the todosTodoIdPatch operation.
-     * @callback moduleapi/ProductionApi~todosTodoIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Todo{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Display the status of a todo - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} todoId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Todo}
      */
+    todosTodoIdGet(todoId) {
+      return this.todosTodoIdGetWithHttpInfo(todoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Change properties of a todo - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/TodosTodoIdBody} body 
      * @param {String} todoId 
-     * @param {module:api/ProductionApi~todosTodoIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Todo} and HTTP response
      */
-    todosTodoIdPatch(body, todoId, callback) {
+    todosTodoIdPatchWithHttpInfo(body, todoId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -2941,26 +3284,32 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/todos/{todo_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepGroupsGet operation.
-     * @callback moduleapi/ProductionApi~workstepGroupsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WorkstepGroup>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Change properties of a todo - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} todoId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Todo}
      */
+    todosTodoIdPatch(body, todoId) {
+      return this.todosTodoIdPatchWithHttpInfo(body, todoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show all available WorkstepGroups - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~workstepGroupsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/WorkstepGroup>} and HTTP response
      */
-    workstepGroupsGet(opts, callback) {
+    workstepGroupsGetWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -2985,24 +3334,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/workstep_groups', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepGroupsPost operation.
-     * @callback moduleapi/ProductionApi~workstepGroupsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WorkstepGroup{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show all available WorkstepGroups - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/WorkstepGroup>}
      */
+    workstepGroupsGet(opts) {
+      return this.workstepGroupsGetWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new WorkstepGroup - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/WorkstepGroupsBody} body 
-     * @param {module:api/ProductionApi~workstepGroupsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepGroup} and HTTP response
      */
-    workstepGroupsPost(body, callback) {
+    workstepGroupsPostWithHttpInfo(body) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -3031,23 +3387,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/workstep_groups', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepGroupsWorkstepGroupIdDelete operation.
-     * @callback moduleapi/ProductionApi~workstepGroupsWorkstepGroupIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create a new WorkstepGroup - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepGroup}
      */
+    workstepGroupsPost(body) {
+      return this.workstepGroupsPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove a WorkstepGroup, this will remove all contained Worksteps and associated IntermediateProducts\&quot;  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} workstepGroupId 
-     * @param {module:api/ProductionApi~workstepGroupsWorkstepGroupIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    workstepGroupsWorkstepGroupIdDelete(workstepGroupId, callback) {
+    workstepGroupsWorkstepGroupIdDeleteWithHttpInfo(workstepGroupId) {
       
       let postBody = null;
       // verify the required parameter 'workstepGroupId' is set
@@ -3076,24 +3438,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/workstep_groups/{workstep_group_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepGroupsWorkstepGroupIdGet operation.
-     * @callback moduleapi/ProductionApi~workstepGroupsWorkstepGroupIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WorkstepGroup{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove a WorkstepGroup, this will remove all contained Worksteps and associated IntermediateProducts\&quot;  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    workstepGroupsWorkstepGroupIdDelete(workstepGroupId) {
+      return this.workstepGroupsWorkstepGroupIdDeleteWithHttpInfo(workstepGroupId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show the full details of a given WorkstepGroup including all Worksteps - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} workstepGroupId 
-     * @param {module:api/ProductionApi~workstepGroupsWorkstepGroupIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepGroup} and HTTP response
      */
-    workstepGroupsWorkstepGroupIdGet(workstepGroupId, callback) {
+    workstepGroupsWorkstepGroupIdGetWithHttpInfo(workstepGroupId) {
       
       let postBody = null;
       // verify the required parameter 'workstepGroupId' is set
@@ -3122,25 +3489,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/workstep_groups/{workstep_group_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepGroupsWorkstepGroupIdPatch operation.
-     * @callback moduleapi/ProductionApi~workstepGroupsWorkstepGroupIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WorkstepGroup{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show the full details of a given WorkstepGroup including all Worksteps - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepGroup}
      */
+    workstepGroupsWorkstepGroupIdGet(workstepGroupId) {
+      return this.workstepGroupsWorkstepGroupIdGetWithHttpInfo(workstepGroupId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update a WorkstepGroup - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/WorkstepGroupsWorkstepGroupIdBody} body 
      * @param {String} workstepGroupId 
-     * @param {module:api/ProductionApi~workstepGroupsWorkstepGroupIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepGroup} and HTTP response
      */
-    workstepGroupsWorkstepGroupIdPatch(body, workstepGroupId, callback) {
+    workstepGroupsWorkstepGroupIdPatchWithHttpInfo(body, workstepGroupId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -3173,26 +3545,32 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/workstep_groups/{workstep_group_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepsGet operation.
-     * @callback moduleapi/ProductionApi~workstepsGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Workstep>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update a WorkstepGroup - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepGroup}
      */
+    workstepGroupsWorkstepGroupIdPatch(body, workstepGroupId) {
+      return this.workstepGroupsWorkstepGroupIdPatchWithHttpInfo(body, workstepGroupId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List all available Worksteps - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @param {module:api/ProductionApi~workstepsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Workstep>} and HTTP response
      */
-    workstepsGet(opts, callback) {
+    workstepsGetWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -3217,24 +3595,31 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/worksteps', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepsPost operation.
-     * @callback moduleapi/ProductionApi~workstepsPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Workstep{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List all available Worksteps - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Workstep>}
      */
+    workstepsGet(opts) {
+      return this.workstepsGetWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new Workstep - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/WorkstepsBody} body 
-     * @param {module:api/ProductionApi~workstepsPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Workstep} and HTTP response
      */
-    workstepsPost(body, callback) {
+    workstepsPostWithHttpInfo(body) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -3263,23 +3648,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/worksteps', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepsWorkstepIdDelete operation.
-     * @callback moduleapi/ProductionApi~workstepsWorkstepIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create a new Workstep - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Workstep}
      */
+    workstepsPost(body) {
+      return this.workstepsPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Remove a Workstep - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} workstepId 
-     * @param {module:api/ProductionApi~workstepsWorkstepIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    workstepsWorkstepIdDelete(workstepId, callback) {
+    workstepsWorkstepIdDeleteWithHttpInfo(workstepId) {
       
       let postBody = null;
       // verify the required parameter 'workstepId' is set
@@ -3308,24 +3699,29 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/worksteps/{workstep_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepsWorkstepIdGet operation.
-     * @callback moduleapi/ProductionApi~workstepsWorkstepIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Workstep{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Remove a Workstep - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    workstepsWorkstepIdDelete(workstepId) {
+      return this.workstepsWorkstepIdDeleteWithHttpInfo(workstepId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Show the full details of a Workstep - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {String} workstepId 
-     * @param {module:api/ProductionApi~workstepsWorkstepIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Workstep} and HTTP response
      */
-    workstepsWorkstepIdGet(workstepId, callback) {
+    workstepsWorkstepIdGetWithHttpInfo(workstepId) {
       
       let postBody = null;
       // verify the required parameter 'workstepId' is set
@@ -3354,25 +3750,30 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/worksteps/{workstep_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the workstepsWorkstepIdPatch operation.
-     * @callback moduleapi/ProductionApi~workstepsWorkstepIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Workstep{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Show the full details of a Workstep - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.r&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Workstep}
      */
+    workstepsWorkstepIdGet(workstepId) {
+      return this.workstepsWorkstepIdGetWithHttpInfo(workstepId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update a Workstep with the provided params - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
      * @param {module:model/WorkstepsWorkstepIdBody} body 
      * @param {String} workstepId 
-     * @param {module:api/ProductionApi~workstepsWorkstepIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Workstep} and HTTP response
      */
-    workstepsWorkstepIdPatch(body, workstepId, callback) {
+    workstepsWorkstepIdPatchWithHttpInfo(body, workstepId) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
@@ -3405,8 +3806,21 @@ export class ProductionApi {
       return this.apiClient.callApi(
         '/worksteps/{workstep_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update a Workstep with the provided params - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.jobs.w&#x60; or &#x60;mission_control.jobs.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} workstepId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Workstep}
+     */
+    workstepsWorkstepIdPatch(body, workstepId) {
+      return this.workstepsWorkstepIdPatchWithHttpInfo(body, workstepId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 }

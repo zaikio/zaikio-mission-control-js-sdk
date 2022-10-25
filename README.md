@@ -2,19 +2,6 @@
 
 Mission Control - JavaScript client for mission_control
 
-## Available OAuth Scopes
-
-- `mission_control.commissionings.r` [`Commissioning`]: Read information of all commissionings
-- `mission_control.commissionings.w` [`Commissioning`]: Create or update commissioning related models
-- `mission_control.estimates.r` [`Estimate`]: Read information of all Estimates
-- `mission_control.estimates.w` [`Estimate`]: Create or update all kinds of Estimates
-- `mission_control.lists.r` [`List`]: Read information of all List objects
-- `mission_control.lists.w` [`List`]: Create or update List objects
-- `mission_control.orders.r` [`Order`]: Read information of all orders
-- `mission_control.orders.w` [`Order`]: Create or update new orders
-- `mission_control.jobs.r` [`Job`]: Read basic information of all jobs currently or formerly in production
-- `mission_control.jobs.w` [`Job`]: Create or update new jobs
-
 ## Installation
 
 ### For [Node.js](https://nodejs.org/)
@@ -40,15 +27,27 @@ defaultClient.authentications.bearerAuth = {
 var api = new MissionControl.BusinessApi();
 var estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // {String}
 
-var callback = function (error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log("API called successfully.");
-  }
-};
-api.estimatesEstimateIdDelete(estimateId, callback);
+api
+  .estimatesEstimateIdGet(estimateId)
+  .then((data) => {
+    console.log("API called successfully");
+    console.log(data);
+  })
+  .catch((err) => console.error(error));
 ```
+
+## Available OAuth Scopes
+
+- `mission_control.commissionings.r` [`Commissioning`]: Read information of all commissionings
+- `mission_control.commissionings.w` [`Commissioning`]: Create or update commissioning related models
+- `mission_control.estimates.r` [`Estimate`]: Read information of all Estimates
+- `mission_control.estimates.w` [`Estimate`]: Create or update all kinds of Estimates
+- `mission_control.lists.r` [`List`]: Read information of all List objects
+- `mission_control.lists.w` [`List`]: Create or update List objects
+- `mission_control.orders.r` [`Order`]: Read information of all orders
+- `mission_control.orders.w` [`Order`]: Create or update new orders
+- `mission_control.jobs.r` [`Job`]: Read basic information of all jobs currently or formerly in production
+- `mission_control.jobs.w` [`Job`]: Create or update new jobs
 
 ## Documentation for API Endpoints
 
