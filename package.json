@@ -1,0 +1,42 @@
+{
+  "name": "mission_control",
+  "version": "1.0.0",
+  "description": "This_is_the_documentation_of_all_API_endpoints_provided_by_Mission_Control__Provided_OAuth_Scopes__mission_control_commissionings_r__Commissioning_Read_information_of_all_commissionings__mission_control_commissionings_w__Commissioning_Create_or_update_commissioning_related_models__mission_control_estimates_r__Estimate_Read_information_of_all_Estimates__mission_control_estimates_w__Estimate_Create_or_update_all_kinds_of_Estimates__mission_control_lists_r__List_Read_information_of_all_List_objects__mission_control_lists_r__List_Create_or_update_List_objects__mission_control_orders_r__Order_Read_information_of_all_orders__mission_control_orders_w__Order_Create_or_update_new_orders__mission_control_jobs_r__Job_Read_basic_information_of_all_jobs_currently_or_formerly_in_production__GET_jobs__mission_control_jobs_w__Job_Create_or_update_new_jobs__POST_jobs_PATCH_jobs",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "mocha --require @babel/register --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "@babel/cli": "^7.0.0",
+    "superagent": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^8.0.1",
+    "sinon": "^7.2.0"
+  }
+}
