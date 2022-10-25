@@ -1,24 +1,19 @@
-const { ApiClient } = require("./lib/ApiClient");
-const { ProductionApi } = require("./lib/api/ProductionApi");
+var MissionControl = require("./lib");
+var defaultClient = MissionControl.ApiClient.instance;
 
-const accessToken = process.env.AUTH_TOKEN;
+defaultClient.basePath = "https://mc.sandbox.zaikio.com/api/v1";
+defaultClient.authentications.bearerAuth = {
+  type: "oauth2",
+  accessToken: process.env.ACCESS_TOKEN,
+};
 
-ApiClient.instance.basePath = 'https://mc.sandbox.zaikio.com/api/v1';
-ApiClient.instance.authentications.bearerAuth = { type: "oauth2", accessToken };
+var api = new MissionControl.BusinessApi();
+var estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // {String}
 
-function run() {
-  const productionApi = new ProductionApi();
-  
-  productionApi.executionsGet(undefined, (err, data) => {
-    if (err != null) { 
-      console.log("ERROR");
-      console.error(err);
-      
-      process.exit(0);
-    };
-    
+api
+  .estimatesEstimateIdGet(estimateId)
+  .then((data) => {
+    console.log("API called successfully");
     console.log(data);
-  });
-}
-
-run();
+  })
+  .catch((err) => console.error(err));
