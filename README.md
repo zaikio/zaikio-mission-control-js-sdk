@@ -31,6 +31,12 @@ Please follow the [installation](#installation) instruction and execute the foll
 var MissionControl = require("mission_control");
 var defaultClient = MissionControl.ApiClient.instance;
 
+defaultClient.basePath = "https://mc.sandbox.zaikio.com/api/v1";
+defaultClient.authentications.bearerAuth = {
+  type: "oauth2",
+  accessToken: process.env.ACCESS_TOKEN,
+};
+
 var api = new MissionControl.BusinessApi();
 var estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // {String}
 
