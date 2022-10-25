@@ -38,8 +38,8 @@ api
 
 ### Environments
 
-The JS SDK defaults to our live environment. To test or use the Mission Control Sandbox, please ensure to 
-change the `baseUrl` of the client to point to the Sandbox. This can be done in the following manner, and is 
+The JS SDK defaults to our live environment. To test or use the Mission Control Sandbox, please ensure to
+change the `baseUrl` of the client to point to the Sandbox. This can be done in the following manner, and is
 shown in the simple example above.
 
 ```js
@@ -66,6 +66,23 @@ defaultClient.authentications.bearerAuth = {
 ```
 
 We would always suggest following good development practices regarding credential storage.
+
+### Further examples
+
+There is a very simple example application included in the `example/` folder, which can be used as
+inspiration for how you might access the Mission Control API to enable functionality within an application.
+This one simply pulls in some order details from Mission Control, and then loads the latest data on any
+associated Jobs, but it could easily be adapted for much more complicated scenarios.
+
+To use the application, simply clone this repository, enter the `example/` folder and run the following commands
+
+```shell
+npm ci
+ACCESS_TOKEN=MY_SUPER_SECURE_MISSION_CONTROL_OAUTH_TOKEN npm start
+```
+
+This will make the app available to you on [http://127.0.0.1:3000](http://127.0.0.1:3000) - and you can use
+the search box to load in an Order from the Mission Control sandbox.
 
 ## Available OAuth Scopes
 

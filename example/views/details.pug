@@ -1,0 +1,60 @@
+html
+  head
+    title= title
+
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous")
+    link(rel="stylesheet" href="/styles.css")
+  body
+    section.h-100.h-custom(style='background-color: #eee;')
+      .container.py-5.h-100
+        .row.d-flex.justify-content-center.align-items-center.h-100
+          .col-lg-10.col-xl-8
+            .card.border-top.border-bottom.border-3(style='border-color: #f37a27 !important;')
+              .card-body.p-5
+                p.lead.fw-bold.mb-5(style='color: #f37a27;') Your Order
+                .row
+                  .col.mb-3
+                    p.small.text-muted.mb-1 Date
+                    p= order.createdAt
+                  .col.mb-3
+                    p.small.text-muted.mb-1 Order Reference
+                    p= order.references[0]
+                .mx-n5.px-5.py-4(style='background-color: #f2f2f2;')
+                  each line in order.lineItems
+                    .row
+                      .col-md-4.col-lg-6
+                        p= line.description || line.kind
+                      .col-md-4.col-lg-3
+                        p= `${line.quantity} ${line.unit}`
+                      .col-md-4.col-lg-3
+                        p= `${(line.grossTotalPrice / 100)} ${order.currency}`
+                .row.my-4
+                  .col-md-4.offset-md-8.col-lg-3.offset-lg-9
+                    p.lead.fw-bold.mb-0(style='color: #f37a27;')= `${order.grossTotal / 100} ${order.currency}`
+                p.lead.fw-bold.mb-4.pb-2(style='color: #f37a27;') Tracking Order
+                .row
+                  .col-lg-12
+                    .horizontal-timeline
+                      ul.list-inline.items.d-flex.justify-content-between
+                        li.list-inline-item.items-list
+                          p.py-1.px-2.rounded.text-white(style='background-color: #f37a27;') Placed
+                        li.list-inline-item.items-list
+                          p.py-1.px-2.rounded.text-white(style='background-color: #f37a27;') Confirmed
+                        li.list-inline-item.items-list
+                          p.py-1.px-2.rounded.text-end
+                            | On the way
+                        li.list-inline-item.items-list.text-end(style='margin-right: 8px;')
+                          p(style='margin-right: -8px;') Delivered
+                if order.state == "confirmed"
+                  .row
+                    .col-lg-12
+                      p.lead.fw-bold.mb-0(style="color: #f37a27;") Production Status
+                      each job in order.lineItems.filter(item => !!item.job).map(item => item.job)
+                        .row
+                          .col.mb-3
+                            p.small.text-muted.mb-1 Name
+                            p= job.name
+                          .col.mb-3
+                            p.small.text-muted.mb-1 Estimated Completion
+                            p= job.estimatedCompletedAt
