@@ -5,8 +5,8 @@
   "license": "Unlicense",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib",
-    "test": "mocha --require @babel/register --recursive"
+    "test": "mocha --require @babel/register --recursive",
+    "build": "babel src -d lib"
   },
   "browser": {
     "fs": false
