@@ -29,17 +29,19 @@ export class Box {
    * @param kind {module:model/Box.KindEnum} Describes the kind of this box
    * @param position {Array.<Number>} The position where the top left corner of this box is placed relative to the position of it's parent. The first coordinate describes distance from the `top`, the second coordinate describes the distance from the `left`. All measurements are given in the unit selected in the header.
    * @param dimensions {Array.<Number>} The dimensions of the box given in the measurement unit selected in the header. The first array value represents the `length` of the box (x-axis), while the second array value represents the `height` (y-axis).
+   * @param orientation {Number} The orientation of any referenced resource contained by this Box. This allows the specification of, for example, a landscape page to be printed alongside portrait pages, or more complex layouts of finishings to be applied without needing to edit the source files. Valid values are 0, 90, 180 or 270. This is expressed in degrees of clockwise rotation from the 0,0 co-ordinate of the box. Will default to 0 (natural orientation) if not specified.
    * @param bleeds {Array.<Number>} The size of the bleeds outside the box given in the measurement unit selected in the header. The array values represent the bleeds for the following sides of the box, in clockwise order from `top`, `right`, `bottom`, `left`. If there is no bleed for a side, the corresponding value must be 0.
    * @param printFreeMargins {Array.<Number>} The size of the print free area inside the boxen given in the measurement unit selected in the header. The array values represent the bleeds for the following parts of the box, in clockwise order from `top`, `right`, `bottom`, `left`. If there is no print free area for a side of the box, the corresponding value must be 0.
    * @param pageNumbers {Array.<Number>} The page numbers that are represented by this box. The first element in the array corresponds to the page number of the facing side of the page, the second element in the array corresponds to the page number of the back side of the page.
    * @param reference {String} 
    */
-  constructor(children, id, kind, position, dimensions, bleeds, printFreeMargins, pageNumbers, reference) {
+  constructor(children, id, kind, position, dimensions, orientation, bleeds, printFreeMargins, pageNumbers, reference) {
     this.children = children;
     this.id = id;
     this.kind = kind;
     this.position = position;
     this.dimensions = dimensions;
+    this.orientation = orientation;
     this.bleeds = bleeds;
     this.printFreeMargins = printFreeMargins;
     this.pageNumbers = pageNumbers;
@@ -66,6 +68,8 @@ export class Box {
         obj.position = ApiClient.convertToType(data['position'], ['Number']);
       if (data.hasOwnProperty('dimensions'))
         obj.dimensions = ApiClient.convertToType(data['dimensions'], ['Number']);
+      if (data.hasOwnProperty('orientation'))
+        obj.orientation = ApiClient.convertToType(data['orientation'], 'Number');
       if (data.hasOwnProperty('bleeds'))
         obj.bleeds = ApiClient.convertToType(data['bleeds'], ['Number']);
       if (data.hasOwnProperty('print_free_margins'))
@@ -166,6 +170,12 @@ Box.prototype.position = undefined;
  * @member {Array.<Number>} dimensions
  */
 Box.prototype.dimensions = undefined;
+
+/**
+ * The orientation of any referenced resource contained by this Box. This allows the specification of, for example, a landscape page to be printed alongside portrait pages, or more complex layouts of finishings to be applied without needing to edit the source files. Valid values are 0, 90, 180 or 270. This is expressed in degrees of clockwise rotation from the 0,0 co-ordinate of the box. Will default to 0 (natural orientation) if not specified.
+ * @member {Number} orientation
+ */
+Box.prototype.orientation = undefined;
 
 /**
  * The size of the bleeds outside the box given in the measurement unit selected in the header. The array values represent the bleeds for the following sides of the box, in clockwise order from `top`, `right`, `bottom`, `left`. If there is no bleed for a side, the corresponding value must be 0.

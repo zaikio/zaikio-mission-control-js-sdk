@@ -48,6 +48,8 @@ export class BoxUpdate {
         obj.position = ApiClient.convertToType(data['position'], ['Number']);
       if (data.hasOwnProperty('dimensions'))
         obj.dimensions = ApiClient.convertToType(data['dimensions'], ['Number']);
+      if (data.hasOwnProperty('orientation'))
+        obj.orientation = ApiClient.convertToType(data['orientation'], 'Number');
       if (data.hasOwnProperty('bleeds'))
         obj.bleeds = ApiClient.convertToType(data['bleeds'], ['Number']);
       if (data.hasOwnProperty('print_free_margins'))
@@ -148,6 +150,12 @@ BoxUpdate.prototype.position = undefined;
  * @member {Array.<Number>} dimensions
  */
 BoxUpdate.prototype.dimensions = undefined;
+
+/**
+ * The orientation of any referenced resource contained by this Box. This allows the specification of, for example, a landscape page to be printed alongside portrait pages, or more complex layouts of finishings to be applied without needing to edit the source files. Valid values are 0, 90, 180 or 270. This is expressed in degrees of clockwise rotation from the 0,0 co-ordinate of the box. Will default to 0 (natural orientation) if not specified.
+ * @member {Number} orientation
+ */
+BoxUpdate.prototype.orientation = undefined;
 
 /**
  * The size of the bleeds outside the box given in the measurement unit selected in the header. The array values represent the bleeds for the following sides of the box, in clockwise order from `top`, `right`, `bottom`, `left`. If there is no bleed for a side, the corresponding value must be 0.
