@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha --require @babel/register --recursive",
+    "prebuild": "rm -rf lib",
     "build": "babel src -d lib"
   },
   "browser": {

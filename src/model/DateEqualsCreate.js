@@ -55,6 +55,12 @@ export class DateEqualsCreate {
  */
 DateEqualsCreate.SubjectTypeEnum = {
   /**
+   * value: "CUSTOMER_NAME"
+   * @const
+   */
+  CUSTOMER_NAME: "CUSTOMER_NAME",
+
+  /**
    * value: "FINISHING_KIND"
    * @const
    */
@@ -79,10 +85,40 @@ DateEqualsCreate.SubjectTypeEnum = {
   JOB_NAME: "JOB_NAME",
 
   /**
+   * value: "JOB_PROGRESS"
+   * @const
+   */
+  JOB_PROGRESS: "JOB_PROGRESS",
+
+  /**
    * value: "JOB_QUANTITY"
    * @const
    */
   JOB_QUANTITY: "JOB_QUANTITY",
+
+  /**
+   * value: "JOB_SOURCE"
+   * @const
+   */
+  JOB_SOURCE: "JOB_SOURCE",
+
+  /**
+   * value: "JOB_STATE"
+   * @const
+   */
+  JOB_STATE: "JOB_STATE",
+
+  /**
+   * value: "MILESTONE_POSITION"
+   * @const
+   */
+  MILESTONE_POSITION: "MILESTONE_POSITION",
+
+  /**
+   * value: "SUBSTRATE_PAPER_WEIGHT"
+   * @const
+   */
+  SUBSTRATE_PAPER_WEIGHT: "SUBSTRATE_PAPER_WEIGHT",
 
   /**
    * value: "TODO_STATE"

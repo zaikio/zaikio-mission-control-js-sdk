@@ -12,11 +12,17 @@ Name | Type | Description | Notes
 <a name="SubjectTypeEnum"></a>
 ## Enum: SubjectTypeEnum
 
+* `CUSTOMER_NAME` (value: `"CUSTOMER_NAME"`)
 * `FINISHING_KIND` (value: `"FINISHING_KIND"`)
 * `JOB_DUE_AT` (value: `"JOB_DUE_AT"`)
 * `JOB_KIND` (value: `"JOB_KIND"`)
 * `JOB_NAME` (value: `"JOB_NAME"`)
+* `JOB_PROGRESS` (value: `"JOB_PROGRESS"`)
 * `JOB_QUANTITY` (value: `"JOB_QUANTITY"`)
+* `JOB_SOURCE` (value: `"JOB_SOURCE"`)
+* `JOB_STATE` (value: `"JOB_STATE"`)
+* `MILESTONE_POSITION` (value: `"MILESTONE_POSITION"`)
+* `SUBSTRATE_PAPER_WEIGHT` (value: `"SUBSTRATE_PAPER_WEIGHT"`)
 * `TODO_STATE` (value: `"TODO_STATE"`)
 * `WORKSTEP_STATE` (value: `"WORKSTEP_STATE"`)
 

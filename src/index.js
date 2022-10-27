@@ -385,7 +385,6 @@ import {BusinessApi} from './api/BusinessApi';
 import {CommercialApi} from './api/CommercialApi';
 import {LogisticsApi} from './api/LogisticsApi';
 import {ProductionApi} from './api/ProductionApi';
-import {ProdutionApi} from './api/ProdutionApi';
 import {SpecificationApi} from './api/SpecificationApi';
 
 /**
@@ -2657,12 +2656,6 @@ export {
     * @property {module:api/ProductionApi}
     */
     ProductionApi,
-
-    /**
-    * The ProdutionApi service constructor.
-    * @property {module:api/ProdutionApi}
-    */
-    ProdutionApi,
 
     /**
     * The SpecificationApi service constructor.

@@ -37,6 +37,7 @@ import {JobIdMilestonesBody} from '../model/JobIdMilestonesBody';
 import {JobIdProductionStrategiesBody} from '../model/JobIdProductionStrategiesBody';
 import {JobIdTodosBody} from '../model/JobIdTodosBody';
 import {ListIdPredicatesBody} from '../model/ListIdPredicatesBody';
+import {ListMember} from '../model/ListMember';
 import {ListsBody} from '../model/ListsBody';
 import {ListsListIdBody} from '../model/ListsListIdBody';
 import {Milestone} from '../model/Milestone';
@@ -1843,6 +1844,63 @@ export class ProductionApi {
      */
     listsListIdGet(listId) {
       return this.listsListIdGetWithHttpInfo(listId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Returns all members in a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {String} listId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ListMember>} and HTTP response
+     */
+    listsListIdMembersGetWithHttpInfo(listId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'listId' is set
+      if (listId === undefined || listId === null) {
+        throw new Error("Missing the required parameter 'listId' when calling listsListIdMembersGet");
+      }
+
+      let pathParams = {
+        'list_id': listId
+      };
+      let queryParams = {
+        'page': opts['page'],'per_page': opts['perPage']
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['bearerAuth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ListMember];
+
+      return this.apiClient.callApi(
+        '/lists/{list_id}/members', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Returns all members in a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} listId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ListMember>}
+     */
+    listsListIdMembersGet(listId, opts) {
+      return this.listsListIdMembersGetWithHttpInfo(listId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -12,8 +12,11 @@ Name | Type | Description | Notes
 <a name="SubjectTypeEnum"></a>
 ## Enum: SubjectTypeEnum
 
-* `DUE_AT` (value: `"JOB_DUE_AT"`)
-* `QUANTITY` (value: `"JOB_QUANTITY"`)
+* `JOB_DUE_AT` (value: `"JOB_DUE_AT"`)
+* `JOB_PROGRESS` (value: `"JOB_PROGRESS"`)
+* `JOB_QUANTITY` (value: `"JOB_QUANTITY"`)
+* `SUBSTRATE_PAPER_WEIGHT` (value: `"SUBSTRATE_PAPER_WEIGHT"`)
+* `MILESTONE_POSITION` (value: `"MILESTONE_POSITION"`)
 
 
 <a name="TypeEnum"></a>

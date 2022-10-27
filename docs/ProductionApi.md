@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**listsGet**](ProductionApi.md#listsGet) | **GET** /lists | 
 [**listsListIdDelete**](ProductionApi.md#listsListIdDelete) | **DELETE** /lists/{list_id} | 
 [**listsListIdGet**](ProductionApi.md#listsListIdGet) | **GET** /lists/{list_id} | 
+[**listsListIdMembersGet**](ProductionApi.md#listsListIdMembersGet) | **GET** /lists/{list_id}/members | 
 [**listsListIdPatch**](ProductionApi.md#listsListIdPatch) | **PATCH** /lists/{list_id} | 
 [**listsListIdPredicatesGet**](ProductionApi.md#listsListIdPredicatesGet) | **GET** /lists/{list_id}/predicates | 
 [**listsListIdPredicatesPost**](ProductionApi.md#listsListIdPredicatesPost) | **POST** /lists/{list_id}/predicates | 
@@ -1563,6 +1564,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2014**](InlineResponse2014.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="listsListIdMembersGet"></a>
+# **listsListIdMembersGet**
+> [ListMember] listsListIdMembersGet(listId, opts)
+
+
+
+Returns all members in a specific list. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.lists.r&#x60;
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.ProductionApi();
+let listId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let opts = { 
+  'page': 56, // Number | The page of the current collection that shall be returned
+  'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
+};
+apiInstance.listsListIdMembersGet(listId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listId** | [**String**](.md)|  | 
+ **page** | **Number**| The page of the current collection that shall be returned | [optional] 
+ **perPage** | **Number**| The maximum number of items included in the response, ie., the page size | [optional] [default to 100]
+
+### Return type
+
+[**[ListMember]**](ListMember.md)
 
 ### Authorization
 

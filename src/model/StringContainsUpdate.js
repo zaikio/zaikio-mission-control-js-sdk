@@ -56,10 +56,22 @@ export class StringContainsUpdate {
  */
 StringContainsUpdate.SubjectTypeEnum = {
   /**
+   * value: "CUSTOMER_NAME"
+   * @const
+   */
+  CUSTOMER_NAME: "CUSTOMER_NAME",
+
+  /**
    * value: "JOB_NAME"
    * @const
    */
-  JOB_NAME: "JOB_NAME"
+  JOB_NAME: "JOB_NAME",
+
+  /**
+   * value: "JOB_SOURCE"
+   * @const
+   */
+  JOB_SOURCE: "JOB_SOURCE"
 };
 /**
  * The list members field to filter results. Specified subject type must be compatible with the associated list member class. StringContains rules only admit string subject types (fields with string type).

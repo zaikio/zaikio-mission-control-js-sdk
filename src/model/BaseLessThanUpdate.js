@@ -57,13 +57,31 @@ BaseLessThanUpdate.SubjectTypeEnum = {
    * value: "JOB_DUE_AT"
    * @const
    */
-  DUE_AT: "JOB_DUE_AT",
+  JOB_DUE_AT: "JOB_DUE_AT",
+
+  /**
+   * value: "JOB_PROGRESS"
+   * @const
+   */
+  JOB_PROGRESS: "JOB_PROGRESS",
 
   /**
    * value: "JOB_QUANTITY"
    * @const
    */
-  QUANTITY: "JOB_QUANTITY"
+  JOB_QUANTITY: "JOB_QUANTITY",
+
+  /**
+   * value: "SUBSTRATE_PAPER_WEIGHT"
+   * @const
+   */
+  SUBSTRATE_PAPER_WEIGHT: "SUBSTRATE_PAPER_WEIGHT",
+
+  /**
+   * value: "MILESTONE_POSITION"
+   * @const
+   */
+  MILESTONE_POSITION: "MILESTONE_POSITION"
 };
 /**
  * The list members field to filter results. Specified subject type must be compatible with the associated list member class.

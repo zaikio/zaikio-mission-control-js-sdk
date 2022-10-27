@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 <a name="SubjectTypeEnum"></a>
 ## Enum: SubjectTypeEnum
 
+* `CUSTOMER_NAME` (value: `"CUSTOMER_NAME"`)
 * `JOB_NAME` (value: `"JOB_NAME"`)
+* `JOB_SOURCE` (value: `"JOB_SOURCE"`)
 
 
 <a name="TypeEnum"></a>
