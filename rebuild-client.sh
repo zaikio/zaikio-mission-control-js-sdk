@@ -3,8 +3,9 @@
 set -e pipefail
 
 swagger-codegen generate \
+  -Dio.swagger.parser.util.RemoteUrl.trustAll=true \
   -l javascript \
-  -i https://mc.sandbox.zaikio.com/api/docs/api.yml \
+  -i "https://mc.zaikio.com/api/docs/api.yml" \
   -o . \
   --additional-properties usePromises=true,useES6=true
 
