@@ -69,6 +69,12 @@
         // expect(instance.dimensions).to.be(expectedValueLiteral);
       });
 
+      it('should have the property orientation (base name: "orientation")', function() {
+        // TODO: update the code to test the property orientation
+        expect(instance).to.have.property('orientation');
+        // expect(instance.orientation).to.be(expectedValueLiteral);
+      });
+
       it('should have the property bleeds (base name: "bleeds")', function() {
         // TODO: update the code to test the property bleeds
         expect(instance).to.have.property('bleeds');

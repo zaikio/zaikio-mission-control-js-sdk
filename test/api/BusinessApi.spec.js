@@ -39,13 +39,11 @@
           // TODO: uncomment, update parameter values for estimatesEstimateIdDelete call
           /*
 
-          instance.estimatesEstimateIdDelete(estimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.estimatesEstimateIdDelete(estimateId).then(function(data) {
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -57,15 +55,13 @@
           // TODO: uncomment, update parameter values for estimatesEstimateIdGet call and complete the assertions
           /*
 
-          instance.estimatesEstimateIdGet(estimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.estimatesEstimateIdGet(estimateId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.Estimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -77,15 +73,13 @@
           // TODO: uncomment, update parameter values for estimatesEstimateIdPatch call and complete the assertions
           /*
 
-          instance.estimatesEstimateIdPatch(body, estimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.estimatesEstimateIdPatch(body, estimateId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.Estimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -98,11 +92,7 @@
           /*
           var opts = {};
 
-          instance.estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts).then(function(data) {
             // TODO: update response assertions
             let dataCtr = data;
             expect(dataCtr).to.be.an(Array);
@@ -113,6 +103,8 @@
             }
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -124,15 +116,13 @@
           // TODO: uncomment, update parameter values for estimatesEstimateIdWorkstepEstimatesPost call and complete the assertions
           /*
 
-          instance.estimatesEstimateIdWorkstepEstimatesPost(body, estimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.estimatesEstimateIdWorkstepEstimatesPost(body, estimateId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.WorkstepEstimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -145,11 +135,7 @@
           /*
           var opts = {};
 
-          instance.jobsJobIdEstimatesGet(jobId, opts, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.jobsJobIdEstimatesGet(jobId, opts).then(function(data) {
             // TODO: update response assertions
             let dataCtr = data;
             expect(dataCtr).to.be.an(Array);
@@ -160,6 +146,8 @@
             }
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -171,15 +159,13 @@
           // TODO: uncomment, update parameter values for jobsJobIdEstimatesPost call and complete the assertions
           /*
 
-          instance.jobsJobIdEstimatesPost(body, jobId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.jobsJobIdEstimatesPost(body, jobId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.Estimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -191,13 +177,11 @@
           // TODO: uncomment, update parameter values for materialEstimatesMaterialEstimateIdDelete call
           /*
 
-          instance.materialEstimatesMaterialEstimateIdDelete(materialEstimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.materialEstimatesMaterialEstimateIdDelete(materialEstimateId).then(function(data) {
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -209,15 +193,13 @@
           // TODO: uncomment, update parameter values for materialEstimatesMaterialEstimateIdGet call and complete the assertions
           /*
 
-          instance.materialEstimatesMaterialEstimateIdGet(materialEstimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.materialEstimatesMaterialEstimateIdGet(materialEstimateId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.MaterialEstimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -229,15 +211,13 @@
           // TODO: uncomment, update parameter values for materialEstimatesMaterialEstimateIdPatch call and complete the assertions
           /*
 
-          instance.materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.MaterialEstimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -249,13 +229,11 @@
           // TODO: uncomment, update parameter values for workstepEstimatesWorkstepEstimateIdDelete call
           /*
 
-          instance.workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId).then(function(data) {
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -267,15 +245,13 @@
           // TODO: uncomment, update parameter values for workstepEstimatesWorkstepEstimateIdGet call and complete the assertions
           /*
 
-          instance.workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.WorkstepEstimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -288,11 +264,7 @@
           /*
           var opts = {};
 
-          instance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts).then(function(data) {
             // TODO: update response assertions
             let dataCtr = data;
             expect(dataCtr).to.be.an(Array);
@@ -303,6 +275,8 @@
             }
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -314,15 +288,13 @@
           // TODO: uncomment, update parameter values for workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost call and complete the assertions
           /*
 
-          instance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.MaterialEstimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -334,15 +306,13 @@
           // TODO: uncomment, update parameter values for workstepEstimatesWorkstepEstimateIdPatch call and complete the assertions
           /*
 
-          instance.workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.WorkstepEstimate);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
