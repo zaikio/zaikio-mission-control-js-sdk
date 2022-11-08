@@ -39,13 +39,11 @@
           // TODO: uncomment, update parameter values for orderLineItemsOrderLineItemIdDelete call
           /*
 
-          instance.orderLineItemsOrderLineItemIdDelete(orderLineItemId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.orderLineItemsOrderLineItemIdDelete(orderLineItemId).then(function(data) {
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -57,15 +55,13 @@
           // TODO: uncomment, update parameter values for orderLineItemsOrderLineItemIdGet call and complete the assertions
           /*
 
-          instance.orderLineItemsOrderLineItemIdGet(orderLineItemId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.orderLineItemsOrderLineItemIdGet(orderLineItemId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.OrderLineItem);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -77,15 +73,13 @@
           // TODO: uncomment, update parameter values for orderLineItemsOrderLineItemIdPatch call and complete the assertions
           /*
 
-          instance.orderLineItemsOrderLineItemIdPatch(body, orderLineItemId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.orderLineItemsOrderLineItemIdPatch(body, orderLineItemId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.OrderLineItem);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -98,11 +92,7 @@
           /*
           var opts = {};
 
-          instance.ordersGet(opts, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersGet(opts).then(function(data) {
             // TODO: update response assertions
             let dataCtr = data;
             expect(dataCtr).to.be.an(Array);
@@ -113,6 +103,8 @@
             }
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -124,13 +116,11 @@
           // TODO: uncomment, update parameter values for ordersOrderIdAddressDelete call
           /*
 
-          instance.ordersOrderIdAddressDelete(orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdAddressDelete(orderId).then(function(data) {
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -142,15 +132,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdAddressGet call and complete the assertions
           /*
 
-          instance.ordersOrderIdAddressGet(orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdAddressGet(orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.Address);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -162,15 +150,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdAddressPatch call and complete the assertions
           /*
 
-          instance.ordersOrderIdAddressPatch(body, orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdAddressPatch(body, orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.Address);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -182,15 +168,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdAddressPost call and complete the assertions
           /*
 
-          instance.ordersOrderIdAddressPost(body, orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdAddressPost(body, orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.Address);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -202,13 +186,11 @@
           // TODO: uncomment, update parameter values for ordersOrderIdDelete call
           /*
 
-          instance.ordersOrderIdDelete(orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdDelete(orderId).then(function(data) {
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -220,15 +202,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdGet call and complete the assertions
           /*
 
-          instance.ordersOrderIdGet(orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdGet(orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.InlineResponse2012);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -241,11 +221,7 @@
           /*
           var opts = {};
 
-          instance.ordersOrderIdOrderLineItemsGet(orderId, opts, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdOrderLineItemsGet(orderId, opts).then(function(data) {
             // TODO: update response assertions
             let dataCtr = data;
             expect(dataCtr).to.be.an(Array);
@@ -256,6 +232,8 @@
             }
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -267,15 +245,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdOrderLineItemsPost call and complete the assertions
           /*
 
-          instance.ordersOrderIdOrderLineItemsPost(body, orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdOrderLineItemsPost(body, orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.OrderLineItem);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -287,15 +263,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdPatch call and complete the assertions
           /*
 
-          instance.ordersOrderIdPatch(body, orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdPatch(body, orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.InlineResponse2012);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -307,13 +281,11 @@
           // TODO: uncomment, update parameter values for ordersOrderIdPaymentTermsDelete call
           /*
 
-          instance.ordersOrderIdPaymentTermsDelete(orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdPaymentTermsDelete(orderId).then(function(data) {
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -325,15 +297,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdPaymentTermsGet call and complete the assertions
           /*
 
-          instance.ordersOrderIdPaymentTermsGet(orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdPaymentTermsGet(orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.PaymentTerms);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -345,15 +315,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdPaymentTermsPatch call and complete the assertions
           /*
 
-          instance.ordersOrderIdPaymentTermsPatch(body, orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdPaymentTermsPatch(body, orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.PaymentTerms);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -365,15 +333,13 @@
           // TODO: uncomment, update parameter values for ordersOrderIdPaymentTermsPost call and complete the assertions
           /*
 
-          instance.ordersOrderIdPaymentTermsPost(body, orderId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersOrderIdPaymentTermsPost(body, orderId).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.PaymentTerms);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
@@ -385,15 +351,13 @@
           // TODO: uncomment, update parameter values for ordersPost call and complete the assertions
           /*
 
-          instance.ordersPost(body, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+          instance.ordersPost(body).then(function(data) {
             // TODO: update response assertions
             expect(data).to.be.a(MissionControl.InlineResponse2012);
 
             done();
+          }, function(error) {
+            done(error);
           });
           */
           // TODO: uncomment and complete method invocation above, then delete this line and the next:
