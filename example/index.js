@@ -9,10 +9,10 @@ app.use(
 );
 const port = 3000;
 
-const MissionControl = require("../lib");
+const MissionControl = require("../dist");
 const defaultClient = MissionControl.ApiClient.instance;
 
-defaultClient.basePath = "https://mc.zaikio.test/api/v1";
+defaultClient.basePath = "https://mc.sandbox.zaikio.com/api/v1";
 defaultClient.authentications.bearerAuth = {
   type: "oauth2",
   accessToken: process.env.ACCESS_TOKEN,
@@ -41,10 +41,6 @@ app.get("/jobs/:id", async (req, res) => {
   const job = await specificationApi.jobsJobIdGet(req.params.id);
   res.render('job', { title: job.name, job });
 });
-
-app.get("/thing", (_req, res) => {
-  res.redirect("/")
-})
 
 app.listen(port, () => {
   console.log(`Mission Control Example listening on port ${port}`);
