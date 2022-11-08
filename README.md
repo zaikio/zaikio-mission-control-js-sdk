@@ -1,6 +1,6 @@
 # Mission Control
 
-This is the Javascript SDK for Zaikio Mission Control. 
+This is the Javascript SDK for [Zaikio Mission Control](https://zaikio.com/en/mission-control). 
 
 ## Installation
 
