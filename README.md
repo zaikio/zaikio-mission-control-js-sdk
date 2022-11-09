@@ -1,13 +1,32 @@
 # Mission Control
 
-This is the Javascript SDK for [Zaikio Mission Control](https://zaikio.com/en/mission-control). 
+This is the Javascript SDK for [Zaikio Mission Control](https://zaikio.com/en/mission-control).
+
+## Maturity
+
+The Zaikio Mission Control API is currently in _beta_ status. We do not
+expect drastic changes to the [structure and nature of the API](https://docs.zaikio.com/api/mission_control/api.html)
+however we still might make large changes based on partner feedback. If
+you do have feedback, please contact your Partner Manager to discuss
+how Mission Control can become more suitable for your use case.
+
+The Zaikio Mission Control JS SDK is currently in _alpha_ status. We will
+look to support use cases, bugs and usability issues, but do not offer an
+SLA on fixes until this reaches maturity. Contact details for our support
+services can be found at our developer site:
+[docs.zaikio.com](https://docs.zaikio.com/).
+
+### Current areas we are improving.
+
+- Naming of operations within this SDK
+- More specific documentation, both in this repo and at [docs.zaikio.com](https://docs.zaikio.com/api/mission_control/guides/)
 
 ## Installation
 
 ### For [Node.js](https://nodejs.org/)
 
 ```shell
-    npm install zaikio/zaikio-mission-control-js-sdk --save
+npm install zaikio/zaikio-mission-control-js-sdk --save
 ```
 
 ## Getting Started
@@ -643,7 +662,3 @@ All URIs are relative to *https://mc.zaikio.com/api/v1/*
 - [MissionControl.WorkstepUpdate](docs/WorkstepUpdate.md)
 - [MissionControl.WorkstepsBody](docs/WorkstepsBody.md)
 - [MissionControl.WorkstepsWorkstepIdBody](docs/WorkstepsWorkstepIdBody.md)
-
-## Documentation for Authorization
-
-### bearerAuth
