@@ -36,7 +36,7 @@ var InlineResponse2011 = /*#__PURE__*/function (_ProductionStrategy) {
    * @param id {} 
    * @param createdAt {} 
    * @param updatedAt {} 
-   * @param jobId {} The ID of the Job this ProductionStrategy belongs to
+   * @param jobId {} The ID of the Job this ProductionStrateg belongs to
    * @param state {} What is the status of this strategy
    * @param kind {} What approach does this strategy optimize for
    * @param canceledAt {} When this strategy was cancelled, if in canceled state

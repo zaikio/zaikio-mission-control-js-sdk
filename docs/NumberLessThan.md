@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 <a name="SubjectTypeEnum"></a>
 ## Enum: SubjectTypeEnum
 
+* `JOB_CREATED_AT` (value: `"JOB_CREATED_AT"`)
 * `JOB_DUE_AT` (value: `"JOB_DUE_AT"`)
 * `JOB_PROGRESS` (value: `"JOB_PROGRESS"`)
 * `JOB_QUANTITY` (value: `"JOB_QUANTITY"`)

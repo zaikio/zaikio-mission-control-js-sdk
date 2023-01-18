@@ -32,12 +32,11 @@ var AllOfjobIdProductionStrategiesBodyProductionStrategy = /*#__PURE__*/function
    * @alias module:model/AllOfjobIdProductionStrategiesBodyProductionStrategy
    * @class
    * @extends module:model/ProductionStrategyCreate
-   * @param jobId {} The ID of the Job this ProductionStrategy belongs to
    * @param kind {} What approach does this strategy optimize for
    */
-  function AllOfjobIdProductionStrategiesBodyProductionStrategy(jobId, kind) {
+  function AllOfjobIdProductionStrategiesBodyProductionStrategy(kind) {
     _classCallCheck(this, AllOfjobIdProductionStrategiesBodyProductionStrategy);
-    return _super.call(this, jobId, kind);
+    return _super.call(this, kind);
   }
 
   /**

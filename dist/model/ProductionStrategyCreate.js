@@ -18,12 +18,10 @@ var ProductionStrategyCreate = /*#__PURE__*/function () {
    * Constructs a new <code>ProductionStrategyCreate</code>.
    * @alias module:model/ProductionStrategyCreate
    * @class
-   * @param jobId {String} The ID of the Job this ProductionStrategy belongs to
    * @param kind {module:model/ProductionStrategyCreate.KindEnum} What approach does this strategy optimize for
    */
-  function ProductionStrategyCreate(jobId, kind) {
+  function ProductionStrategyCreate(kind) {
     _classCallCheck(this, ProductionStrategyCreate);
-    this.jobId = jobId;
     this.kind = kind;
   }
 
@@ -39,7 +37,6 @@ var ProductionStrategyCreate = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new ProductionStrategyCreate();
-        if (data.hasOwnProperty('job_id')) obj.jobId = _ApiClient.ApiClient.convertToType(data['job_id'], 'String');
         if (data.hasOwnProperty('state')) obj.state = _ApiClient.ApiClient.convertToType(data['state'], 'String');
         if (data.hasOwnProperty('kind')) obj.kind = _ApiClient.ApiClient.convertToType(data['kind'], 'String');
       }
@@ -49,17 +46,11 @@ var ProductionStrategyCreate = /*#__PURE__*/function () {
   return ProductionStrategyCreate;
 }();
 /**
- * The ID of the Job this ProductionStrategy belongs to
- * @member {String} jobId
- */
-exports.ProductionStrategyCreate = ProductionStrategyCreate;
-ProductionStrategyCreate.prototype.jobId = undefined;
-
-/**
  * Allowed values for the <code>state</code> property.
  * @enum {String}
  * @readonly
  */
+exports.ProductionStrategyCreate = ProductionStrategyCreate;
 ProductionStrategyCreate.StateEnum = {
   /**
    * value: "draft"

@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 <a name="SubjectTypeEnum"></a>
 ## Enum: SubjectTypeEnum
 
-* `JOB_DUE_AT` (value: `"JOB_DUE_AT"`)
+* `CREATED_AT` (value: `"JOB_CREATED_AT"`)
+* `DUE_AT` (value: `"JOB_DUE_AT"`)
 
 
 <a name="TypeEnum"></a>

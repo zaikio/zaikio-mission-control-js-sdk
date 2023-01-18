@@ -4,29 +4,35 @@ All URIs are relative to *https://mc.zaikio.com/api/v1/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**estimatesEstimateIdDelete**](BusinessApi.md#estimatesEstimateIdDelete) | **DELETE** /estimates/{estimate_id} | 
-[**estimatesEstimateIdGet**](BusinessApi.md#estimatesEstimateIdGet) | **GET** /estimates/{estimate_id} | 
-[**estimatesEstimateIdPatch**](BusinessApi.md#estimatesEstimateIdPatch) | **PATCH** /estimates/{estimate_id} | 
-[**estimatesEstimateIdWorkstepEstimatesGet**](BusinessApi.md#estimatesEstimateIdWorkstepEstimatesGet) | **GET** /estimates/{estimate_id}/workstep_estimates | 
-[**estimatesEstimateIdWorkstepEstimatesPost**](BusinessApi.md#estimatesEstimateIdWorkstepEstimatesPost) | **POST** /estimates/{estimate_id}/workstep_estimates | 
-[**jobsJobIdEstimatesGet**](BusinessApi.md#jobsJobIdEstimatesGet) | **GET** /jobs/{job_id}/estimates | 
-[**jobsJobIdEstimatesPost**](BusinessApi.md#jobsJobIdEstimatesPost) | **POST** /jobs/{job_id}/estimates | 
-[**materialEstimatesMaterialEstimateIdDelete**](BusinessApi.md#materialEstimatesMaterialEstimateIdDelete) | **DELETE** /material_estimates/{material_estimate_id} | 
-[**materialEstimatesMaterialEstimateIdGet**](BusinessApi.md#materialEstimatesMaterialEstimateIdGet) | **GET** /material_estimates/{material_estimate_id} | 
-[**materialEstimatesMaterialEstimateIdPatch**](BusinessApi.md#materialEstimatesMaterialEstimateIdPatch) | **PATCH** /material_estimates/{material_estimate_id} | 
-[**workstepEstimatesWorkstepEstimateIdDelete**](BusinessApi.md#workstepEstimatesWorkstepEstimateIdDelete) | **DELETE** /workstep_estimates/{workstep_estimate_id} | 
-[**workstepEstimatesWorkstepEstimateIdGet**](BusinessApi.md#workstepEstimatesWorkstepEstimateIdGet) | **GET** /workstep_estimates/{workstep_estimate_id} | 
-[**workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet**](BusinessApi.md#workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet) | **GET** /workstep_estimates/{workstep_estimate_id}/material_estimates | 
-[**workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost**](BusinessApi.md#workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost) | **POST** /workstep_estimates/{workstep_estimate_id}/material_estimates | 
-[**workstepEstimatesWorkstepEstimateIdPatch**](BusinessApi.md#workstepEstimatesWorkstepEstimateIdPatch) | **PATCH** /workstep_estimates/{workstep_estimate_id} | 
+[**orderLineItemsOrderLineItemIdDelete**](BusinessApi.md#orderLineItemsOrderLineItemIdDelete) | **DELETE** /order_line_items/{order_line_item_id} | 
+[**orderLineItemsOrderLineItemIdGet**](BusinessApi.md#orderLineItemsOrderLineItemIdGet) | **GET** /order_line_items/{order_line_item_id} | 
+[**orderLineItemsOrderLineItemIdPatch**](BusinessApi.md#orderLineItemsOrderLineItemIdPatch) | **PATCH** /order_line_items/{order_line_item_id} | 
+[**ordersGet**](BusinessApi.md#ordersGet) | **GET** /orders | 
+[**ordersOrderIdAddressDelete**](BusinessApi.md#ordersOrderIdAddressDelete) | **DELETE** /orders/{order_id}/address | 
+[**ordersOrderIdAddressGet**](BusinessApi.md#ordersOrderIdAddressGet) | **GET** /orders/{order_id}/address | 
+[**ordersOrderIdAddressPatch**](BusinessApi.md#ordersOrderIdAddressPatch) | **PATCH** /orders/{order_id}/address | 
+[**ordersOrderIdAddressPost**](BusinessApi.md#ordersOrderIdAddressPost) | **POST** /orders/{order_id}/address | 
+[**ordersOrderIdDelete**](BusinessApi.md#ordersOrderIdDelete) | **DELETE** /orders/{order_id} | 
+[**ordersOrderIdGet**](BusinessApi.md#ordersOrderIdGet) | **GET** /orders/{order_id} | 
+[**ordersOrderIdOrderLineItemsGet**](BusinessApi.md#ordersOrderIdOrderLineItemsGet) | **GET** /orders/{order_id}/order_line_items | 
+[**ordersOrderIdOrderLineItemsPost**](BusinessApi.md#ordersOrderIdOrderLineItemsPost) | **POST** /orders/{order_id}/order_line_items | 
+[**ordersOrderIdPatch**](BusinessApi.md#ordersOrderIdPatch) | **PATCH** /orders/{order_id} | 
+[**ordersOrderIdPaymentTermsDelete**](BusinessApi.md#ordersOrderIdPaymentTermsDelete) | **DELETE** /orders/{order_id}/payment_terms | 
+[**ordersOrderIdPaymentTermsGet**](BusinessApi.md#ordersOrderIdPaymentTermsGet) | **GET** /orders/{order_id}/payment_terms | 
+[**ordersOrderIdPaymentTermsPatch**](BusinessApi.md#ordersOrderIdPaymentTermsPatch) | **PATCH** /orders/{order_id}/payment_terms | 
+[**ordersOrderIdPaymentTermsPost**](BusinessApi.md#ordersOrderIdPaymentTermsPost) | **POST** /orders/{order_id}/payment_terms | 
+[**ordersOrderIdStateTransitionsGet**](BusinessApi.md#ordersOrderIdStateTransitionsGet) | **GET** /orders/{order_id}/state_transitions | 
+[**ordersOrderIdStateTransitionsPost**](BusinessApi.md#ordersOrderIdStateTransitionsPost) | **POST** /orders/{order_id}/state_transitions | 
+[**ordersOrderIdStateTransitionsStateTransitionIdGet**](BusinessApi.md#ordersOrderIdStateTransitionsStateTransitionIdGet) | **GET** /orders/{order_id}/state_transitions/{state_transition_id} | 
+[**ordersPost**](BusinessApi.md#ordersPost) | **POST** /orders | 
 
-<a name="estimatesEstimateIdDelete"></a>
-# **estimatesEstimateIdDelete**
-> estimatesEstimateIdDelete(estimateId)
+<a name="orderLineItemsOrderLineItemIdDelete"></a>
+# **orderLineItemsOrderLineItemIdDelete**
+> orderLineItemsOrderLineItemIdDelete(orderLineItemId)
 
 
 
-Removes a specific estimate, inclduing all of its workstep and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Removes or specific order line item. Please not that removing line items is only possible                             if the parent order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
 
 ### Example
 ```javascript
@@ -35,9 +41,9 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let orderLineItemId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.estimatesEstimateIdDelete(estimateId).then(() => {
+apiInstance.orderLineItemsOrderLineItemIdDelete(orderLineItemId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -49,7 +55,7 @@ apiInstance.estimatesEstimateIdDelete(estimateId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **estimateId** | [**String**](.md)|  | 
+ **orderLineItemId** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -64,13 +70,13 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="estimatesEstimateIdGet"></a>
-# **estimatesEstimateIdGet**
-> Estimate estimatesEstimateIdGet(estimateId)
+<a name="orderLineItemsOrderLineItemIdGet"></a>
+# **orderLineItemsOrderLineItemIdGet**
+> OrderLineItem orderLineItemsOrderLineItemIdGet(orderLineItemId)
 
 
 
-Returns a specific estimate, including its workstep estimates and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Returns a specific order line item. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
 
 ### Example
 ```javascript
@@ -79,9 +85,9 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let orderLineItemId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.estimatesEstimateIdGet(estimateId).then((data) => {
+apiInstance.orderLineItemsOrderLineItemIdGet(orderLineItemId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -93,11 +99,11 @@ apiInstance.estimatesEstimateIdGet(estimateId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **estimateId** | [**String**](.md)|  | 
+ **orderLineItemId** | [**String**](.md)|  | 
 
 ### Return type
 
-[**Estimate**](Estimate.md)
+[**OrderLineItem**](OrderLineItem.md)
 
 ### Authorization
 
@@ -108,13 +114,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="estimatesEstimateIdPatch"></a>
-# **estimatesEstimateIdPatch**
-> Estimate estimatesEstimateIdPatch(body, estimateId)
+<a name="orderLineItemsOrderLineItemIdPatch"></a>
+# **orderLineItemsOrderLineItemIdPatch**
+> OrderLineItem orderLineItemsOrderLineItemIdPatch(body, orderLineItemId)
 
 
 
-Modifies a specific estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Modifies a specfic order line item. Please not that any modifications to order line items                           are only possible as long as the parent order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
 
 ### Example
 ```javascript
@@ -123,10 +129,10 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let body = new MissionControl.EstimatesEstimateIdBody(); // EstimatesEstimateIdBody | 
-let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let body = new MissionControl.OrderLineItemsOrderLineItemIdBody(); // OrderLineItemsOrderLineItemIdBody | 
+let orderLineItemId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.estimatesEstimateIdPatch(body, estimateId).then((data) => {
+apiInstance.orderLineItemsOrderLineItemIdPatch(body, orderLineItemId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -138,12 +144,12 @@ apiInstance.estimatesEstimateIdPatch(body, estimateId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EstimatesEstimateIdBody**](EstimatesEstimateIdBody.md)|  | 
- **estimateId** | [**String**](.md)|  | 
+ **body** | [**OrderLineItemsOrderLineItemIdBody**](OrderLineItemsOrderLineItemIdBody.md)|  | 
+ **orderLineItemId** | [**String**](.md)|  | 
 
 ### Return type
 
-[**Estimate**](Estimate.md)
+[**OrderLineItem**](OrderLineItem.md)
 
 ### Authorization
 
@@ -154,13 +160,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="estimatesEstimateIdWorkstepEstimatesGet"></a>
-# **estimatesEstimateIdWorkstepEstimatesGet**
-> [WorkstepEstimate] estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts)
+<a name="ordersGet"></a>
+# **ordersGet**
+> [Order] ordersGet(opts)
 
 
 
-Returns all workstep estimates for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Returns all orders that have already been confirmed. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
 
 ### Example
 ```javascript
@@ -169,12 +175,11 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 let opts = { 
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts).then((data) => {
+apiInstance.ordersGet(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -186,13 +191,12 @@ apiInstance.estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **estimateId** | [**String**](.md)|  | 
  **page** | **Number**| The page of the current collection that shall be returned | [optional] 
  **perPage** | **Number**| The maximum number of items included in the response, ie., the page size | [optional] [default to 100]
 
 ### Return type
 
-[**[WorkstepEstimate]**](WorkstepEstimate.md)
+[**[Order]**](Order.md)
 
 ### Authorization
 
@@ -203,59 +207,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="estimatesEstimateIdWorkstepEstimatesPost"></a>
-# **estimatesEstimateIdWorkstepEstimatesPost**
-> WorkstepEstimate estimatesEstimateIdWorkstepEstimatesPost(body, estimateId)
+<a name="ordersOrderIdAddressDelete"></a>
+# **ordersOrderIdAddressDelete**
+> ordersOrderIdAddressDelete(orderId)
 
 
 
-Creates a new workstep estimate for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-
-### Example
-```javascript
-import {MissionControl} from 'mission_control';
-let defaultClient = MissionControl.ApiClient.instance;
-
-
-let apiInstance = new MissionControl.BusinessApi();
-let body = new MissionControl.EstimateIdWorkstepEstimatesBody(); // EstimateIdWorkstepEstimatesBody | 
-let estimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
-
-apiInstance.estimatesEstimateIdWorkstepEstimatesPost(body, estimateId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EstimateIdWorkstepEstimatesBody**](EstimateIdWorkstepEstimatesBody.md)|  | 
- **estimateId** | [**String**](.md)|  | 
-
-### Return type
-
-[**WorkstepEstimate**](WorkstepEstimate.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="jobsJobIdEstimatesGet"></a>
-# **jobsJobIdEstimatesGet**
-> [Estimate] jobsJobIdEstimatesGet(jobId, opts)
-
-
-
-Returns all estimates of a specific job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Removes the address from a specific order as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
 
 ### Example
 ```javascript
@@ -264,104 +222,9 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let jobId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
-let opts = { 
-  'page': 56, // Number | The page of the current collection that shall be returned
-  'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
-};
-apiInstance.jobsJobIdEstimatesGet(jobId, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobId** | [**String**](.md)|  | 
- **page** | **Number**| The page of the current collection that shall be returned | [optional] 
- **perPage** | **Number**| The maximum number of items included in the response, ie., the page size | [optional] [default to 100]
-
-### Return type
-
-[**[Estimate]**](Estimate.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="jobsJobIdEstimatesPost"></a>
-# **jobsJobIdEstimatesPost**
-> Estimate jobsJobIdEstimatesPost(body, jobId)
-
-
-
-Creates a new estimate for the specified job. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-
-### Example
-```javascript
-import {MissionControl} from 'mission_control';
-let defaultClient = MissionControl.ApiClient.instance;
-
-
-let apiInstance = new MissionControl.BusinessApi();
-let body = new MissionControl.JobIdEstimatesBody(); // JobIdEstimatesBody | 
-let jobId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
-
-apiInstance.jobsJobIdEstimatesPost(body, jobId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**JobIdEstimatesBody**](JobIdEstimatesBody.md)|  | 
- **jobId** | [**String**](.md)|  | 
-
-### Return type
-
-[**Estimate**](Estimate.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="materialEstimatesMaterialEstimateIdDelete"></a>
-# **materialEstimatesMaterialEstimateIdDelete**
-> materialEstimatesMaterialEstimateIdDelete(materialEstimateId)
-
-
-
- - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-
-### Example
-```javascript
-import {MissionControl} from 'mission_control';
-let defaultClient = MissionControl.ApiClient.instance;
-
-
-let apiInstance = new MissionControl.BusinessApi();
-let materialEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
-
-apiInstance.materialEstimatesMaterialEstimateIdDelete(materialEstimateId).then(() => {
+apiInstance.ordersOrderIdAddressDelete(orderId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -373,7 +236,7 @@ apiInstance.materialEstimatesMaterialEstimateIdDelete(materialEstimateId).then((
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **materialEstimateId** | [**String**](.md)|  | 
+ **orderId** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -388,13 +251,13 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="materialEstimatesMaterialEstimateIdGet"></a>
-# **materialEstimatesMaterialEstimateIdGet**
-> MaterialEstimate materialEstimatesMaterialEstimateIdGet(materialEstimateId)
+<a name="ordersOrderIdAddressGet"></a>
+# **ordersOrderIdAddressGet**
+> Address ordersOrderIdAddressGet(orderId)
 
 
 
- - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Returns the address for this order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission-control.orders.r&#x60;
 
 ### Example
 ```javascript
@@ -403,9 +266,9 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let materialEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.materialEstimatesMaterialEstimateIdGet(materialEstimateId).then((data) => {
+apiInstance.ordersOrderIdAddressGet(orderId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -417,11 +280,11 @@ apiInstance.materialEstimatesMaterialEstimateIdGet(materialEstimateId).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **materialEstimateId** | [**String**](.md)|  | 
+ **orderId** | [**String**](.md)|  | 
 
 ### Return type
 
-[**MaterialEstimate**](MaterialEstimate.md)
+[**Address**](Address.md)
 
 ### Authorization
 
@@ -432,13 +295,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="materialEstimatesMaterialEstimateIdPatch"></a>
-# **materialEstimatesMaterialEstimateIdPatch**
-> MaterialEstimate materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId)
+<a name="ordersOrderIdAddressPatch"></a>
+# **ordersOrderIdAddressPatch**
+> Address ordersOrderIdAddressPatch(body, orderId)
 
 
 
- - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Modifies the address from a specific order as long as                   the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
 
 ### Example
 ```javascript
@@ -447,10 +310,10 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let body = new MissionControl.MaterialEstimatesMaterialEstimateIdBody(); // MaterialEstimatesMaterialEstimateIdBody | 
-let materialEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let body = new MissionControl.OrderIdAddressBody1(); // OrderIdAddressBody1 | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId).then((data) => {
+apiInstance.ordersOrderIdAddressPatch(body, orderId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -462,12 +325,12 @@ apiInstance.materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId).t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MaterialEstimatesMaterialEstimateIdBody**](MaterialEstimatesMaterialEstimateIdBody.md)|  | 
- **materialEstimateId** | [**String**](.md)|  | 
+ **body** | [**OrderIdAddressBody1**](OrderIdAddressBody1.md)|  | 
+ **orderId** | [**String**](.md)|  | 
 
 ### Return type
 
-[**MaterialEstimate**](MaterialEstimate.md)
+[**Address**](Address.md)
 
 ### Authorization
 
@@ -478,13 +341,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="workstepEstimatesWorkstepEstimateIdDelete"></a>
-# **workstepEstimatesWorkstepEstimateIdDelete**
-> workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId)
+<a name="ordersOrderIdAddressPost"></a>
+# **ordersOrderIdAddressPost**
+> Address ordersOrderIdAddressPost(body, orderId)
 
 
 
- - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Creates new address. If an address is already present, it will be overwritten.                   Creating an address is only possible as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
 
 ### Example
 ```javascript
@@ -493,9 +356,55 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let body = new MissionControl.OrderIdAddressBody(); // OrderIdAddressBody | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId).then(() => {
+apiInstance.ordersOrderIdAddressPost(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OrderIdAddressBody**](OrderIdAddressBody.md)|  | 
+ **orderId** | [**String**](.md)|  | 
+
+### Return type
+
+[**Address**](Address.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="ordersOrderIdDelete"></a>
+# **ordersOrderIdDelete**
+> ordersOrderIdDelete(orderId)
+
+
+
+ - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+
+apiInstance.ordersOrderIdDelete(orderId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -507,7 +416,7 @@ apiInstance.workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId).then((
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workstepEstimateId** | [**String**](.md)|  | 
+ **orderId** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -522,13 +431,13 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="workstepEstimatesWorkstepEstimateIdGet"></a>
-# **workstepEstimatesWorkstepEstimateIdGet**
-> WorkstepEstimate workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId)
+<a name="ordersOrderIdGet"></a>
+# **ordersOrderIdGet**
+> InlineResponse2012 ordersOrderIdGet(orderId)
 
 
 
- - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Returns a specific order, including the address, payment terms and line items. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
 
 ### Example
 ```javascript
@@ -537,9 +446,9 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId).then((data) => {
+apiInstance.ordersOrderIdGet(orderId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -551,11 +460,11 @@ apiInstance.workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workstepEstimateId** | [**String**](.md)|  | 
+ **orderId** | [**String**](.md)|  | 
 
 ### Return type
 
-[**WorkstepEstimate**](WorkstepEstimate.md)
+[**InlineResponse2012**](InlineResponse2012.md)
 
 ### Authorization
 
@@ -566,13 +475,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet"></a>
-# **workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet**
-> [MaterialEstimate] workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts)
+<a name="ordersOrderIdOrderLineItemsGet"></a>
+# **ordersOrderIdOrderLineItemsGet**
+> [OrderLineItem] ordersOrderIdOrderLineItemsGet(orderId, opts)
 
 
 
- - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Returns all line item of a specific order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
 
 ### Example
 ```javascript
@@ -581,12 +490,12 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 let opts = { 
   'page': 56, // Number | The page of the current collection that shall be returned
   'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
 };
-apiInstance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts).then((data) => {
+apiInstance.ordersOrderIdOrderLineItemsGet(orderId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -598,13 +507,13 @@ apiInstance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEsti
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workstepEstimateId** | [**String**](.md)|  | 
+ **orderId** | [**String**](.md)|  | 
  **page** | **Number**| The page of the current collection that shall be returned | [optional] 
  **perPage** | **Number**| The maximum number of items included in the response, ie., the page size | [optional] [default to 100]
 
 ### Return type
 
-[**[MaterialEstimate]**](MaterialEstimate.md)
+[**[OrderLineItem]**](OrderLineItem.md)
 
 ### Authorization
 
@@ -615,13 +524,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost"></a>
-# **workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost**
-> MaterialEstimate workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId)
+<a name="ordersOrderIdOrderLineItemsPost"></a>
+# **ordersOrderIdOrderLineItemsPost**
+> OrderLineItem ordersOrderIdOrderLineItemsPost(body, orderId)
 
 
 
- - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+Creates a new order line item and attaches it to an order. Please note that line items can                           only be added to orders in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
 
 ### Example
 ```javascript
@@ -630,10 +539,10 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let body = new MissionControl.WorkstepEstimateIdMaterialEstimatesBody(); // WorkstepEstimateIdMaterialEstimatesBody | 
-let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let body = new MissionControl.OrderIdOrderLineItemsBody(); // OrderIdOrderLineItemsBody | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId).then((data) => {
+apiInstance.ordersOrderIdOrderLineItemsPost(body, orderId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -645,12 +554,12 @@ apiInstance.workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, works
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WorkstepEstimateIdMaterialEstimatesBody**](WorkstepEstimateIdMaterialEstimatesBody.md)|  | 
- **workstepEstimateId** | [**String**](.md)|  | 
+ **body** | [**OrderIdOrderLineItemsBody**](OrderIdOrderLineItemsBody.md)|  | 
+ **orderId** | [**String**](.md)|  | 
 
 ### Return type
 
-[**MaterialEstimate**](MaterialEstimate.md)
+[**OrderLineItem**](OrderLineItem.md)
 
 ### Authorization
 
@@ -661,13 +570,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="workstepEstimatesWorkstepEstimateIdPatch"></a>
-# **workstepEstimatesWorkstepEstimateIdPatch**
-> WorkstepEstimate workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId)
+<a name="ordersOrderIdPatch"></a>
+# **ordersOrderIdPatch**
+> InlineResponse2012 ordersOrderIdPatch(body, orderId)
 
 
 
- - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+ - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
 
 ### Example
 ```javascript
@@ -676,10 +585,10 @@ let defaultClient = MissionControl.ApiClient.instance;
 
 
 let apiInstance = new MissionControl.BusinessApi();
-let body = new MissionControl.WorkstepEstimatesWorkstepEstimateIdBody(); // WorkstepEstimatesWorkstepEstimateIdBody | 
-let workstepEstimateId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let body = new MissionControl.OrdersOrderIdBody(); // OrdersOrderIdBody | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
-apiInstance.workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId).then((data) => {
+apiInstance.ordersOrderIdPatch(body, orderId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -691,12 +600,377 @@ apiInstance.workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId).t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WorkstepEstimatesWorkstepEstimateIdBody**](WorkstepEstimatesWorkstepEstimateIdBody.md)|  | 
- **workstepEstimateId** | [**String**](.md)|  | 
+ **body** | [**OrdersOrderIdBody**](OrdersOrderIdBody.md)|  | 
+ **orderId** | [**String**](.md)|  | 
 
 ### Return type
 
-[**WorkstepEstimate**](WorkstepEstimate.md)
+[**InlineResponse2012**](InlineResponse2012.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="ordersOrderIdPaymentTermsDelete"></a>
+# **ordersOrderIdPaymentTermsDelete**
+> ordersOrderIdPaymentTermsDelete(orderId)
+
+
+
+Removes the payment terms. Removing the payment terms is only possible while                             the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+
+apiInstance.ordersOrderIdPaymentTermsDelete(orderId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | [**String**](.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="ordersOrderIdPaymentTermsGet"></a>
+# **ordersOrderIdPaymentTermsGet**
+> PaymentTerms ordersOrderIdPaymentTermsGet(orderId)
+
+
+
+Returns the payment terms for the specified order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+
+apiInstance.ordersOrderIdPaymentTermsGet(orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | [**String**](.md)|  | 
+
+### Return type
+
+[**PaymentTerms**](PaymentTerms.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="ordersOrderIdPaymentTermsPatch"></a>
+# **ordersOrderIdPaymentTermsPatch**
+> PaymentTerms ordersOrderIdPaymentTermsPatch(body, orderId)
+
+
+
+Modifies existing payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long as                           the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let body = new MissionControl.OrderIdPaymentTermsBody1(); // OrderIdPaymentTermsBody1 | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+
+apiInstance.ordersOrderIdPaymentTermsPatch(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OrderIdPaymentTermsBody1**](OrderIdPaymentTermsBody1.md)|  | 
+ **orderId** | [**String**](.md)|  | 
+
+### Return type
+
+[**PaymentTerms**](PaymentTerms.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="ordersOrderIdPaymentTermsPost"></a>
+# **ordersOrderIdPaymentTermsPost**
+> PaymentTerms ordersOrderIdPaymentTermsPost(body, orderId)
+
+
+
+Creates a new payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long                           as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let body = new MissionControl.OrderIdPaymentTermsBody(); // OrderIdPaymentTermsBody | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+
+apiInstance.ordersOrderIdPaymentTermsPost(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OrderIdPaymentTermsBody**](OrderIdPaymentTermsBody.md)|  | 
+ **orderId** | [**String**](.md)|  | 
+
+### Return type
+
+[**PaymentTerms**](PaymentTerms.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="ordersOrderIdStateTransitionsGet"></a>
+# **ordersOrderIdStateTransitionsGet**
+> [OrderStateTransition] ordersOrderIdStateTransitionsGet(orderId, opts)
+
+
+
+List transitions for a given Order, chronologically from most recent to oldest - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60; or &#x60;mission_control.orders.rw&#x60;
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let opts = { 
+  'page': 56, // Number | The page of the current collection that shall be returned
+  'perPage': 100 // Number | The maximum number of items included in the response, ie., the page size
+};
+apiInstance.ordersOrderIdStateTransitionsGet(orderId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | [**String**](.md)|  | 
+ **page** | **Number**| The page of the current collection that shall be returned | [optional] 
+ **perPage** | **Number**| The maximum number of items included in the response, ie., the page size | [optional] [default to 100]
+
+### Return type
+
+[**[OrderStateTransition]**](OrderStateTransition.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="ordersOrderIdStateTransitionsPost"></a>
+# **ordersOrderIdStateTransitionsPost**
+> OrderStateTransition ordersOrderIdStateTransitionsPost(body, orderId)
+
+
+
+Transition an Order to a new state - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.w&#x60; or &#x60;mission_control.orders.rw&#x60;
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let body = new MissionControl.OrderIdStateTransitionsBody(); // OrderIdStateTransitionsBody | 
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+
+apiInstance.ordersOrderIdStateTransitionsPost(body, orderId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OrderIdStateTransitionsBody**](OrderIdStateTransitionsBody.md)|  | 
+ **orderId** | [**String**](.md)|  | 
+
+### Return type
+
+[**OrderStateTransition**](OrderStateTransition.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="ordersOrderIdStateTransitionsStateTransitionIdGet"></a>
+# **ordersOrderIdStateTransitionsStateTransitionIdGet**
+> OrderStateTransition ordersOrderIdStateTransitionsStateTransitionIdGet(orderId, stateTransitionId)
+
+
+
+Display a given transition - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60; or &#x60;mission_control.orders.rw&#x60;
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let orderId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+let stateTransitionId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
+
+apiInstance.ordersOrderIdStateTransitionsStateTransitionIdGet(orderId, stateTransitionId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | [**String**](.md)|  | 
+ **stateTransitionId** | [**String**](.md)|  | 
+
+### Return type
+
+[**OrderStateTransition**](OrderStateTransition.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="ordersPost"></a>
+# **ordersPost**
+> InlineResponse2012 ordersPost(body)
+
+
+
+Creates a new order with the given properties. The order will be in state &#x60;draft&#x60; and can be modified as long as that is the case. You can also supply nested properties for line items and the address. DESC, update: &lt;&lt;-DESC.squish Modifies a specific order. Please note that changes are only possible while the order is in &#x60;draft&#x60; state. DESC, destroy: &lt;&lt;-DESC.squish Removes a specific order as long as it still is in &#x60;draft&#x60; state, otherwise the order is set to the &#x60;canceled&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+
+### Example
+```javascript
+import {MissionControl} from 'mission_control';
+let defaultClient = MissionControl.ApiClient.instance;
+
+
+let apiInstance = new MissionControl.BusinessApi();
+let body = new MissionControl.OrdersBody(); // OrdersBody | 
+
+apiInstance.ordersPost(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OrdersBody**](OrdersBody.md)|  | 
+
+### Return type
+
+[**InlineResponse2012**](InlineResponse2012.md)
 
 ### Authorization
 

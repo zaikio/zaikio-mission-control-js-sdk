@@ -322,7 +322,7 @@ WorkstepEstimateCreate.prototype.description = undefined;
 WorkstepEstimateCreate.prototype.internalLaborCosts = undefined;
 
 /**
- * The external labour costs associated with this workstep. External labour costs are all costs The amount is given in the integer sub-unit of the currency selected in the parent estimates' `currency` property (i.e. cents).
+ * The external labour costs associated with this workstep. External labour costs are all costs associated with non-employees. The amount is given in the integer sub-unit of the currency selected in the parent estimates' `currency` property (i.e. cents).
  * @member {Number} externalLaborCosts
  */
 WorkstepEstimateCreate.prototype.externalLaborCosts = undefined;

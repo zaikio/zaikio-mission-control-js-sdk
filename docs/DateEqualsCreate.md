@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 
 * `CUSTOMER_NAME` (value: `"CUSTOMER_NAME"`)
 * `FINISHING_KIND` (value: `"FINISHING_KIND"`)
+* `JOB_CREATED_AT` (value: `"JOB_CREATED_AT"`)
 * `JOB_DUE_AT` (value: `"JOB_DUE_AT"`)
 * `JOB_KIND` (value: `"JOB_KIND"`)
 * `JOB_NAME` (value: `"JOB_NAME"`)

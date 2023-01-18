@@ -80,6 +80,11 @@ DateLessThan.prototype.updatedAt = undefined;
  */
 DateLessThan.SubjectTypeEnum = {
   /**
+   * value: "JOB_CREATED_AT"
+   * @const
+   */
+  JOB_CREATED_AT: "JOB_CREATED_AT",
+  /**
    * value: "JOB_DUE_AT"
    * @const
    */

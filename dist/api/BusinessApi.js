@@ -5,17 +5,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.BusinessApi = void 0;
 var _ApiClient = require("../ApiClient");
-var _Estimate = require("../model/Estimate");
-var _EstimateIdWorkstepEstimatesBody = require("../model/EstimateIdWorkstepEstimatesBody");
-var _EstimatesEstimateIdBody = require("../model/EstimatesEstimateIdBody");
-var _InlineResponse = require("../model/InlineResponse400");
-var _InlineResponse2 = require("../model/InlineResponse401");
-var _JobIdEstimatesBody = require("../model/JobIdEstimatesBody");
-var _MaterialEstimate = require("../model/MaterialEstimate");
-var _MaterialEstimatesMaterialEstimateIdBody = require("../model/MaterialEstimatesMaterialEstimateIdBody");
-var _WorkstepEstimate = require("../model/WorkstepEstimate");
-var _WorkstepEstimateIdMaterialEstimatesBody = require("../model/WorkstepEstimateIdMaterialEstimatesBody");
-var _WorkstepEstimatesWorkstepEstimateIdBody = require("../model/WorkstepEstimatesWorkstepEstimateIdBody");
+var _Address = require("../model/Address");
+var _InlineResponse = require("../model/InlineResponse2012");
+var _InlineResponse2 = require("../model/InlineResponse400");
+var _InlineResponse3 = require("../model/InlineResponse401");
+var _Order = require("../model/Order");
+var _OrderIdAddressBody = require("../model/OrderIdAddressBody");
+var _OrderIdAddressBody2 = require("../model/OrderIdAddressBody1");
+var _OrderIdOrderLineItemsBody = require("../model/OrderIdOrderLineItemsBody");
+var _OrderIdPaymentTermsBody = require("../model/OrderIdPaymentTermsBody");
+var _OrderIdPaymentTermsBody2 = require("../model/OrderIdPaymentTermsBody1");
+var _OrderIdStateTransitionsBody = require("../model/OrderIdStateTransitionsBody");
+var _OrderLineItem = require("../model/OrderLineItem");
+var _OrderLineItemsOrderLineItemIdBody = require("../model/OrderLineItemsOrderLineItemIdBody");
+var _OrderStateTransition = require("../model/OrderStateTransition");
+var _OrdersBody = require("../model/OrdersBody");
+var _OrdersOrderIdBody = require("../model/OrdersOrderIdBody");
+var _PaymentTerms = require("../model/PaymentTerms");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -39,20 +45,20 @@ var BusinessApi = /*#__PURE__*/function () {
   }
 
   /**
-   * Removes a specific estimate, inclduing all of its workstep and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-   * @param {String} estimateId 
+   * Removes or specific order line item. Please not that removing line items is only possible                             if the parent order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+   * @param {String} orderLineItemId 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   _createClass(BusinessApi, [{
-    key: "estimatesEstimateIdDeleteWithHttpInfo",
-    value: function estimatesEstimateIdDeleteWithHttpInfo(estimateId) {
+    key: "orderLineItemsOrderLineItemIdDeleteWithHttpInfo",
+    value: function orderLineItemsOrderLineItemIdDeleteWithHttpInfo(orderLineItemId) {
       var postBody = null;
-      // verify the required parameter 'estimateId' is set
-      if (estimateId === undefined || estimateId === null) {
-        throw new Error("Missing the required parameter 'estimateId' when calling estimatesEstimateIdDelete");
+      // verify the required parameter 'orderLineItemId' is set
+      if (orderLineItemId === undefined || orderLineItemId === null) {
+        throw new Error("Missing the required parameter 'orderLineItemId' when calling orderLineItemsOrderLineItemIdDelete");
       }
       var pathParams = {
-        'estimate_id': estimateId
+        'order_line_item_id': orderLineItemId
       };
       var queryParams = {};
       var headerParams = {};
@@ -61,37 +67,37 @@ var BusinessApi = /*#__PURE__*/function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/estimates/{estimate_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      return this.apiClient.callApi('/order_line_items/{order_line_item_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     * Removes a specific estimate, inclduing all of its workstep and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
+     * Removes or specific order line item. Please not that removing line items is only possible                             if the parent order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderLineItemId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
   }, {
-    key: "estimatesEstimateIdDelete",
-    value: function estimatesEstimateIdDelete(estimateId) {
-      return this.estimatesEstimateIdDeleteWithHttpInfo(estimateId).then(function (response_and_data) {
+    key: "orderLineItemsOrderLineItemIdDelete",
+    value: function orderLineItemsOrderLineItemIdDelete(orderLineItemId) {
+      return this.orderLineItemsOrderLineItemIdDeleteWithHttpInfo(orderLineItemId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Returns a specific estimate, including its workstep estimates and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {String} estimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Estimate} and HTTP response
+     * Returns a specific order line item. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {String} orderLineItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderLineItem} and HTTP response
      */
   }, {
-    key: "estimatesEstimateIdGetWithHttpInfo",
-    value: function estimatesEstimateIdGetWithHttpInfo(estimateId) {
+    key: "orderLineItemsOrderLineItemIdGetWithHttpInfo",
+    value: function orderLineItemsOrderLineItemIdGetWithHttpInfo(orderLineItemId) {
       var postBody = null;
-      // verify the required parameter 'estimateId' is set
-      if (estimateId === undefined || estimateId === null) {
-        throw new Error("Missing the required parameter 'estimateId' when calling estimatesEstimateIdGet");
+      // verify the required parameter 'orderLineItemId' is set
+      if (orderLineItemId === undefined || orderLineItemId === null) {
+        throw new Error("Missing the required parameter 'orderLineItemId' when calling orderLineItemsOrderLineItemIdGet");
       }
       var pathParams = {
-        'estimate_id': estimateId
+        'order_line_item_id': orderLineItemId
       };
       var queryParams = {};
       var headerParams = {};
@@ -99,43 +105,43 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Estimate.Estimate;
-      return this.apiClient.callApi('/estimates/{estimate_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = _OrderLineItem.OrderLineItem;
+      return this.apiClient.callApi('/order_line_items/{order_line_item_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     * Returns a specific estimate, including its workstep estimates and material estimates. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Estimate}
+     * Returns a specific order line item. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderLineItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderLineItem}
      */
   }, {
-    key: "estimatesEstimateIdGet",
-    value: function estimatesEstimateIdGet(estimateId) {
-      return this.estimatesEstimateIdGetWithHttpInfo(estimateId).then(function (response_and_data) {
+    key: "orderLineItemsOrderLineItemIdGet",
+    value: function orderLineItemsOrderLineItemIdGet(orderLineItemId) {
+      return this.orderLineItemsOrderLineItemIdGetWithHttpInfo(orderLineItemId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Modifies a specific estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {module:model/EstimatesEstimateIdBody} body 
-     * @param {String} estimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Estimate} and HTTP response
+     * Modifies a specfic order line item. Please not that any modifications to order line items                           are only possible as long as the parent order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {module:model/OrderLineItemsOrderLineItemIdBody} body 
+     * @param {String} orderLineItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderLineItem} and HTTP response
      */
   }, {
-    key: "estimatesEstimateIdPatchWithHttpInfo",
-    value: function estimatesEstimateIdPatchWithHttpInfo(body, estimateId) {
+    key: "orderLineItemsOrderLineItemIdPatchWithHttpInfo",
+    value: function orderLineItemsOrderLineItemIdPatchWithHttpInfo(body, orderLineItemId) {
       var postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling estimatesEstimateIdPatch");
+        throw new Error("Missing the required parameter 'body' when calling orderLineItemsOrderLineItemIdPatch");
       }
-      // verify the required parameter 'estimateId' is set
-      if (estimateId === undefined || estimateId === null) {
-        throw new Error("Missing the required parameter 'estimateId' when calling estimatesEstimateIdPatch");
+      // verify the required parameter 'orderLineItemId' is set
+      if (orderLineItemId === undefined || orderLineItemId === null) {
+        throw new Error("Missing the required parameter 'orderLineItemId' when calling orderLineItemsOrderLineItemIdPatch");
       }
       var pathParams = {
-        'estimate_id': estimateId
+        'order_line_item_id': orderLineItemId
       };
       var queryParams = {};
       var headerParams = {};
@@ -143,44 +149,37 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _Estimate.Estimate;
-      return this.apiClient.callApi('/estimates/{estimate_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = _OrderLineItem.OrderLineItem;
+      return this.apiClient.callApi('/order_line_items/{order_line_item_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     * Modifies a specific estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * Modifies a specfic order line item. Please not that any modifications to order line items                           are only possible as long as the parent order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {<&vendorExtensions.x-jsdoc-type>} body 
-     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Estimate}
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderLineItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderLineItem}
      */
   }, {
-    key: "estimatesEstimateIdPatch",
-    value: function estimatesEstimateIdPatch(body, estimateId) {
-      return this.estimatesEstimateIdPatchWithHttpInfo(body, estimateId).then(function (response_and_data) {
+    key: "orderLineItemsOrderLineItemIdPatch",
+    value: function orderLineItemsOrderLineItemIdPatch(body, orderLineItemId) {
+      return this.orderLineItemsOrderLineItemIdPatchWithHttpInfo(body, orderLineItemId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Returns all workstep estimates for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {String} estimateId 
+     * Returns all orders that have already been confirmed. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/WorkstepEstimate>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Order>} and HTTP response
      */
   }, {
-    key: "estimatesEstimateIdWorkstepEstimatesGetWithHttpInfo",
-    value: function estimatesEstimateIdWorkstepEstimatesGetWithHttpInfo(estimateId, opts) {
+    key: "ordersGetWithHttpInfo",
+    value: function ordersGetWithHttpInfo(opts) {
       opts = opts || {};
       var postBody = null;
-      // verify the required parameter 'estimateId' is set
-      if (estimateId === undefined || estimateId === null) {
-        throw new Error("Missing the required parameter 'estimateId' when calling estimatesEstimateIdWorkstepEstimatesGet");
-      }
-      var pathParams = {
-        'estimate_id': estimateId
-      };
+      var pathParams = {};
       var queryParams = {
         'page': opts['page'],
         'per_page': opts['perPage']
@@ -190,180 +189,40 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_WorkstepEstimate.WorkstepEstimate];
-      return this.apiClient.callApi('/estimates/{estimate_id}/workstep_estimates', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = [_Order.Order];
+      return this.apiClient.callApi('/orders', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     * Returns all workstep estimates for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
+     * Returns all orders that have already been confirmed. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/WorkstepEstimate>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Order>}
      */
   }, {
-    key: "estimatesEstimateIdWorkstepEstimatesGet",
-    value: function estimatesEstimateIdWorkstepEstimatesGet(estimateId, opts) {
-      return this.estimatesEstimateIdWorkstepEstimatesGetWithHttpInfo(estimateId, opts).then(function (response_and_data) {
+    key: "ordersGet",
+    value: function ordersGet(opts) {
+      return this.ordersGetWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Creates a new workstep estimate for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {module:model/EstimateIdWorkstepEstimatesBody} body 
-     * @param {String} estimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepEstimate} and HTTP response
-     */
-  }, {
-    key: "estimatesEstimateIdWorkstepEstimatesPostWithHttpInfo",
-    value: function estimatesEstimateIdWorkstepEstimatesPostWithHttpInfo(body, estimateId) {
-      var postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling estimatesEstimateIdWorkstepEstimatesPost");
-      }
-      // verify the required parameter 'estimateId' is set
-      if (estimateId === undefined || estimateId === null) {
-        throw new Error("Missing the required parameter 'estimateId' when calling estimatesEstimateIdWorkstepEstimatesPost");
-      }
-      var pathParams = {
-        'estimate_id': estimateId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['bearerAuth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _WorkstepEstimate.WorkstepEstimate;
-      return this.apiClient.callApi('/estimates/{estimate_id}/workstep_estimates', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
-    }
-
-    /**
-     * Creates a new workstep estimate for the given estimate. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} body 
-     * @param {<&vendorExtensions.x-jsdoc-type>} estimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepEstimate}
-     */
-  }, {
-    key: "estimatesEstimateIdWorkstepEstimatesPost",
-    value: function estimatesEstimateIdWorkstepEstimatesPost(body, estimateId) {
-      return this.estimatesEstimateIdWorkstepEstimatesPostWithHttpInfo(body, estimateId).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Returns all estimates of a specific job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {String} jobId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.page The page of the current collection that shall be returned
-     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Estimate>} and HTTP response
-     */
-  }, {
-    key: "jobsJobIdEstimatesGetWithHttpInfo",
-    value: function jobsJobIdEstimatesGetWithHttpInfo(jobId, opts) {
-      opts = opts || {};
-      var postBody = null;
-      // verify the required parameter 'jobId' is set
-      if (jobId === undefined || jobId === null) {
-        throw new Error("Missing the required parameter 'jobId' when calling jobsJobIdEstimatesGet");
-      }
-      var pathParams = {
-        'job_id': jobId
-      };
-      var queryParams = {
-        'page': opts['page'],
-        'per_page': opts['perPage']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['bearerAuth'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [_Estimate.Estimate];
-      return this.apiClient.callApi('/jobs/{job_id}/estimates', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
-    }
-
-    /**
-     * Returns all estimates of a specific job - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.page The page of the current collection that shall be returned
-     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Estimate>}
-     */
-  }, {
-    key: "jobsJobIdEstimatesGet",
-    value: function jobsJobIdEstimatesGet(jobId, opts) {
-      return this.jobsJobIdEstimatesGetWithHttpInfo(jobId, opts).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Creates a new estimate for the specified job. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {module:model/JobIdEstimatesBody} body 
-     * @param {String} jobId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Estimate} and HTTP response
-     */
-  }, {
-    key: "jobsJobIdEstimatesPostWithHttpInfo",
-    value: function jobsJobIdEstimatesPostWithHttpInfo(body, jobId) {
-      var postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling jobsJobIdEstimatesPost");
-      }
-      // verify the required parameter 'jobId' is set
-      if (jobId === undefined || jobId === null) {
-        throw new Error("Missing the required parameter 'jobId' when calling jobsJobIdEstimatesPost");
-      }
-      var pathParams = {
-        'job_id': jobId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['bearerAuth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _Estimate.Estimate;
-      return this.apiClient.callApi('/jobs/{job_id}/estimates', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
-    }
-
-    /**
-     * Creates a new estimate for the specified job. - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} body 
-     * @param {<&vendorExtensions.x-jsdoc-type>} jobId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Estimate}
-     */
-  }, {
-    key: "jobsJobIdEstimatesPost",
-    value: function jobsJobIdEstimatesPost(body, jobId) {
-      return this.jobsJobIdEstimatesPostWithHttpInfo(body, jobId).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {String} materialEstimateId 
+     * Removes the address from a specific order as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {String} orderId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
   }, {
-    key: "materialEstimatesMaterialEstimateIdDeleteWithHttpInfo",
-    value: function materialEstimatesMaterialEstimateIdDeleteWithHttpInfo(materialEstimateId) {
+    key: "ordersOrderIdAddressDeleteWithHttpInfo",
+    value: function ordersOrderIdAddressDeleteWithHttpInfo(orderId) {
       var postBody = null;
-      // verify the required parameter 'materialEstimateId' is set
-      if (materialEstimateId === undefined || materialEstimateId === null) {
-        throw new Error("Missing the required parameter 'materialEstimateId' when calling materialEstimatesMaterialEstimateIdDelete");
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdAddressDelete");
       }
       var pathParams = {
-        'material_estimate_id': materialEstimateId
+        'order_id': orderId
       };
       var queryParams = {};
       var headerParams = {};
@@ -372,37 +231,37 @@ var BusinessApi = /*#__PURE__*/function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/material_estimates/{material_estimate_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      return this.apiClient.callApi('/orders/{order_id}/address', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} materialEstimateId 
+     * Removes the address from a specific order as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
   }, {
-    key: "materialEstimatesMaterialEstimateIdDelete",
-    value: function materialEstimatesMaterialEstimateIdDelete(materialEstimateId) {
-      return this.materialEstimatesMaterialEstimateIdDeleteWithHttpInfo(materialEstimateId).then(function (response_and_data) {
+    key: "ordersOrderIdAddressDelete",
+    value: function ordersOrderIdAddressDelete(orderId) {
+      return this.ordersOrderIdAddressDeleteWithHttpInfo(orderId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {String} materialEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MaterialEstimate} and HTTP response
+     * Returns the address for this order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission-control.orders.r&#x60;
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Address} and HTTP response
      */
   }, {
-    key: "materialEstimatesMaterialEstimateIdGetWithHttpInfo",
-    value: function materialEstimatesMaterialEstimateIdGetWithHttpInfo(materialEstimateId) {
+    key: "ordersOrderIdAddressGetWithHttpInfo",
+    value: function ordersOrderIdAddressGetWithHttpInfo(orderId) {
       var postBody = null;
-      // verify the required parameter 'materialEstimateId' is set
-      if (materialEstimateId === undefined || materialEstimateId === null) {
-        throw new Error("Missing the required parameter 'materialEstimateId' when calling materialEstimatesMaterialEstimateIdGet");
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdAddressGet");
       }
       var pathParams = {
-        'material_estimate_id': materialEstimateId
+        'order_id': orderId
       };
       var queryParams = {};
       var headerParams = {};
@@ -410,43 +269,43 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _MaterialEstimate.MaterialEstimate;
-      return this.apiClient.callApi('/material_estimates/{material_estimate_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = _Address.Address;
+      return this.apiClient.callApi('/orders/{order_id}/address', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} materialEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MaterialEstimate}
+     * Returns the address for this order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission-control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Address}
      */
   }, {
-    key: "materialEstimatesMaterialEstimateIdGet",
-    value: function materialEstimatesMaterialEstimateIdGet(materialEstimateId) {
-      return this.materialEstimatesMaterialEstimateIdGetWithHttpInfo(materialEstimateId).then(function (response_and_data) {
+    key: "ordersOrderIdAddressGet",
+    value: function ordersOrderIdAddressGet(orderId) {
+      return this.ordersOrderIdAddressGetWithHttpInfo(orderId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {module:model/MaterialEstimatesMaterialEstimateIdBody} body 
-     * @param {String} materialEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MaterialEstimate} and HTTP response
+     * Modifies the address from a specific order as long as                   the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {module:model/OrderIdAddressBody1} body 
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Address} and HTTP response
      */
   }, {
-    key: "materialEstimatesMaterialEstimateIdPatchWithHttpInfo",
-    value: function materialEstimatesMaterialEstimateIdPatchWithHttpInfo(body, materialEstimateId) {
+    key: "ordersOrderIdAddressPatchWithHttpInfo",
+    value: function ordersOrderIdAddressPatchWithHttpInfo(body, orderId) {
       var postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling materialEstimatesMaterialEstimateIdPatch");
+        throw new Error("Missing the required parameter 'body' when calling ordersOrderIdAddressPatch");
       }
-      // verify the required parameter 'materialEstimateId' is set
-      if (materialEstimateId === undefined || materialEstimateId === null) {
-        throw new Error("Missing the required parameter 'materialEstimateId' when calling materialEstimatesMaterialEstimateIdPatch");
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdAddressPatch");
       }
       var pathParams = {
-        'material_estimate_id': materialEstimateId
+        'order_id': orderId
       };
       var queryParams = {};
       var headerParams = {};
@@ -454,39 +313,84 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _MaterialEstimate.MaterialEstimate;
-      return this.apiClient.callApi('/material_estimates/{material_estimate_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = _Address.Address;
+      return this.apiClient.callApi('/orders/{order_id}/address', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * Modifies the address from a specific order as long as                   the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {<&vendorExtensions.x-jsdoc-type>} body 
-     * @param {<&vendorExtensions.x-jsdoc-type>} materialEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MaterialEstimate}
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Address}
      */
   }, {
-    key: "materialEstimatesMaterialEstimateIdPatch",
-    value: function materialEstimatesMaterialEstimateIdPatch(body, materialEstimateId) {
-      return this.materialEstimatesMaterialEstimateIdPatchWithHttpInfo(body, materialEstimateId).then(function (response_and_data) {
+    key: "ordersOrderIdAddressPatch",
+    value: function ordersOrderIdAddressPatch(body, orderId) {
+      return this.ordersOrderIdAddressPatchWithHttpInfo(body, orderId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {String} workstepEstimateId 
+     * Creates new address. If an address is already present, it will be overwritten.                   Creating an address is only possible as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {module:model/OrderIdAddressBody} body 
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Address} and HTTP response
+     */
+  }, {
+    key: "ordersOrderIdAddressPostWithHttpInfo",
+    value: function ordersOrderIdAddressPostWithHttpInfo(body, orderId) {
+      var postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ordersOrderIdAddressPost");
+      }
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdAddressPost");
+      }
+      var pathParams = {
+        'order_id': orderId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _Address.Address;
+      return this.apiClient.callApi('/orders/{order_id}/address', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * Creates new address. If an address is already present, it will be overwritten.                   Creating an address is only possible as long as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Address}
+     */
+  }, {
+    key: "ordersOrderIdAddressPost",
+    value: function ordersOrderIdAddressPost(body, orderId) {
+      return this.ordersOrderIdAddressPostWithHttpInfo(body, orderId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     *  - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {String} orderId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdDeleteWithHttpInfo",
-    value: function workstepEstimatesWorkstepEstimateIdDeleteWithHttpInfo(workstepEstimateId) {
+    key: "ordersOrderIdDeleteWithHttpInfo",
+    value: function ordersOrderIdDeleteWithHttpInfo(orderId) {
       var postBody = null;
-      // verify the required parameter 'workstepEstimateId' is set
-      if (workstepEstimateId === undefined || workstepEstimateId === null) {
-        throw new Error("Missing the required parameter 'workstepEstimateId' when calling workstepEstimatesWorkstepEstimateIdDelete");
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdDelete");
       }
       var pathParams = {
-        'workstep_estimate_id': workstepEstimateId
+        'order_id': orderId
       };
       var queryParams = {};
       var headerParams = {};
@@ -495,37 +399,37 @@ var BusinessApi = /*#__PURE__*/function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/workstep_estimates/{workstep_estimate_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      return this.apiClient.callApi('/orders/{order_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
+     *  - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdDelete",
-    value: function workstepEstimatesWorkstepEstimateIdDelete(workstepEstimateId) {
-      return this.workstepEstimatesWorkstepEstimateIdDeleteWithHttpInfo(workstepEstimateId).then(function (response_and_data) {
+    key: "ordersOrderIdDelete",
+    value: function ordersOrderIdDelete(orderId) {
+      return this.ordersOrderIdDeleteWithHttpInfo(orderId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {String} workstepEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepEstimate} and HTTP response
+     * Returns a specific order, including the address, payment terms and line items. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2012} and HTTP response
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdGetWithHttpInfo",
-    value: function workstepEstimatesWorkstepEstimateIdGetWithHttpInfo(workstepEstimateId) {
+    key: "ordersOrderIdGetWithHttpInfo",
+    value: function ordersOrderIdGetWithHttpInfo(orderId) {
       var postBody = null;
-      // verify the required parameter 'workstepEstimateId' is set
-      if (workstepEstimateId === undefined || workstepEstimateId === null) {
-        throw new Error("Missing the required parameter 'workstepEstimateId' when calling workstepEstimatesWorkstepEstimateIdGet");
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdGet");
       }
       var pathParams = {
-        'workstep_estimate_id': workstepEstimateId
+        'order_id': orderId
       };
       var queryParams = {};
       var headerParams = {};
@@ -533,42 +437,42 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _WorkstepEstimate.WorkstepEstimate;
-      return this.apiClient.callApi('/workstep_estimates/{workstep_estimate_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = _InlineResponse.InlineResponse2012;
+      return this.apiClient.callApi('/orders/{order_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepEstimate}
+     * Returns a specific order, including the address, payment terms and line items. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2012}
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdGet",
-    value: function workstepEstimatesWorkstepEstimateIdGet(workstepEstimateId) {
-      return this.workstepEstimatesWorkstepEstimateIdGetWithHttpInfo(workstepEstimateId).then(function (response_and_data) {
+    key: "ordersOrderIdGet",
+    value: function ordersOrderIdGet(orderId) {
+      return this.ordersOrderIdGetWithHttpInfo(orderId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {String} workstepEstimateId 
+     * Returns all line item of a specific order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {String} orderId 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/MaterialEstimate>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/OrderLineItem>} and HTTP response
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdMaterialEstimatesGetWithHttpInfo",
-    value: function workstepEstimatesWorkstepEstimateIdMaterialEstimatesGetWithHttpInfo(workstepEstimateId, opts) {
+    key: "ordersOrderIdOrderLineItemsGetWithHttpInfo",
+    value: function ordersOrderIdOrderLineItemsGetWithHttpInfo(orderId, opts) {
       opts = opts || {};
       var postBody = null;
-      // verify the required parameter 'workstepEstimateId' is set
-      if (workstepEstimateId === undefined || workstepEstimateId === null) {
-        throw new Error("Missing the required parameter 'workstepEstimateId' when calling workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet");
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdOrderLineItemsGet");
       }
       var pathParams = {
-        'workstep_estimate_id': workstepEstimateId
+        'order_id': orderId
       };
       var queryParams = {
         'page': opts['page'],
@@ -579,46 +483,46 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_MaterialEstimate.MaterialEstimate];
-      return this.apiClient.callApi('/workstep_estimates/{workstep_estimate_id}/material_estimates', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = [_OrderLineItem.OrderLineItem];
+      return this.apiClient.callApi('/orders/{order_id}/order_line_items', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.r&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
+     * Returns all line item of a specific order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The page of the current collection that shall be returned
      * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/MaterialEstimate>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/OrderLineItem>}
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet",
-    value: function workstepEstimatesWorkstepEstimateIdMaterialEstimatesGet(workstepEstimateId, opts) {
-      return this.workstepEstimatesWorkstepEstimateIdMaterialEstimatesGetWithHttpInfo(workstepEstimateId, opts).then(function (response_and_data) {
+    key: "ordersOrderIdOrderLineItemsGet",
+    value: function ordersOrderIdOrderLineItemsGet(orderId, opts) {
+      return this.ordersOrderIdOrderLineItemsGetWithHttpInfo(orderId, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {module:model/WorkstepEstimateIdMaterialEstimatesBody} body 
-     * @param {String} workstepEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MaterialEstimate} and HTTP response
+     * Creates a new order line item and attaches it to an order. Please note that line items can                           only be added to orders in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {module:model/OrderIdOrderLineItemsBody} body 
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderLineItem} and HTTP response
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdMaterialEstimatesPostWithHttpInfo",
-    value: function workstepEstimatesWorkstepEstimateIdMaterialEstimatesPostWithHttpInfo(body, workstepEstimateId) {
+    key: "ordersOrderIdOrderLineItemsPostWithHttpInfo",
+    value: function ordersOrderIdOrderLineItemsPostWithHttpInfo(body, orderId) {
       var postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost");
+        throw new Error("Missing the required parameter 'body' when calling ordersOrderIdOrderLineItemsPost");
       }
-      // verify the required parameter 'workstepEstimateId' is set
-      if (workstepEstimateId === undefined || workstepEstimateId === null) {
-        throw new Error("Missing the required parameter 'workstepEstimateId' when calling workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost");
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdOrderLineItemsPost");
       }
       var pathParams = {
-        'workstep_estimate_id': workstepEstimateId
+        'order_id': orderId
       };
       var queryParams = {};
       var headerParams = {};
@@ -626,44 +530,44 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _MaterialEstimate.MaterialEstimate;
-      return this.apiClient.callApi('/workstep_estimates/{workstep_estimate_id}/material_estimates', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = _OrderLineItem.OrderLineItem;
+      return this.apiClient.callApi('/orders/{order_id}/order_line_items', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     * Creates a new order line item and attaches it to an order. Please note that line items can                           only be added to orders in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {<&vendorExtensions.x-jsdoc-type>} body 
-     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MaterialEstimate}
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderLineItem}
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost",
-    value: function workstepEstimatesWorkstepEstimateIdMaterialEstimatesPost(body, workstepEstimateId) {
-      return this.workstepEstimatesWorkstepEstimateIdMaterialEstimatesPostWithHttpInfo(body, workstepEstimateId).then(function (response_and_data) {
+    key: "ordersOrderIdOrderLineItemsPost",
+    value: function ordersOrderIdOrderLineItemsPost(body, orderId) {
+      return this.ordersOrderIdOrderLineItemsPostWithHttpInfo(body, orderId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
-     * @param {module:model/WorkstepEstimatesWorkstepEstimateIdBody} body 
-     * @param {String} workstepEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkstepEstimate} and HTTP response
+     *  - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {module:model/OrdersOrderIdBody} body 
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2012} and HTTP response
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdPatchWithHttpInfo",
-    value: function workstepEstimatesWorkstepEstimateIdPatchWithHttpInfo(body, workstepEstimateId) {
+    key: "ordersOrderIdPatchWithHttpInfo",
+    value: function ordersOrderIdPatchWithHttpInfo(body, orderId) {
       var postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling workstepEstimatesWorkstepEstimateIdPatch");
+        throw new Error("Missing the required parameter 'body' when calling ordersOrderIdPatch");
       }
-      // verify the required parameter 'workstepEstimateId' is set
-      if (workstepEstimateId === undefined || workstepEstimateId === null) {
-        throw new Error("Missing the required parameter 'workstepEstimateId' when calling workstepEstimatesWorkstepEstimateIdPatch");
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdPatch");
       }
       var pathParams = {
-        'workstep_estimate_id': workstepEstimateId
+        'order_id': orderId
       };
       var queryParams = {};
       var headerParams = {};
@@ -671,20 +575,365 @@ var BusinessApi = /*#__PURE__*/function () {
       var authNames = ['bearerAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _WorkstepEstimate.WorkstepEstimate;
-      return this.apiClient.callApi('/workstep_estimates/{workstep_estimate_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+      var returnType = _InlineResponse.InlineResponse2012;
+      return this.apiClient.callApi('/orders/{order_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
     }
 
     /**
-     *  - needed bearer: &#x60;Organization&#x60; - needed scopes: &#x60;mission_control.estimates.w&#x60; or &#x60;mission_control.estimates.rw&#x60;
+     *  - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
      * @param {<&vendorExtensions.x-jsdoc-type>} body 
-     * @param {<&vendorExtensions.x-jsdoc-type>} workstepEstimateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkstepEstimate}
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2012}
      */
   }, {
-    key: "workstepEstimatesWorkstepEstimateIdPatch",
-    value: function workstepEstimatesWorkstepEstimateIdPatch(body, workstepEstimateId) {
-      return this.workstepEstimatesWorkstepEstimateIdPatchWithHttpInfo(body, workstepEstimateId).then(function (response_and_data) {
+    key: "ordersOrderIdPatch",
+    value: function ordersOrderIdPatch(body, orderId) {
+      return this.ordersOrderIdPatchWithHttpInfo(body, orderId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Removes the payment terms. Removing the payment terms is only possible while                             the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+  }, {
+    key: "ordersOrderIdPaymentTermsDeleteWithHttpInfo",
+    value: function ordersOrderIdPaymentTermsDeleteWithHttpInfo(orderId) {
+      var postBody = null;
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdPaymentTermsDelete");
+      }
+      var pathParams = {
+        'order_id': orderId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+      return this.apiClient.callApi('/orders/{order_id}/payment_terms', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * Removes the payment terms. Removing the payment terms is only possible while                             the order is still in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+  }, {
+    key: "ordersOrderIdPaymentTermsDelete",
+    value: function ordersOrderIdPaymentTermsDelete(orderId) {
+      return this.ordersOrderIdPaymentTermsDeleteWithHttpInfo(orderId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Returns the payment terms for the specified order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTerms} and HTTP response
+     */
+  }, {
+    key: "ordersOrderIdPaymentTermsGetWithHttpInfo",
+    value: function ordersOrderIdPaymentTermsGetWithHttpInfo(orderId) {
+      var postBody = null;
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdPaymentTermsGet");
+      }
+      var pathParams = {
+        'order_id': orderId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _PaymentTerms.PaymentTerms;
+      return this.apiClient.callApi('/orders/{order_id}/payment_terms', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * Returns the payment terms for the specified order. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTerms}
+     */
+  }, {
+    key: "ordersOrderIdPaymentTermsGet",
+    value: function ordersOrderIdPaymentTermsGet(orderId) {
+      return this.ordersOrderIdPaymentTermsGetWithHttpInfo(orderId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Modifies existing payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long as                           the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {module:model/OrderIdPaymentTermsBody1} body 
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTerms} and HTTP response
+     */
+  }, {
+    key: "ordersOrderIdPaymentTermsPatchWithHttpInfo",
+    value: function ordersOrderIdPaymentTermsPatchWithHttpInfo(body, orderId) {
+      var postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ordersOrderIdPaymentTermsPatch");
+      }
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdPaymentTermsPatch");
+      }
+      var pathParams = {
+        'order_id': orderId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _PaymentTerms.PaymentTerms;
+      return this.apiClient.callApi('/orders/{order_id}/payment_terms', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * Modifies existing payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long as                           the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTerms}
+     */
+  }, {
+    key: "ordersOrderIdPaymentTermsPatch",
+    value: function ordersOrderIdPaymentTermsPatch(body, orderId) {
+      return this.ordersOrderIdPaymentTermsPatchWithHttpInfo(body, orderId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Creates a new payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long                           as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {module:model/OrderIdPaymentTermsBody} body 
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTerms} and HTTP response
+     */
+  }, {
+    key: "ordersOrderIdPaymentTermsPostWithHttpInfo",
+    value: function ordersOrderIdPaymentTermsPostWithHttpInfo(body, orderId) {
+      var postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ordersOrderIdPaymentTermsPost");
+      }
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdPaymentTermsPost");
+      }
+      var pathParams = {
+        'order_id': orderId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _PaymentTerms.PaymentTerms;
+      return this.apiClient.callApi('/orders/{order_id}/payment_terms', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * Creates a new payment terms for the specified order. If payment terms already                           exist they will be overwritten. Creating payment terms is only possible as long                           as the order is in a &#x60;draft&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTerms}
+     */
+  }, {
+    key: "ordersOrderIdPaymentTermsPost",
+    value: function ordersOrderIdPaymentTermsPost(body, orderId) {
+      return this.ordersOrderIdPaymentTermsPostWithHttpInfo(body, orderId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * List transitions for a given Order, chronologically from most recent to oldest - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60; or &#x60;mission_control.orders.rw&#x60;
+     * @param {String} orderId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/OrderStateTransition>} and HTTP response
+     */
+  }, {
+    key: "ordersOrderIdStateTransitionsGetWithHttpInfo",
+    value: function ordersOrderIdStateTransitionsGetWithHttpInfo(orderId, opts) {
+      opts = opts || {};
+      var postBody = null;
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdStateTransitionsGet");
+      }
+      var pathParams = {
+        'order_id': orderId
+      };
+      var queryParams = {
+        'page': opts['page'],
+        'per_page': opts['perPage']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [_OrderStateTransition.OrderStateTransition];
+      return this.apiClient.callApi('/orders/{order_id}/state_transitions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * List transitions for a given Order, chronologically from most recent to oldest - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60; or &#x60;mission_control.orders.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page The page of the current collection that shall be returned
+     * @param {Number} opts.perPage The maximum number of items included in the response, ie., the page size (default to <.>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/OrderStateTransition>}
+     */
+  }, {
+    key: "ordersOrderIdStateTransitionsGet",
+    value: function ordersOrderIdStateTransitionsGet(orderId, opts) {
+      return this.ordersOrderIdStateTransitionsGetWithHttpInfo(orderId, opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Transition an Order to a new state - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.w&#x60; or &#x60;mission_control.orders.rw&#x60;
+     * @param {module:model/OrderIdStateTransitionsBody} body 
+     * @param {String} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderStateTransition} and HTTP response
+     */
+  }, {
+    key: "ordersOrderIdStateTransitionsPostWithHttpInfo",
+    value: function ordersOrderIdStateTransitionsPostWithHttpInfo(body, orderId) {
+      var postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ordersOrderIdStateTransitionsPost");
+      }
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdStateTransitionsPost");
+      }
+      var pathParams = {
+        'order_id': orderId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _OrderStateTransition.OrderStateTransition;
+      return this.apiClient.callApi('/orders/{order_id}/state_transitions', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * Transition an Order to a new state - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.w&#x60; or &#x60;mission_control.orders.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderStateTransition}
+     */
+  }, {
+    key: "ordersOrderIdStateTransitionsPost",
+    value: function ordersOrderIdStateTransitionsPost(body, orderId) {
+      return this.ordersOrderIdStateTransitionsPostWithHttpInfo(body, orderId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Display a given transition - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60; or &#x60;mission_control.orders.rw&#x60;
+     * @param {String} orderId 
+     * @param {String} stateTransitionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderStateTransition} and HTTP response
+     */
+  }, {
+    key: "ordersOrderIdStateTransitionsStateTransitionIdGetWithHttpInfo",
+    value: function ordersOrderIdStateTransitionsStateTransitionIdGetWithHttpInfo(orderId, stateTransitionId) {
+      var postBody = null;
+      // verify the required parameter 'orderId' is set
+      if (orderId === undefined || orderId === null) {
+        throw new Error("Missing the required parameter 'orderId' when calling ordersOrderIdStateTransitionsStateTransitionIdGet");
+      }
+      // verify the required parameter 'stateTransitionId' is set
+      if (stateTransitionId === undefined || stateTransitionId === null) {
+        throw new Error("Missing the required parameter 'stateTransitionId' when calling ordersOrderIdStateTransitionsStateTransitionIdGet");
+      }
+      var pathParams = {
+        'order_id': orderId,
+        'state_transition_id': stateTransitionId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _OrderStateTransition.OrderStateTransition;
+      return this.apiClient.callApi('/orders/{order_id}/state_transitions/{state_transition_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * Display a given transition - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: &#x60;mission_control.orders.r&#x60; or &#x60;mission_control.orders.rw&#x60;
+     * @param {<&vendorExtensions.x-jsdoc-type>} orderId 
+     * @param {<&vendorExtensions.x-jsdoc-type>} stateTransitionId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderStateTransition}
+     */
+  }, {
+    key: "ordersOrderIdStateTransitionsStateTransitionIdGet",
+    value: function ordersOrderIdStateTransitionsStateTransitionIdGet(orderId, stateTransitionId) {
+      return this.ordersOrderIdStateTransitionsStateTransitionIdGetWithHttpInfo(orderId, stateTransitionId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Creates a new order with the given properties. The order will be in state &#x60;draft&#x60; and can be modified as long as that is the case. You can also supply nested properties for line items and the address. DESC, update: &lt;&lt;-DESC.squish Modifies a specific order. Please note that changes are only possible while the order is in &#x60;draft&#x60; state. DESC, destroy: &lt;&lt;-DESC.squish Removes a specific order as long as it still is in &#x60;draft&#x60; state, otherwise the order is set to the &#x60;canceled&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {module:model/OrdersBody} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2012} and HTTP response
+     */
+  }, {
+    key: "ordersPostWithHttpInfo",
+    value: function ordersPostWithHttpInfo(body) {
+      var postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ordersPost");
+      }
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['bearerAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _InlineResponse.InlineResponse2012;
+      return this.apiClient.callApi('/orders', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * Creates a new order with the given properties. The order will be in state &#x60;draft&#x60; and can be modified as long as that is the case. You can also supply nested properties for line items and the address. DESC, update: &lt;&lt;-DESC.squish Modifies a specific order. Please note that changes are only possible while the order is in &#x60;draft&#x60; state. DESC, destroy: &lt;&lt;-DESC.squish Removes a specific order as long as it still is in &#x60;draft&#x60; state, otherwise the order is set to the &#x60;canceled&#x60; state. - needed bearer: &#x60;Organization&#x60; or &#x60;Person&#x60; - needed scopes: 
+     * @param {<&vendorExtensions.x-jsdoc-type>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2012}
+     */
+  }, {
+    key: "ordersPost",
+    value: function ordersPost(body) {
+      return this.ordersPostWithHttpInfo(body).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

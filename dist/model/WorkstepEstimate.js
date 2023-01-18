@@ -27,7 +27,7 @@ var WorkstepEstimate = /*#__PURE__*/function () {
    * @param kind {module:model/WorkstepEstimate.KindEnum} The kind of this workstep. Must be one of the workstep kinds known for shopfloor worksteps, or a kind that is only used for workstep estimates (see list below). This can also be set to other, for semantically unknown worksteps, but in this case the description property must be set.
    * @param description {String} A more detailed description of the workstep than `kind`. It is optional, but must be filled out if `kind` is set to `other`.
    * @param internalLaborCosts {Number} The internal labour costs associated with this workstep. Internal labor is all labor that is performed by employees of the producing organisation. The amount is given in the integer sub-unit of the currency selected in the parent estimates' `currency` property (i.e. cents).
-   * @param externalLaborCosts {Number} The external labour costs associated with this workstep. External labour costs are all costs The amount is given in the integer sub-unit of the currency selected in the parent estimates' `currency` property (i.e. cents).
+   * @param externalLaborCosts {Number} The external labour costs associated with this workstep. External labour costs are all costs associated with non-employees. The amount is given in the integer sub-unit of the currency selected in the parent estimates' `currency` property (i.e. cents).
    * @param durationForPreparation {Number} The estimated time in seconds that is required to perform all operations necessary in preparation of the estimated workstep.
    * @param durationForExecution {Number} The estimated time in seconds that is required to execute of the estimated workstep.
    * @param durationForCleanup {Number} The estimated time in seconds that is required to perform all operations necessary to clean up after the execution of the estimated workstep.
@@ -365,7 +365,7 @@ WorkstepEstimate.prototype.description = undefined;
 WorkstepEstimate.prototype.internalLaborCosts = undefined;
 
 /**
- * The external labour costs associated with this workstep. External labour costs are all costs The amount is given in the integer sub-unit of the currency selected in the parent estimates' `currency` property (i.e. cents).
+ * The external labour costs associated with this workstep. External labour costs are all costs associated with non-employees. The amount is given in the integer sub-unit of the currency selected in the parent estimates' `currency` property (i.e. cents).
  * @member {Number} externalLaborCosts
  */
 WorkstepEstimate.prototype.externalLaborCosts = undefined;

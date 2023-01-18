@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **createdAt** | **Date** |  | 
 **updatedAt** | **Date** |  | 
-**jobId** | **String** | The ID of the Job this ProductionStrategy belongs to | 
+**jobId** | **String** | The ID of the Job this ProductionStrateg belongs to | 
 **state** | **String** | What is the status of this strategy | 
 **kind** | **String** | What approach does this strategy optimize for | 
 **canceledAt** | **Date** | When this strategy was cancelled, if in canceled state | 

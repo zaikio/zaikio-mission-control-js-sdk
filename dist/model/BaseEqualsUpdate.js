@@ -61,6 +61,11 @@ BaseEqualsUpdate.SubjectTypeEnum = {
    */
   FINISHING_KIND: "FINISHING_KIND",
   /**
+   * value: "JOB_CREATED_AT"
+   * @const
+   */
+  JOB_CREATED_AT: "JOB_CREATED_AT",
+  /**
    * value: "JOB_DUE_AT"
    * @const
    */

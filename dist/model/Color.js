@@ -25,8 +25,9 @@ var Color = /*#__PURE__*/function () {
    * @param system {module:model/Color.SystemEnum} The color reference system in which color name is given
    * @param name {String} The name of the colour inside the selected reference system. When the system is CMYK only Cyan, Magenta, Yellow, Black are allowed. A system/colour name combinatin must be unique per surface.
    * @param coverage {String} The amount of colour coverage for this colour on the given surface. Must be expressed as percentage, thus the value must be greather than 0. A value of 1 represents 100% coverage. The value might go up to 10, equallying 1000% coverage for jobs where the same colour is applied in several coatings.
+   * @param printStandard {module:model/Color.PrintStandardEnum} Set an output desired color calibration to reduce likelihood of errors.
    */
-  function Color(id, createdAt, updatedAt, surface, system, name, coverage) {
+  function Color(id, createdAt, updatedAt, surface, system, name, coverage, printStandard) {
     _classCallCheck(this, Color);
     this.id = id;
     this.createdAt = createdAt;
@@ -35,6 +36,7 @@ var Color = /*#__PURE__*/function () {
     this.system = system;
     this.name = name;
     this.coverage = coverage;
+    this.printStandard = printStandard;
   }
 
   /**
@@ -56,6 +58,7 @@ var Color = /*#__PURE__*/function () {
         if (data.hasOwnProperty('system')) obj.system = _ApiClient.ApiClient.convertToType(data['system'], 'String');
         if (data.hasOwnProperty('name')) obj.name = _ApiClient.ApiClient.convertToType(data['name'], 'String');
         if (data.hasOwnProperty('coverage')) obj.coverage = _ApiClient.ApiClient.convertToType(data['coverage'], 'String');
+        if (data.hasOwnProperty('print_standard')) obj.printStandard = _ApiClient.ApiClient.convertToType(data['print_standard'], 'String');
       }
       return obj;
     }
@@ -140,3 +143,96 @@ Color.prototype.name = undefined;
  * @member {String} coverage
  */
 Color.prototype.coverage = undefined;
+
+/**
+ * Allowed values for the <code>printStandard</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Color.PrintStandardEnum = {
+  /**
+   * value: "CRPC3"
+   * @const
+   */
+  cRPC3: "CRPC3",
+  /**
+   * value: "CRPC6"
+   * @const
+   */
+  cRPC6: "CRPC6",
+  /**
+   * value: "FOGRA39"
+   * @const
+   */
+  fOGRA39: "FOGRA39",
+  /**
+   * value: "FOGRA40"
+   * @const
+   */
+  fOGRA40: "FOGRA40",
+  /**
+   * value: "FOGRA45"
+   * @const
+   */
+  fOGRA45: "FOGRA45",
+  /**
+   * value: "FOGRA46"
+   * @const
+   */
+  fOGRA46: "FOGRA46",
+  /**
+   * value: "FOGRA47"
+   * @const
+   */
+  fOGRA47: "FOGRA47",
+  /**
+   * value: "FOGRA51"
+   * @const
+   */
+  fOGRA51: "FOGRA51",
+  /**
+   * value: "FOGRA52"
+   * @const
+   */
+  fOGRA52: "FOGRA52",
+  /**
+   * value: "FOGRA54"
+   * @const
+   */
+  fOGRA54: "FOGRA54",
+  /**
+   * value: "FOGRA59"
+   * @const
+   */
+  fOGRA59: "FOGRA59",
+  /**
+   * value: "GRACOL"
+   * @const
+   */
+  GRACOL: "GRACOL",
+  /**
+   * value: "IFRA26"
+   * @const
+   */
+  iFRA26: "IFRA26",
+  /**
+   * value: "TR001"
+   * @const
+   */
+  tR001: "TR001",
+  /**
+   * value: "TR005"
+   * @const
+   */
+  tR005: "TR005",
+  /**
+   * value: "TR006"
+   * @const
+   */
+  tR006: "TR006"
+};
+/**
+ * Set an output desired color calibration to reduce likelihood of errors.
+ * @member {module:model/Color.PrintStandardEnum} printStandard
+ */
+Color.prototype.printStandard = undefined;

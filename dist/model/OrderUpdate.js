@@ -36,7 +36,6 @@ var OrderUpdate = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new OrderUpdate();
         if (data.hasOwnProperty('references')) obj.references = _ApiClient.ApiClient.convertToType(data['references'], ['String']);
-        if (data.hasOwnProperty('state')) obj.state = _ApiClient.ApiClient.convertToType(data['state'], 'String');
         if (data.hasOwnProperty('currency')) obj.currency = _ApiClient.ApiClient.convertToType(data['currency'], 'String');
         if (data.hasOwnProperty('net_total')) obj.netTotal = _ApiClient.ApiClient.convertToType(data['net_total'], 'Number');
         if (data.hasOwnProperty('gross_total')) obj.grossTotal = _ApiClient.ApiClient.convertToType(data['gross_total'], 'Number');
@@ -56,39 +55,6 @@ var OrderUpdate = /*#__PURE__*/function () {
  */
 exports.OrderUpdate = OrderUpdate;
 OrderUpdate.prototype.references = undefined;
-
-/**
- * Allowed values for the <code>state</code> property.
- * @enum {String}
- * @readonly
- */
-OrderUpdate.StateEnum = {
-  /**
-   * value: "draft"
-   * @const
-   */
-  draft: "draft",
-  /**
-   * value: "confirmed"
-   * @const
-   */
-  confirmed: "confirmed",
-  /**
-   * value: "fulfilled"
-   * @const
-   */
-  fulfilled: "fulfilled",
-  /**
-   * value: "canceled"
-   * @const
-   */
-  canceled: "canceled"
-};
-/**
- * The current state of the Order
- * @member {module:model/OrderUpdate.StateEnum} state
- */
-OrderUpdate.prototype.state = undefined;
 
 /**
  * Allowed values for the <code>currency</code> property.

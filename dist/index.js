@@ -105,6 +105,30 @@ Object.defineProperty(exports, "ArrayContainsUpdate", {
     return _ArrayContainsUpdate.ArrayContainsUpdate;
   }
 });
+Object.defineProperty(exports, "Back", {
+  enumerable: true,
+  get: function get() {
+    return _Back.Back;
+  }
+});
+Object.defineProperty(exports, "Back1", {
+  enumerable: true,
+  get: function get() {
+    return _Back2.Back1;
+  }
+});
+Object.defineProperty(exports, "Back2", {
+  enumerable: true,
+  get: function get() {
+    return _Back3.Back2;
+  }
+});
+Object.defineProperty(exports, "Back3", {
+  enumerable: true,
+  get: function get() {
+    return _Back4.Back3;
+  }
+});
 Object.defineProperty(exports, "BaseEquals", {
   enumerable: true,
   get: function get() {
@@ -225,22 +249,388 @@ Object.defineProperty(exports, "BatchesBody", {
     return _BatchesBody.BatchesBody;
   }
 });
-Object.defineProperty(exports, "Box", {
+Object.defineProperty(exports, "Bleeds", {
   enumerable: true,
   get: function get() {
-    return _Box.Box;
+    return _Bleeds.Bleeds;
   }
 });
-Object.defineProperty(exports, "BoxCreate", {
+Object.defineProperty(exports, "Bleeds1", {
   enumerable: true,
   get: function get() {
-    return _BoxCreate.BoxCreate;
+    return _Bleeds2.Bleeds1;
   }
 });
-Object.defineProperty(exports, "BoxUpdate", {
+Object.defineProperty(exports, "Bleeds2", {
   enumerable: true,
   get: function get() {
-    return _BoxUpdate.BoxUpdate;
+    return _Bleeds3.Bleeds2;
+  }
+});
+Object.defineProperty(exports, "Bleeds3", {
+  enumerable: true,
+  get: function get() {
+    return _Bleeds4.Bleeds3;
+  }
+});
+Object.defineProperty(exports, "BoxModelFinishing", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFinishing.BoxModelFinishing;
+  }
+});
+Object.defineProperty(exports, "BoxModelFinishingCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFinishingCreate.BoxModelFinishingCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelFinishingUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFinishingUpdate.BoxModelFinishingUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelFlap", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFlap.BoxModelFlap;
+  }
+});
+Object.defineProperty(exports, "BoxModelFlapCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFlapCreate.BoxModelFlapCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelFlapUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFlapUpdate.BoxModelFlapUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelFold", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFold.BoxModelFold;
+  }
+});
+Object.defineProperty(exports, "BoxModelFoldCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFoldCreate.BoxModelFoldCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelFoldUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelFoldUpdate.BoxModelFoldUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelIntermediateLayout", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelIntermediateLayout.BoxModelIntermediateLayout;
+  }
+});
+Object.defineProperty(exports, "BoxModelIntermediateLayoutChildren", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelIntermediateLayoutChildren.BoxModelIntermediateLayoutChildren;
+  }
+});
+Object.defineProperty(exports, "BoxModelIntermediateLayoutChildrenCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelIntermediateLayoutChildrenCreate.BoxModelIntermediateLayoutChildrenCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelIntermediateLayoutChildrenUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelIntermediateLayoutChildrenUpdate.BoxModelIntermediateLayoutChildrenUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelIntermediateLayoutCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelIntermediateLayoutCreate.BoxModelIntermediateLayoutCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelIntermediateLayoutUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelIntermediateLayoutUpdate.BoxModelIntermediateLayoutUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelMark", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelMark.BoxModelMark;
+  }
+});
+Object.defineProperty(exports, "BoxModelMarkCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelMarkCreate.BoxModelMarkCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelMarkUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelMarkUpdate.BoxModelMarkUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelObject", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelObject.BoxModelObject;
+  }
+});
+Object.defineProperty(exports, "BoxModelObjectCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelObjectCreate.BoxModelObjectCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelObjectUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelObjectUpdate.BoxModelObjectUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelPage", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPage.BoxModelPage;
+  }
+});
+Object.defineProperty(exports, "BoxModelPageChildren", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPageChildren.BoxModelPageChildren;
+  }
+});
+Object.defineProperty(exports, "BoxModelPageChildrenCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPageChildrenCreate.BoxModelPageChildrenCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelPageChildrenUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPageChildrenUpdate.BoxModelPageChildrenUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelPageCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPageCreate.BoxModelPageCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelPageUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPageUpdate.BoxModelPageUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelPartLayout", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPartLayout.BoxModelPartLayout;
+  }
+});
+Object.defineProperty(exports, "BoxModelPartLayoutChildren", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPartLayoutChildren.BoxModelPartLayoutChildren;
+  }
+});
+Object.defineProperty(exports, "BoxModelPartLayoutChildrenCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPartLayoutChildrenCreate.BoxModelPartLayoutChildrenCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelPartLayoutChildrenUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPartLayoutChildrenUpdate.BoxModelPartLayoutChildrenUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelPartLayoutCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPartLayoutCreate.BoxModelPartLayoutCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelPartLayoutUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelPartLayoutUpdate.BoxModelPartLayoutUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelRollSegment", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelRollSegment.BoxModelRollSegment;
+  }
+});
+Object.defineProperty(exports, "BoxModelRollSegmentChildren", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelRollSegmentChildren.BoxModelRollSegmentChildren;
+  }
+});
+Object.defineProperty(exports, "BoxModelRollSegmentChildrenCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelRollSegmentChildrenCreate.BoxModelRollSegmentChildrenCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelRollSegmentChildrenUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelRollSegmentChildrenUpdate.BoxModelRollSegmentChildrenUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelRollSegmentCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelRollSegmentCreate.BoxModelRollSegmentCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelRollSegmentUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelRollSegmentUpdate.BoxModelRollSegmentUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSheet", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSheet.BoxModelSheet;
+  }
+});
+Object.defineProperty(exports, "BoxModelSheetChildren", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSheetChildren.BoxModelSheetChildren;
+  }
+});
+Object.defineProperty(exports, "BoxModelSheetChildrenCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSheetChildrenCreate.BoxModelSheetChildrenCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSheetChildrenUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSheetChildrenUpdate.BoxModelSheetChildrenUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSheetCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSheetCreate.BoxModelSheetCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSheetUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSheetUpdate.BoxModelSheetUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSignatureLayout", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSignatureLayout.BoxModelSignatureLayout;
+  }
+});
+Object.defineProperty(exports, "BoxModelSignatureLayoutChildren", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSignatureLayoutChildren.BoxModelSignatureLayoutChildren;
+  }
+});
+Object.defineProperty(exports, "BoxModelSignatureLayoutChildrenCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSignatureLayoutChildrenCreate.BoxModelSignatureLayoutChildrenCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSignatureLayoutChildrenUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSignatureLayoutChildrenUpdate.BoxModelSignatureLayoutChildrenUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSignatureLayoutCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSignatureLayoutCreate.BoxModelSignatureLayoutCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSignatureLayoutUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSignatureLayoutUpdate.BoxModelSignatureLayoutUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpine", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpine.BoxModelSpine;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpineCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpineCreate.BoxModelSpineCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpineUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpineUpdate.BoxModelSpineUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpread", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpread.BoxModelSpread;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpreadChildren", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpreadChildren.BoxModelSpreadChildren;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpreadChildrenCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpreadChildrenCreate.BoxModelSpreadChildrenCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpreadChildrenUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpreadChildrenUpdate.BoxModelSpreadChildrenUpdate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpreadCreate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpreadCreate.BoxModelSpreadCreate;
+  }
+});
+Object.defineProperty(exports, "BoxModelSpreadUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _BoxModelSpreadUpdate.BoxModelSpreadUpdate;
   }
 });
 Object.defineProperty(exports, "BusinessApi", {
@@ -289,12 +679,6 @@ Object.defineProperty(exports, "CombBindingUpdate", {
   enumerable: true,
   get: function get() {
     return _CombBindingUpdate.CombBindingUpdate;
-  }
-});
-Object.defineProperty(exports, "CommercialApi", {
-  enumerable: true,
-  get: function get() {
-    return _CommercialApi.CommercialApi;
   }
 });
 Object.defineProperty(exports, "Commissioning", {
@@ -501,6 +885,18 @@ Object.defineProperty(exports, "DesiredSubstrateUpdate", {
     return _DesiredSubstrateUpdate.DesiredSubstrateUpdate;
   }
 });
+Object.defineProperty(exports, "Dimensions", {
+  enumerable: true,
+  get: function get() {
+    return _Dimensions.Dimensions;
+  }
+});
+Object.defineProperty(exports, "Dimensions1", {
+  enumerable: true,
+  get: function get() {
+    return _Dimensions2.Dimensions1;
+  }
+});
 Object.defineProperty(exports, "Embossing", {
   enumerable: true,
   get: function get() {
@@ -559,6 +955,12 @@ Object.defineProperty(exports, "EstimateUpdate", {
   enumerable: true,
   get: function get() {
     return _EstimateUpdate.EstimateUpdate;
+  }
+});
+Object.defineProperty(exports, "EstimatesApi", {
+  enumerable: true,
+  get: function get() {
+    return _EstimatesApi.EstimatesApi;
   }
 });
 Object.defineProperty(exports, "EstimatesEstimateIdBody", {
@@ -849,6 +1251,30 @@ Object.defineProperty(exports, "FoilStampUpdate", {
     return _FoilStampUpdate.FoilStampUpdate;
   }
 });
+Object.defineProperty(exports, "Front", {
+  enumerable: true,
+  get: function get() {
+    return _Front.Front;
+  }
+});
+Object.defineProperty(exports, "Front1", {
+  enumerable: true,
+  get: function get() {
+    return _Front2.Front1;
+  }
+});
+Object.defineProperty(exports, "Front2", {
+  enumerable: true,
+  get: function get() {
+    return _Front3.Front2;
+  }
+});
+Object.defineProperty(exports, "Front3", {
+  enumerable: true,
+  get: function get() {
+    return _Front4.Front3;
+  }
+});
 Object.defineProperty(exports, "Glue", {
   enumerable: true,
   get: function get() {
@@ -1035,6 +1461,30 @@ Object.defineProperty(exports, "JobCreate", {
     return _JobCreate.JobCreate;
   }
 });
+Object.defineProperty(exports, "JobDelay", {
+  enumerable: true,
+  get: function get() {
+    return _JobDelay.JobDelay;
+  }
+});
+Object.defineProperty(exports, "JobDelayCreate", {
+  enumerable: true,
+  get: function get() {
+    return _JobDelayCreate.JobDelayCreate;
+  }
+});
+Object.defineProperty(exports, "JobDelayUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _JobDelayUpdate.JobDelayUpdate;
+  }
+});
+Object.defineProperty(exports, "JobDelaysJobDelayIdBody", {
+  enumerable: true,
+  get: function get() {
+    return _JobDelaysJobDelayIdBody.JobDelaysJobDelayIdBody;
+  }
+});
 Object.defineProperty(exports, "JobIdEstimatesBody", {
   enumerable: true,
   get: function get() {
@@ -1057,6 +1507,12 @@ Object.defineProperty(exports, "JobIdIntermediateProductsBody", {
   enumerable: true,
   get: function get() {
     return _JobIdIntermediateProductsBody.JobIdIntermediateProductsBody;
+  }
+});
+Object.defineProperty(exports, "JobIdJobDelaysBody", {
+  enumerable: true,
+  get: function get() {
+    return _JobIdJobDelaysBody.JobIdJobDelaysBody;
   }
 });
 Object.defineProperty(exports, "JobIdMilestonesBody", {
@@ -1083,16 +1539,46 @@ Object.defineProperty(exports, "JobIdProductionStrategiesBody", {
     return _JobIdProductionStrategiesBody.JobIdProductionStrategiesBody;
   }
 });
+Object.defineProperty(exports, "JobIdStateTransitionsBody", {
+  enumerable: true,
+  get: function get() {
+    return _JobIdStateTransitionsBody.JobIdStateTransitionsBody;
+  }
+});
 Object.defineProperty(exports, "JobIdTodosBody", {
   enumerable: true,
   get: function get() {
     return _JobIdTodosBody.JobIdTodosBody;
   }
 });
+Object.defineProperty(exports, "JobStateTransition", {
+  enumerable: true,
+  get: function get() {
+    return _JobStateTransition.JobStateTransition;
+  }
+});
+Object.defineProperty(exports, "JobStateTransitionCreate", {
+  enumerable: true,
+  get: function get() {
+    return _JobStateTransitionCreate.JobStateTransitionCreate;
+  }
+});
+Object.defineProperty(exports, "JobStateTransitionUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _JobStateTransitionUpdate.JobStateTransitionUpdate;
+  }
+});
 Object.defineProperty(exports, "JobUpdate", {
   enumerable: true,
   get: function get() {
     return _JobUpdate.JobUpdate;
+  }
+});
+Object.defineProperty(exports, "JobsApi", {
+  enumerable: true,
+  get: function get() {
+    return _JobsApi.JobsApi;
   }
 });
 Object.defineProperty(exports, "JobsBody", {
@@ -1123,24 +1609,6 @@ Object.defineProperty(exports, "LaminationUpdate", {
   enumerable: true,
   get: function get() {
     return _LaminationUpdate.LaminationUpdate;
-  }
-});
-Object.defineProperty(exports, "Layout", {
-  enumerable: true,
-  get: function get() {
-    return _Layout.Layout;
-  }
-});
-Object.defineProperty(exports, "LayoutCreate", {
-  enumerable: true,
-  get: function get() {
-    return _LayoutCreate.LayoutCreate;
-  }
-});
-Object.defineProperty(exports, "LayoutUpdate", {
-  enumerable: true,
-  get: function get() {
-    return _LayoutUpdate.LayoutUpdate;
   }
 });
 Object.defineProperty(exports, "LessThan", {
@@ -1219,6 +1687,12 @@ Object.defineProperty(exports, "ListWithPredicatesUpdate", {
   enumerable: true,
   get: function get() {
     return _ListWithPredicatesUpdate.ListWithPredicatesUpdate;
+  }
+});
+Object.defineProperty(exports, "ListsApi", {
+  enumerable: true,
+  get: function get() {
+    return _ListsApi.ListsApi;
   }
 });
 Object.defineProperty(exports, "ListsBody", {
@@ -1587,6 +2061,12 @@ Object.defineProperty(exports, "OrderIdPaymentTermsBody1", {
     return _OrderIdPaymentTermsBody2.OrderIdPaymentTermsBody1;
   }
 });
+Object.defineProperty(exports, "OrderIdStateTransitionsBody", {
+  enumerable: true,
+  get: function get() {
+    return _OrderIdStateTransitionsBody.OrderIdStateTransitionsBody;
+  }
+});
 Object.defineProperty(exports, "OrderLineItem", {
   enumerable: true,
   get: function get() {
@@ -1609,6 +2089,24 @@ Object.defineProperty(exports, "OrderLineItemsOrderLineItemIdBody", {
   enumerable: true,
   get: function get() {
     return _OrderLineItemsOrderLineItemIdBody.OrderLineItemsOrderLineItemIdBody;
+  }
+});
+Object.defineProperty(exports, "OrderStateTransition", {
+  enumerable: true,
+  get: function get() {
+    return _OrderStateTransition.OrderStateTransition;
+  }
+});
+Object.defineProperty(exports, "OrderStateTransitionCreate", {
+  enumerable: true,
+  get: function get() {
+    return _OrderStateTransitionCreate.OrderStateTransitionCreate;
+  }
+});
+Object.defineProperty(exports, "OrderStateTransitionUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _OrderStateTransitionUpdate.OrderStateTransitionUpdate;
   }
 });
 Object.defineProperty(exports, "OrderUpdate", {
@@ -1785,6 +2283,18 @@ Object.defineProperty(exports, "PickupsPickupIdBody", {
     return _PickupsPickupIdBody.PickupsPickupIdBody;
   }
 });
+Object.defineProperty(exports, "Position", {
+  enumerable: true,
+  get: function get() {
+    return _Position.Position;
+  }
+});
+Object.defineProperty(exports, "Position1", {
+  enumerable: true,
+  get: function get() {
+    return _Position2.Position1;
+  }
+});
 Object.defineProperty(exports, "Predicate", {
   enumerable: true,
   get: function get() {
@@ -1813,6 +2323,30 @@ Object.defineProperty(exports, "PredicatesPredicateIdBody", {
   enumerable: true,
   get: function get() {
     return _PredicatesPredicateIdBody.PredicatesPredicateIdBody;
+  }
+});
+Object.defineProperty(exports, "PrintFreeMargins", {
+  enumerable: true,
+  get: function get() {
+    return _PrintFreeMargins.PrintFreeMargins;
+  }
+});
+Object.defineProperty(exports, "PrintFreeMargins1", {
+  enumerable: true,
+  get: function get() {
+    return _PrintFreeMargins2.PrintFreeMargins1;
+  }
+});
+Object.defineProperty(exports, "PrintFreeMargins2", {
+  enumerable: true,
+  get: function get() {
+    return _PrintFreeMargins3.PrintFreeMargins2;
+  }
+});
+Object.defineProperty(exports, "PrintFreeMargins3", {
+  enumerable: true,
+  get: function get() {
+    return _PrintFreeMargins4.PrintFreeMargins3;
   }
 });
 Object.defineProperty(exports, "ProductionApi", {
@@ -1861,6 +2395,18 @@ Object.defineProperty(exports, "ProductionStrategyUpdate", {
   enumerable: true,
   get: function get() {
     return _ProductionStrategyUpdate.ProductionStrategyUpdate;
+  }
+});
+Object.defineProperty(exports, "Rear", {
+  enumerable: true,
+  get: function get() {
+    return _Rear.Rear;
+  }
+});
+Object.defineProperty(exports, "Rear1", {
+  enumerable: true,
+  get: function get() {
+    return _Rear2.Rear1;
   }
 });
 Object.defineProperty(exports, "RingBinding", {
@@ -1959,6 +2505,12 @@ Object.defineProperty(exports, "ShipmentsShipmentIdBody", {
     return _ShipmentsShipmentIdBody.ShipmentsShipmentIdBody;
   }
 });
+Object.defineProperty(exports, "ShopFloorApi", {
+  enumerable: true,
+  get: function get() {
+    return _ShopFloorApi.ShopFloorApi;
+  }
+});
 Object.defineProperty(exports, "Signature", {
   enumerable: true,
   get: function get() {
@@ -1981,12 +2533,6 @@ Object.defineProperty(exports, "SignaturesSignatureIdBody", {
   enumerable: true,
   get: function get() {
     return _SignaturesSignatureIdBody.SignaturesSignatureIdBody;
-  }
-});
-Object.defineProperty(exports, "SpecificationApi", {
-  enumerable: true,
-  get: function get() {
-    return _SpecificationApi.SpecificationApi;
   }
 });
 Object.defineProperty(exports, "SpiralBinding", {
@@ -2264,6 +2810,10 @@ var _AllOfshipmentsShipmentIdBodyShipment = require("./model/AllOfshipmentsShipm
 var _ArrayContains = require("./model/ArrayContains");
 var _ArrayContainsCreate = require("./model/ArrayContainsCreate");
 var _ArrayContainsUpdate = require("./model/ArrayContainsUpdate");
+var _Back = require("./model/Back");
+var _Back2 = require("./model/Back1");
+var _Back3 = require("./model/Back2");
+var _Back4 = require("./model/Back3");
 var _BaseEquals = require("./model/BaseEquals");
 var _BaseEqualsCreate = require("./model/BaseEqualsCreate");
 var _BaseEqualsUpdate = require("./model/BaseEqualsUpdate");
@@ -2284,9 +2834,70 @@ var _BatchSignatureUpdate = require("./model/BatchSignatureUpdate");
 var _BatchUpdate = require("./model/BatchUpdate");
 var _BatchesBatchIdBody = require("./model/BatchesBatchIdBody");
 var _BatchesBody = require("./model/BatchesBody");
-var _Box = require("./model/Box");
-var _BoxCreate = require("./model/BoxCreate");
-var _BoxUpdate = require("./model/BoxUpdate");
+var _Bleeds = require("./model/Bleeds");
+var _Bleeds2 = require("./model/Bleeds1");
+var _Bleeds3 = require("./model/Bleeds2");
+var _Bleeds4 = require("./model/Bleeds3");
+var _BoxModelFinishing = require("./model/BoxModelFinishing");
+var _BoxModelFinishingCreate = require("./model/BoxModelFinishingCreate");
+var _BoxModelFinishingUpdate = require("./model/BoxModelFinishingUpdate");
+var _BoxModelFlap = require("./model/BoxModelFlap");
+var _BoxModelFlapCreate = require("./model/BoxModelFlapCreate");
+var _BoxModelFlapUpdate = require("./model/BoxModelFlapUpdate");
+var _BoxModelFold = require("./model/BoxModelFold");
+var _BoxModelFoldCreate = require("./model/BoxModelFoldCreate");
+var _BoxModelFoldUpdate = require("./model/BoxModelFoldUpdate");
+var _BoxModelIntermediateLayout = require("./model/BoxModelIntermediateLayout");
+var _BoxModelIntermediateLayoutChildren = require("./model/BoxModelIntermediateLayoutChildren");
+var _BoxModelIntermediateLayoutChildrenCreate = require("./model/BoxModelIntermediateLayoutChildrenCreate");
+var _BoxModelIntermediateLayoutChildrenUpdate = require("./model/BoxModelIntermediateLayoutChildrenUpdate");
+var _BoxModelIntermediateLayoutCreate = require("./model/BoxModelIntermediateLayoutCreate");
+var _BoxModelIntermediateLayoutUpdate = require("./model/BoxModelIntermediateLayoutUpdate");
+var _BoxModelMark = require("./model/BoxModelMark");
+var _BoxModelMarkCreate = require("./model/BoxModelMarkCreate");
+var _BoxModelMarkUpdate = require("./model/BoxModelMarkUpdate");
+var _BoxModelObject = require("./model/BoxModelObject");
+var _BoxModelObjectCreate = require("./model/BoxModelObjectCreate");
+var _BoxModelObjectUpdate = require("./model/BoxModelObjectUpdate");
+var _BoxModelPage = require("./model/BoxModelPage");
+var _BoxModelPageChildren = require("./model/BoxModelPageChildren");
+var _BoxModelPageChildrenCreate = require("./model/BoxModelPageChildrenCreate");
+var _BoxModelPageChildrenUpdate = require("./model/BoxModelPageChildrenUpdate");
+var _BoxModelPageCreate = require("./model/BoxModelPageCreate");
+var _BoxModelPageUpdate = require("./model/BoxModelPageUpdate");
+var _BoxModelPartLayout = require("./model/BoxModelPartLayout");
+var _BoxModelPartLayoutChildren = require("./model/BoxModelPartLayoutChildren");
+var _BoxModelPartLayoutChildrenCreate = require("./model/BoxModelPartLayoutChildrenCreate");
+var _BoxModelPartLayoutChildrenUpdate = require("./model/BoxModelPartLayoutChildrenUpdate");
+var _BoxModelPartLayoutCreate = require("./model/BoxModelPartLayoutCreate");
+var _BoxModelPartLayoutUpdate = require("./model/BoxModelPartLayoutUpdate");
+var _BoxModelRollSegment = require("./model/BoxModelRollSegment");
+var _BoxModelRollSegmentChildren = require("./model/BoxModelRollSegmentChildren");
+var _BoxModelRollSegmentChildrenCreate = require("./model/BoxModelRollSegmentChildrenCreate");
+var _BoxModelRollSegmentChildrenUpdate = require("./model/BoxModelRollSegmentChildrenUpdate");
+var _BoxModelRollSegmentCreate = require("./model/BoxModelRollSegmentCreate");
+var _BoxModelRollSegmentUpdate = require("./model/BoxModelRollSegmentUpdate");
+var _BoxModelSheet = require("./model/BoxModelSheet");
+var _BoxModelSheetChildren = require("./model/BoxModelSheetChildren");
+var _BoxModelSheetChildrenCreate = require("./model/BoxModelSheetChildrenCreate");
+var _BoxModelSheetChildrenUpdate = require("./model/BoxModelSheetChildrenUpdate");
+var _BoxModelSheetCreate = require("./model/BoxModelSheetCreate");
+var _BoxModelSheetUpdate = require("./model/BoxModelSheetUpdate");
+var _BoxModelSignatureLayout = require("./model/BoxModelSignatureLayout");
+var _BoxModelSignatureLayoutChildren = require("./model/BoxModelSignatureLayoutChildren");
+var _BoxModelSignatureLayoutChildrenCreate = require("./model/BoxModelSignatureLayoutChildrenCreate");
+var _BoxModelSignatureLayoutChildrenUpdate = require("./model/BoxModelSignatureLayoutChildrenUpdate");
+var _BoxModelSignatureLayoutCreate = require("./model/BoxModelSignatureLayoutCreate");
+var _BoxModelSignatureLayoutUpdate = require("./model/BoxModelSignatureLayoutUpdate");
+var _BoxModelSpine = require("./model/BoxModelSpine");
+var _BoxModelSpineCreate = require("./model/BoxModelSpineCreate");
+var _BoxModelSpineUpdate = require("./model/BoxModelSpineUpdate");
+var _BoxModelSpread = require("./model/BoxModelSpread");
+var _BoxModelSpreadChildren = require("./model/BoxModelSpreadChildren");
+var _BoxModelSpreadChildrenCreate = require("./model/BoxModelSpreadChildrenCreate");
+var _BoxModelSpreadChildrenUpdate = require("./model/BoxModelSpreadChildrenUpdate");
+var _BoxModelSpreadCreate = require("./model/BoxModelSpreadCreate");
+var _BoxModelSpreadUpdate = require("./model/BoxModelSpreadUpdate");
 var _Color = require("./model/Color");
 var _ColorCreate = require("./model/ColorCreate");
 var _ColorUpdate = require("./model/ColorUpdate");
@@ -2328,6 +2939,8 @@ var _DateLessThanUpdate = require("./model/DateLessThanUpdate");
 var _DesiredSubstrate = require("./model/DesiredSubstrate");
 var _DesiredSubstrateCreate = require("./model/DesiredSubstrateCreate");
 var _DesiredSubstrateUpdate = require("./model/DesiredSubstrateUpdate");
+var _Dimensions = require("./model/Dimensions");
+var _Dimensions2 = require("./model/Dimensions1");
 var _Embossing = require("./model/Embossing");
 var _EmbossingCreate = require("./model/EmbossingCreate");
 var _EmbossingUpdate = require("./model/EmbossingUpdate");
@@ -2386,6 +2999,10 @@ var _FinishingsFinishingIdBody = require("./model/FinishingsFinishingIdBody");
 var _FoilStamp = require("./model/FoilStamp");
 var _FoilStampCreate = require("./model/FoilStampCreate");
 var _FoilStampUpdate = require("./model/FoilStampUpdate");
+var _Front = require("./model/Front");
+var _Front2 = require("./model/Front1");
+var _Front3 = require("./model/Front2");
+var _Front4 = require("./model/Front3");
 var _Glue = require("./model/Glue");
 var _GlueCreate = require("./model/GlueCreate");
 var _GlueUpdate = require("./model/GlueUpdate");
@@ -2417,24 +3034,30 @@ var _IntermediateProductUpdate = require("./model/IntermediateProductUpdate");
 var _IntermediateProductsIntermediateProductIdBody = require("./model/IntermediateProductsIntermediateProductIdBody");
 var _Job = require("./model/Job");
 var _JobCreate = require("./model/JobCreate");
+var _JobDelay = require("./model/JobDelay");
+var _JobDelayCreate = require("./model/JobDelayCreate");
+var _JobDelayUpdate = require("./model/JobDelayUpdate");
+var _JobDelaysJobDelayIdBody = require("./model/JobDelaysJobDelayIdBody");
 var _JobIdEstimatesBody = require("./model/JobIdEstimatesBody");
 var _JobIdFinishedProductBody = require("./model/JobIdFinishedProductBody");
 var _JobIdFinishedProductBody2 = require("./model/JobIdFinishedProductBody1");
 var _JobIdIntermediateProductsBody = require("./model/JobIdIntermediateProductsBody");
+var _JobIdJobDelaysBody = require("./model/JobIdJobDelaysBody");
 var _JobIdMilestonesBody = require("./model/JobIdMilestonesBody");
 var _JobIdPackagingsBody = require("./model/JobIdPackagingsBody");
 var _JobIdPartsBody = require("./model/JobIdPartsBody");
 var _JobIdProductionStrategiesBody = require("./model/JobIdProductionStrategiesBody");
+var _JobIdStateTransitionsBody = require("./model/JobIdStateTransitionsBody");
 var _JobIdTodosBody = require("./model/JobIdTodosBody");
+var _JobStateTransition = require("./model/JobStateTransition");
+var _JobStateTransitionCreate = require("./model/JobStateTransitionCreate");
+var _JobStateTransitionUpdate = require("./model/JobStateTransitionUpdate");
 var _JobUpdate = require("./model/JobUpdate");
 var _JobsBody = require("./model/JobsBody");
 var _JobsJobIdBody = require("./model/JobsJobIdBody");
 var _Lamination = require("./model/Lamination");
 var _LaminationCreate = require("./model/LaminationCreate");
 var _LaminationUpdate = require("./model/LaminationUpdate");
-var _Layout = require("./model/Layout");
-var _LayoutCreate = require("./model/LayoutCreate");
-var _LayoutUpdate = require("./model/LayoutUpdate");
 var _LessThan = require("./model/LessThan");
 var _LessThanCreate = require("./model/LessThanCreate");
 var _LessThanUpdate = require("./model/LessThanUpdate");
@@ -2508,10 +3131,14 @@ var _OrderIdAddressBody2 = require("./model/OrderIdAddressBody1");
 var _OrderIdOrderLineItemsBody = require("./model/OrderIdOrderLineItemsBody");
 var _OrderIdPaymentTermsBody = require("./model/OrderIdPaymentTermsBody");
 var _OrderIdPaymentTermsBody2 = require("./model/OrderIdPaymentTermsBody1");
+var _OrderIdStateTransitionsBody = require("./model/OrderIdStateTransitionsBody");
 var _OrderLineItem = require("./model/OrderLineItem");
 var _OrderLineItemCreate = require("./model/OrderLineItemCreate");
 var _OrderLineItemUpdate = require("./model/OrderLineItemUpdate");
 var _OrderLineItemsOrderLineItemIdBody = require("./model/OrderLineItemsOrderLineItemIdBody");
+var _OrderStateTransition = require("./model/OrderStateTransition");
+var _OrderStateTransitionCreate = require("./model/OrderStateTransitionCreate");
+var _OrderStateTransitionUpdate = require("./model/OrderStateTransitionUpdate");
 var _OrderUpdate = require("./model/OrderUpdate");
 var _OrdersBody = require("./model/OrdersBody");
 var _OrdersOrderIdBody = require("./model/OrdersOrderIdBody");
@@ -2541,11 +3168,17 @@ var _Pickup = require("./model/Pickup");
 var _PickupCreate = require("./model/PickupCreate");
 var _PickupUpdate = require("./model/PickupUpdate");
 var _PickupsPickupIdBody = require("./model/PickupsPickupIdBody");
+var _Position = require("./model/Position");
+var _Position2 = require("./model/Position1");
 var _Predicate = require("./model/Predicate");
 var _PredicateCreate = require("./model/PredicateCreate");
 var _PredicateIdRulesBody = require("./model/PredicateIdRulesBody");
 var _PredicateUpdate = require("./model/PredicateUpdate");
 var _PredicatesPredicateIdBody = require("./model/PredicatesPredicateIdBody");
+var _PrintFreeMargins = require("./model/PrintFreeMargins");
+var _PrintFreeMargins2 = require("./model/PrintFreeMargins1");
+var _PrintFreeMargins3 = require("./model/PrintFreeMargins2");
+var _PrintFreeMargins4 = require("./model/PrintFreeMargins3");
 var _ProductionPathsBody = require("./model/ProductionPathsBody");
 var _ProductionPathsProductionPath = require("./model/ProductionPathsProductionPath");
 var _ProductionStrategiesProductionStrategyIdBody = require("./model/ProductionStrategiesProductionStrategyIdBody");
@@ -2553,6 +3186,8 @@ var _ProductionStrategy = require("./model/ProductionStrategy");
 var _ProductionStrategyCreate = require("./model/ProductionStrategyCreate");
 var _ProductionStrategyIdImposingsBody = require("./model/ProductionStrategyIdImposingsBody");
 var _ProductionStrategyUpdate = require("./model/ProductionStrategyUpdate");
+var _Rear = require("./model/Rear");
+var _Rear2 = require("./model/Rear1");
 var _RingBinding = require("./model/RingBinding");
 var _RingBindingCreate = require("./model/RingBindingCreate");
 var _RingBindingUpdate = require("./model/RingBindingUpdate");
@@ -2617,7 +3252,9 @@ var _WorkstepUpdate = require("./model/WorkstepUpdate");
 var _WorkstepsBody = require("./model/WorkstepsBody");
 var _WorkstepsWorkstepIdBody = require("./model/WorkstepsWorkstepIdBody");
 var _BusinessApi = require("./api/BusinessApi");
-var _CommercialApi = require("./api/CommercialApi");
+var _EstimatesApi = require("./api/EstimatesApi");
+var _JobsApi = require("./api/JobsApi");
+var _ListsApi = require("./api/ListsApi");
 var _LogisticsApi = require("./api/LogisticsApi");
 var _ProductionApi = require("./api/ProductionApi");
-var _SpecificationApi = require("./api/SpecificationApi");
+var _ShopFloorApi = require("./api/ShopFloorApi");

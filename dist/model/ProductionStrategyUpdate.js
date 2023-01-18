@@ -35,7 +35,6 @@ var ProductionStrategyUpdate = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new ProductionStrategyUpdate();
-        if (data.hasOwnProperty('job_id')) obj.jobId = _ApiClient.ApiClient.convertToType(data['job_id'], 'String');
         if (data.hasOwnProperty('state')) obj.state = _ApiClient.ApiClient.convertToType(data['state'], 'String');
         if (data.hasOwnProperty('kind')) obj.kind = _ApiClient.ApiClient.convertToType(data['kind'], 'String');
       }
@@ -45,17 +44,11 @@ var ProductionStrategyUpdate = /*#__PURE__*/function () {
   return ProductionStrategyUpdate;
 }();
 /**
- * The ID of the Job this ProductionStrategy belongs to
- * @member {String} jobId
- */
-exports.ProductionStrategyUpdate = ProductionStrategyUpdate;
-ProductionStrategyUpdate.prototype.jobId = undefined;
-
-/**
  * Allowed values for the <code>state</code> property.
  * @enum {String}
  * @readonly
  */
+exports.ProductionStrategyUpdate = ProductionStrategyUpdate;
 ProductionStrategyUpdate.StateEnum = {
   /**
    * value: "draft"

@@ -52,6 +52,11 @@ var NumberLessThanUpdate = /*#__PURE__*/function () {
 exports.NumberLessThanUpdate = NumberLessThanUpdate;
 NumberLessThanUpdate.SubjectTypeEnum = {
   /**
+   * value: "JOB_CREATED_AT"
+   * @const
+   */
+  JOB_CREATED_AT: "JOB_CREATED_AT",
+  /**
    * value: "JOB_DUE_AT"
    * @const
    */

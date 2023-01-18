@@ -82,10 +82,15 @@ DateIsToday.prototype.updatedAt = undefined;
  */
 DateIsToday.SubjectTypeEnum = {
   /**
+   * value: "JOB_CREATED_AT"
+   * @const
+   */
+  CREATED_AT: "JOB_CREATED_AT",
+  /**
    * value: "JOB_DUE_AT"
    * @const
    */
-  JOB_DUE_AT: "JOB_DUE_AT"
+  DUE_AT: "JOB_DUE_AT"
 };
 /**
  * The list members field to filter results. Specified subject type must be compatible with the associated list member class. DateIsToday rules only admit date subject types (fields with date type).

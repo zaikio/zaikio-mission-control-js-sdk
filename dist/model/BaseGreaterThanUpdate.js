@@ -51,6 +51,11 @@ var BaseGreaterThanUpdate = /*#__PURE__*/function () {
 exports.BaseGreaterThanUpdate = BaseGreaterThanUpdate;
 BaseGreaterThanUpdate.SubjectTypeEnum = {
   /**
+   * value: "JOB_CREATED_AT"
+   * @const
+   */
+  JOB_CREATED_AT: "JOB_CREATED_AT",
+  /**
    * value: "JOB_DUE_AT"
    * @const
    */

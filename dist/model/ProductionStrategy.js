@@ -21,7 +21,7 @@ var ProductionStrategy = /*#__PURE__*/function () {
    * @param id {String} 
    * @param createdAt {Date} 
    * @param updatedAt {Date} 
-   * @param jobId {String} The ID of the Job this ProductionStrategy belongs to
+   * @param jobId {String} The ID of the Job this ProductionStrateg belongs to
    * @param state {module:model/ProductionStrategy.StateEnum} What is the status of this strategy
    * @param kind {module:model/ProductionStrategy.KindEnum} What approach does this strategy optimize for
    * @param canceledAt {Date} When this strategy was cancelled, if in canceled state
@@ -79,7 +79,7 @@ ProductionStrategy.prototype.createdAt = undefined;
 ProductionStrategy.prototype.updatedAt = undefined;
 
 /**
- * The ID of the Job this ProductionStrategy belongs to
+ * The ID of the Job this ProductionStrateg belongs to
  * @member {String} jobId
  */
 ProductionStrategy.prototype.jobId = undefined;

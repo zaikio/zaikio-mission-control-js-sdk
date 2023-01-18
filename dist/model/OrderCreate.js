@@ -36,7 +36,6 @@ var OrderCreate = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new OrderCreate();
         if (data.hasOwnProperty('references')) obj.references = _ApiClient.ApiClient.convertToType(data['references'], ['String']);
-        if (data.hasOwnProperty('state')) obj.state = _ApiClient.ApiClient.convertToType(data['state'], 'String');
         if (data.hasOwnProperty('currency')) obj.currency = _ApiClient.ApiClient.convertToType(data['currency'], 'String');
         if (data.hasOwnProperty('net_total')) obj.netTotal = _ApiClient.ApiClient.convertToType(data['net_total'], 'Number');
         if (data.hasOwnProperty('gross_total')) obj.grossTotal = _ApiClient.ApiClient.convertToType(data['gross_total'], 'Number');
@@ -56,39 +55,6 @@ var OrderCreate = /*#__PURE__*/function () {
  */
 exports.OrderCreate = OrderCreate;
 OrderCreate.prototype.references = undefined;
-
-/**
- * Allowed values for the <code>state</code> property.
- * @enum {String}
- * @readonly
- */
-OrderCreate.StateEnum = {
-  /**
-   * value: "draft"
-   * @const
-   */
-  draft: "draft",
-  /**
-   * value: "confirmed"
-   * @const
-   */
-  confirmed: "confirmed",
-  /**
-   * value: "fulfilled"
-   * @const
-   */
-  fulfilled: "fulfilled",
-  /**
-   * value: "canceled"
-   * @const
-   */
-  canceled: "canceled"
-};
-/**
- * The current state of the Order
- * @member {module:model/OrderCreate.StateEnum} state
- */
-OrderCreate.prototype.state = undefined;
 
 /**
  * Allowed values for the <code>currency</code> property.

@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**jobId** | **String** | The ID of the Job this ProductionStrategy belongs to | [optional] 
 **state** | **String** | What is the status of this strategy | [optional] 
 **kind** | **String** | What approach does this strategy optimize for | [optional] 
 

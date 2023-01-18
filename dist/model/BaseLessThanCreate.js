@@ -51,6 +51,11 @@ var BaseLessThanCreate = /*#__PURE__*/function () {
 exports.BaseLessThanCreate = BaseLessThanCreate;
 BaseLessThanCreate.SubjectTypeEnum = {
   /**
+   * value: "JOB_CREATED_AT"
+   * @const
+   */
+  JOB_CREATED_AT: "JOB_CREATED_AT",
+  /**
    * value: "JOB_DUE_AT"
    * @const
    */

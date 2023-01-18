@@ -39,6 +39,7 @@ var ColorCreate = /*#__PURE__*/function () {
         if (data.hasOwnProperty('system')) obj.system = _ApiClient.ApiClient.convertToType(data['system'], 'String');
         if (data.hasOwnProperty('name')) obj.name = _ApiClient.ApiClient.convertToType(data['name'], 'String');
         if (data.hasOwnProperty('coverage')) obj.coverage = _ApiClient.ApiClient.convertToType(data['coverage'], 'String');
+        if (data.hasOwnProperty('print_standard')) obj.printStandard = _ApiClient.ApiClient.convertToType(data['print_standard'], 'String');
       }
       return obj;
     }
@@ -108,3 +109,96 @@ ColorCreate.prototype.name = undefined;
  * @member {String} coverage
  */
 ColorCreate.prototype.coverage = undefined;
+
+/**
+ * Allowed values for the <code>printStandard</code> property.
+ * @enum {String}
+ * @readonly
+ */
+ColorCreate.PrintStandardEnum = {
+  /**
+   * value: "CRPC3"
+   * @const
+   */
+  cRPC3: "CRPC3",
+  /**
+   * value: "CRPC6"
+   * @const
+   */
+  cRPC6: "CRPC6",
+  /**
+   * value: "FOGRA39"
+   * @const
+   */
+  fOGRA39: "FOGRA39",
+  /**
+   * value: "FOGRA40"
+   * @const
+   */
+  fOGRA40: "FOGRA40",
+  /**
+   * value: "FOGRA45"
+   * @const
+   */
+  fOGRA45: "FOGRA45",
+  /**
+   * value: "FOGRA46"
+   * @const
+   */
+  fOGRA46: "FOGRA46",
+  /**
+   * value: "FOGRA47"
+   * @const
+   */
+  fOGRA47: "FOGRA47",
+  /**
+   * value: "FOGRA51"
+   * @const
+   */
+  fOGRA51: "FOGRA51",
+  /**
+   * value: "FOGRA52"
+   * @const
+   */
+  fOGRA52: "FOGRA52",
+  /**
+   * value: "FOGRA54"
+   * @const
+   */
+  fOGRA54: "FOGRA54",
+  /**
+   * value: "FOGRA59"
+   * @const
+   */
+  fOGRA59: "FOGRA59",
+  /**
+   * value: "GRACOL"
+   * @const
+   */
+  GRACOL: "GRACOL",
+  /**
+   * value: "IFRA26"
+   * @const
+   */
+  iFRA26: "IFRA26",
+  /**
+   * value: "TR001"
+   * @const
+   */
+  tR001: "TR001",
+  /**
+   * value: "TR005"
+   * @const
+   */
+  tR005: "TR005",
+  /**
+   * value: "TR006"
+   * @const
+   */
+  tR006: "TR006"
+};
+/**
+ * Set an output desired color calibration to reduce likelihood of errors.
+ * @member {module:model/ColorCreate.PrintStandardEnum} printStandard
+ */
+ColorCreate.prototype.printStandard = undefined;
