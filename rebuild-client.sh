@@ -2,6 +2,16 @@
 
 set -e pipefail
 
+# Check dependencies
+for name in prettier swagger-codegen jq npm
+do
+  if ! command -v $name &> /dev/null
+  then
+      echo "'$name' could not be found on your system. Please install it and try again."
+      exit 1
+  fi
+done
+
 export JS_POST_PROCESS_FILE="$(which prettier) -w"
 
 rm -rf "$(pwd)/src"
